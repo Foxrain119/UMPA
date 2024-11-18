@@ -7,6 +7,9 @@ import ArticleView from '@/views/ArticleView.vue'
 import ProfileView from '@/views/ProfileView.vue'
 import SignUpView from '@/views/SignUpView.vue'
 import LoginView from '@/views/LoginView.vue'
+import SearchProductsView from '@/views/finance/SearchProductsView.vue'
+import SearchDepositsView from '@/views/finance/SearchDepositsView.vue'
+import SearchSavingView from '@/views/finance/SearchSavingView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -30,6 +33,25 @@ const router = createRouter({
       path: '/finance',
       name: 'finance',
       component: FinanceView,
+      children: [
+        {
+          path: '/search_products',
+          name: 'search_products',
+          component: SearchProductsView,
+          children: [
+            {
+              path: '/deposit',
+              name: 'deposit',
+              component: SearchDepositsView,
+            },
+            {
+              path: '/saving',
+              name: 'saving',
+              component: SearchSavingView,
+            },
+          ]
+        },
+      ]
     },
     {
       path: '/exchange',
@@ -51,6 +73,10 @@ const router = createRouter({
       name: 'profile',
       component: ProfileView,
     },
+
+    // Finance
+    
+    
   ],
 })
 
