@@ -13,26 +13,52 @@
         </tr>
       </thead>
       <tbody>
-        <ProductList
-          v-for="product in deposits"
-          :key="`deposit${deposits.id}`"
+        <ProductItem
+          v-for="product in displayedProducts"
+          :key="`deposit${product.id}`"
           :product="product"
-          :options="options.filter(el => el['deposit'] === product.id)"
         />
       </tbody>
     </table>
+
+    <div class="page_btn">
+      <button v-show="currentPage > 1" @click.prevent="prePage"><</button>
+      <span>{{ currentPage }} / {{ totalPage }}</span>
+      <button v-show="currentPage < totalPage" @click.prevent="nextPage">></button>
+    </div>
   </div>
 </template>
 
 <script setup>
-import ProductList from '@/components/fianance/ProductList.vue';
+import ProductItem from '@/components/fianance/ProductItem.vue';
+import { computed, ref } from 'vue'
 import { useFinanceStore } from '@/stores/finance';
 
 const store = useFinanceStore()
 const deposits = store.deposits
-const options = store.deposit_options
+
+const currentPage = ref(1)
+const productCount = 15
+const totalPage = computed(() => Math.floor(deposits.length / productCount) + 1)
+
+const displayedProducts = computed (() => {
+  const startIdx = (currentPage.value - 1) * productCount
+  const endIdx = startIdx + productCount
+  return deposits.slice(startIdx, endIdx)
+})
+
+const prePage = () => {
+  currentPage.value -= 1
+}
+
+const nextPage = () => {
+  currentPage.value += 1
+}
+
 </script>
 
 <style scoped>
-
+.page_btn {
+  text-align: center;
+}
 </style>

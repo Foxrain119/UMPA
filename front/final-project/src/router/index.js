@@ -10,6 +10,7 @@ import LoginView from '@/views/LoginView.vue'
 import SearchProductsView from '@/views/finance/SearchProductsView.vue'
 import SearchDepositsView from '@/views/finance/SearchDepositsView.vue'
 import SearchSavingView from '@/views/finance/SearchSavingView.vue'
+import CommendProductsView from '@/views/finance/CommendProductsView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -50,6 +51,11 @@ const router = createRouter({
               component: SearchSavingView,
             },
           ]
+        },
+        {
+          path: '/commend_products',
+          name: 'commend_products',
+          component: CommendProductsView,
         },
       ]
     },

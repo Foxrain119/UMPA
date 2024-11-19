@@ -16,6 +16,17 @@ class DepositOptionSerializer(serializers.ModelSerializer):
         read_only_fields = ('deposit',)
 
 
+class DepositFullListSerializer(serializers.ModelSerializer):
+    option = DepositOptionSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Deposit
+        fields = '__all__'
+        read_only_fields = ('joined_users',)
+
+
+
+
 class SavingSerializer(serializers.ModelSerializer):
     class Meta:
         model = Saving
@@ -28,3 +39,12 @@ class SavingOptionSerializer(serializers.ModelSerializer):
         model = SavingOption
         fields = '__all__'
         read_only_fields = ('saving',)
+
+
+class SavingFullListSerializer(serializers.ModelSerializer):
+    option = SavingOptionSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Saving
+        fields = '__all__'
+        read_only_fields = ('joined_users',)

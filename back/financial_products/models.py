@@ -17,7 +17,7 @@ class Deposit(models.Model):
 
 
 class DepositOption(models.Model):
-    deposit = models.ForeignKey(Deposit, on_delete=models.CASCADE)
+    deposit = models.ForeignKey(Deposit, on_delete=models.CASCADE, related_name='option')
     intr_rate_type_nm = models.CharField(max_length=2)  # 저축 금리 유형명
     intr_rate = models.FloatField(null=True)            # 저축 금리
     intr_rate2 = models.FloatField(null=True)           # 최고 우대금리
@@ -40,7 +40,7 @@ class Saving(models.Model):
 
   
 class SavingOption(models.Model):
-    saving = models.ForeignKey(Saving, on_delete=models.CASCADE)
+    saving = models.ForeignKey(Saving, on_delete=models.CASCADE, related_name='option')
     intr_rate_type_nm = models.CharField(max_length=2)  # 저축금리 유형명
     rsrv_type_nm = models.CharField(max_length=10)      # 적립 유형명
     intr_rate = models.FloatField(null=True)            # 저축 금리

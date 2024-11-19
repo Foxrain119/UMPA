@@ -4142,7 +4142,7 @@
         "join_deny": 1,
         "join_member": "제한없음",
         "join_way": "영업점",
-        "spcl_cnd": "없음",
+        "spcl_cnd": "- 없음",
         "max_limit": 999999999,
         "joined_users": []
     }

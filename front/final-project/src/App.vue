@@ -28,6 +28,7 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router';
 import { useFinanceStore } from '@/stores/finance';
+import { onMounted } from 'vue';
 
 const store = useFinanceStore()
 
@@ -35,6 +36,10 @@ const logOut = function () {
   store.logOut()
 }
 
+onMounted(() => {
+  store.getProducts()
+  store.getExchages()
+})
 </script>
 
 <style scoped>

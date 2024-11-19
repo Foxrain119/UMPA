@@ -1,13 +1,64 @@
 <template>
   <div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">순위</th>
+          <th scope="col">상품명</th>
+          <th scope="col">금융회사</th>
+          <th scope="col">6개월</th>
+          <th scope="col">12개월</th>
+          <th scope="col">24개월</th>
+          <th scope="col">36개월</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ProductList
+          v-for="product in displayedProducts"
+          :key="`deposit${product.id}`"
+          :product="product"
+        />
+      </tbody>
+    </table>
 
+    <div class="page_btn">
+      <button v-show="currentPage > 1" @click.prevent="prePage"><</button>
+      <span>{{ currentPage }} / {{ totalPage }}</span>
+      <button v-show="currentPage < totalPage" @click.prevent="nextPage">></button>
+    </div>
   </div>
 </template>
 
 <script setup>
+import ProductList from '@/components/fianance/ProductItem.vue';
+import { computed, ref } from 'vue'
+import { useFinanceStore } from '@/stores/finance';
+
+const store = useFinanceStore()
+const savings = store.savings
+
+const currentPage = ref(1)
+const productCount = 15
+const totalPage = computed(() => Math.floor(savings.length / productCount) + 1)
+
+const displayedProducts = computed (() => {
+  const startIdx = (currentPage.value - 1) * productCount
+  const endIdx = startIdx + productCount
+  return savings.slice(startIdx, endIdx)
+})
+
+const prePage = () => {
+  currentPage.value -= 1
+}
+
+const nextPage = () => {
+  currentPage.value += 1
+}
 
 </script>
 
 <style scoped>
-
+.page_btn {
+  text-align: center;
+}
 </style>

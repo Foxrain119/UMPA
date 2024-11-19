@@ -13,13 +13,13 @@
 <script setup>
 const props = defineProps({
   product: Object,
-  options: Array,
 })
 
-const option6 = props.options.find(el => el['save_trm'] === 6)
-const option12 = props.options.find(el => el['save_trm'] === 12)
-const option24 = props.options.find(el => el['save_trm'] === 24)
-const option36 = props.options.find(el => el['save_trm'] === 36)
+const option = props.product.option
+const option6 = option.find(el => el['save_trm'] === 6)
+const option12 = option.find(el => el['save_trm'] === 12)
+const option24 = option.find(el => el['save_trm'] === 24)
+const option36 = option.find(el => el['save_trm'] === 36)
 
 </script>
 

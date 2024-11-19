@@ -10,7 +10,8 @@ from rest_framework.decorators import api_view
 BASE_URL = 'http://finlife.fss.or.kr/finlifeapi/'
 API_KEY = settings.API_KEY
 
-topFinGrpNo = ['030200', '030300', '050000', '060000']
+# 020000(은행), 030200(여신전문), 030300(저축은행), 050000(보험), 060000(금융투자)
+topFinGrpNo = ['020000', '030200', '030300', '050000', '060000']
 
 @api_view(['GET'])
 def load_api_data(request):
@@ -25,7 +26,8 @@ def load_api_data(request):
             }
             deposits = requests.get(deposit_URL, params=deposit_params).json()
             
-            print(f'deposit {type}/{i}', deposits.get('result').get('max_page_no'))
+            print(f'deposit {type}/{i} total_count: ', deposits.get('result').get('total_count'))
+            print(f'deposit {type}/{i} max_page_no: ', deposits.get('result').get('max_page_no'))
             
             for deposit in deposits.get('result').get('baseList'):
                 if Deposit.objects.filter(fin_prdt_cd = deposit.get('fin_prdt_cd')):
@@ -72,7 +74,8 @@ def load_api_data(request):
 
             savings = requests.get(saving_URL, params=saving_params).json()
 
-            print(f'saving {type}/{i}', savings.get('result').get('max_page_no'))
+            print(f'saving {type}/{i} total_count: ', savings.get('result').get('total_count'))
+            print(f'saving {type}/{i} max_page_no: ', savings.get('result').get('max_page_no'))
 
             for saving in savings.get('result').get('baseList'):
                 if Saving.objects.filter(fin_prdt_cd = saving.get('fin_prdt_cd')):
@@ -113,16 +116,47 @@ def load_api_data(request):
     return Response({"message": "금융 데이터 저장이 완료되었습니다."})
 
 
+# # 적금
+# # 1. 적금 데이터만 보내기
+# @api_view(['GET'])
+# def deposit_list(request):
+#     deposits = Deposit.objects.all()
+#     serializer = DepositSerializer(deposits, many=True)
+#     return Response(serializer.data)
+
+# # 2. dumpdata로 만들어진 데이터 보내기
+# import os
+# import json
+# from django.http import JsonResponse
+
+# @api_view(['GET'])
+# def deposit_list(request):
+#     file_path = os.path.join(settings.BASE_DIR, 'financial_products/fixtures','deposit.json')
+#     try:
+#         with open(file_path, 'r', encoding='utf-8') as f:
+#             data = json.load(f)
+#         return JsonResponse(data, safe=False)
+#     except FileNotFoundError:
+#         return JsonResponse({'error': 'Data file not found.'}, status=404)
+
+# 3. 옵션이랑 묶어서 보내기
 @api_view(['GET'])
 def deposit_list(request):
     deposits = Deposit.objects.all()
-    serializer = DepositSerializer(deposits, many=True)
+    serializer = DepositFullListSerializer(deposits, many=True)
     return Response(serializer.data)
 
 
-@api_view(['GET'])
-def deposit_option_list(request):
-    deposit_options = DepositOption.objects.all()
-    serializer = DepositOptionSerializer(deposit_options, many=True)
+# @api_view(['GET'])
+# def deposit_option_list(request):
+#     deposit_options = DepositOption.objects.all()
+#     serializer = DepositOptionSerializer(deposit_options, many=True)
 
+#     return Response(serializer.data)
+
+
+@api_view(['GET'])
+def saving_list(request):
+    savings = Saving.objects.all()
+    serializer = SavingFullListSerializer(savings, many=True)
     return Response(serializer.data)

@@ -21,10 +21,11 @@ import environ
 env = environ.Env(DEBUG=(bool, True))
 
 environ.Env.read_env(
-  env_file=os.path.join(BASE_DIR, '.env')
+  env_file=os.path.join(BASE_DIR, '../.env')
 )
 
 API_KEY = env('API_KEY')
+API_KEY_EX = env('API_KEY_EX')
 
 
 # Quick-start development settings - unsuitable for production

@@ -8,11 +8,28 @@ export const useFinanceStore = defineStore('finance', () => {
   const token = ref(null)
   const router = useRouter()
 
-  const deposits= ref([])
+  // 금융 상품
+  const deposits = ref([])
   const deposit_options = ref([])
+  const savings = ref([])
 
-  const getDeposits = function () {
-    // 예금
+  // 환율
+  const exchanges = ref([])
+
+  const getExchages = function () {
+    axios({
+      method: 'get',
+      url: `${API_URL}/exchanges/list/`
+    })
+    .then(res => {
+      console.log(res.data)
+      exchanges.value = res.data
+    })
+    .catch(err => console.log(err))
+  }
+
+  const getProducts = function () {
+    // 예금 + 옵션
     axios({
       method: 'get',
       url: `${API_URL}/financial/deposit_list/`,
@@ -23,16 +40,27 @@ export const useFinanceStore = defineStore('finance', () => {
       })
       .catch(err => console.log(err))
     
-    // 옵션
+    // 적금 + 옵션
     axios({
       method: 'get',
-      url: `${API_URL}/financial/deposit_option_list/`,
+      url: `${API_URL}/financial/saving_list/`,
     })
       .then(res => {
         console.log(res.data)
-        deposit_options.value = res.data
+        savings.value = res.data
       })
       .catch(err => console.log(err))
+
+    // // 옵션
+    // axios({
+    //   method: 'get',
+    //   url: `${API_URL}/financial/deposit_option_list/`,
+    // })
+    //   .then(res => {
+    //     console.log(res.data)
+    //     deposit_options.value = res.data
+    //   })
+    //   .catch(err => console.log(err))
   }
 
   const signUp = function (payload) {
@@ -86,5 +114,5 @@ export const useFinanceStore = defineStore('finance', () => {
     router.push({ name: 'home' })
   }
 
-  return { deposits, deposit_options, getDeposits, token, signUp, logIn, isLogin, logOut }
+  return { deposits, savings, deposit_options, exchanges, getProducts, getExchages, token, signUp, logIn, isLogin, logOut }
 }, { persist: true })
