@@ -3,7 +3,7 @@
     <nav class="navbar">
       <div>
         <router-link :to="{ name: 'home' }">home</router-link> |
-        <router-link :to="{ name: 'finance' }">예적금 비교</router-link> |
+        <router-link :to="{ name: 'deposit' }">예적금 비교</router-link> |
         <router-link :to="{ name: 'exchange' }">환율 계산</router-link> |
         <router-link :to="{ name: 'map' }">주변 은행</router-link> |
         <router-link :to="{ name: 'articles' }">커뮤니티</router-link>

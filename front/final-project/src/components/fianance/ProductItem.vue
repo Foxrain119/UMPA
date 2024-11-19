@@ -1,6 +1,6 @@
 <template>
   <tr>
-    <th scope="row">{{  }}</th>
+    <!-- <th scope="row"></th> -->
     <td>{{ product['fin_prdt_nm'] }}</td>
     <td>{{ product['kor_co_nm'] }}</td>
     <td>{{ option6 ? option6['intr_rate2'] : '-' }}</td>

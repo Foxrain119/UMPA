@@ -1,7 +1,11 @@
 <template>
   <div>
     <div class="txt_box">
-      <RouterLink :to="{ name: 'deposit' }">예금</RouterLink> |
+      <RouterLink 
+        :to="{ name: 'deposit' }"
+        class="router-link-active router-link-exact-active"
+        aria-current="page"
+      >예금</RouterLink> |
       <RouterLink :to="{ name: 'saving' }">적금</RouterLink>
     </div>
     <RouterView />

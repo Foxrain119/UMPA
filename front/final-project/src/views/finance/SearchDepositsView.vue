@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <div class="search-box">
     <table class="table">
       <thead>
         <tr>
-          <th scope="col">순위</th>
+          <!-- <th scope="col">순위</th> -->
           <th scope="col">상품명</th>
           <th scope="col">금융회사</th>
           <th scope="col">6개월</th>
@@ -17,14 +17,15 @@
           v-for="product in displayedProducts"
           :key="`deposit${product.id}`"
           :product="product"
+
         />
       </tbody>
     </table>
 
     <div class="page_btn">
-      <button v-show="currentPage > 1" @click.prevent="prePage"><</button>
+      <button v-show="currentPage > 1" @click.prevent="prePage" class="left-btn"><</button>
       <span>{{ currentPage }} / {{ totalPage }}</span>
-      <button v-show="currentPage < totalPage" @click.prevent="nextPage">></button>
+      <button v-show="currentPage < totalPage" @click.prevent="nextPage" class="right-btn">></button>
     </div>
   </div>
 </template>
@@ -35,7 +36,22 @@ import { computed, ref } from 'vue'
 import { useFinanceStore } from '@/stores/finance';
 
 const store = useFinanceStore()
-const deposits = store.deposits
+const deposits = store.deposits.sort(function (a, b) {
+  const optionA = a.option.find(opt => opt.save_trm === 6);
+  const optionB = b.option.find(opt => opt.save_trm === 6);
+
+  if (optionA && optionB) {
+    return optionB.intr_rate2 - optionA.intr_rate2;
+  } else if (optionA) {
+    return -1;
+  } else if (optionB) {
+    return 1;
+  } else {
+    return 0;
+  }
+})
+
+console.log(deposits)
 
 const currentPage = ref(1)
 const productCount = 15
@@ -58,6 +74,20 @@ const nextPage = () => {
 </script>
 
 <style scoped>
+button {
+  position: absolute;
+}
+.left-btn {
+  left: 445px;
+}
+.right-btn {
+  right: 445px
+}
+.search-box {
+  position: relative;
+  width: 1000px;
+  margin: 0 auto;
+}
 .page_btn {
   text-align: center;
 }
