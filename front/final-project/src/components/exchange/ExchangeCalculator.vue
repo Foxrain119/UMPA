@@ -17,6 +17,7 @@
         <span></span>
       </form>
     </div>
+    <button @click.prevent="switchCountry">↕</button>
     <div class="compare-box">
       <form>
         <select name="select_to" id="" v-model="selectedTo">
@@ -48,7 +49,6 @@ const selectedTo = ref('USD')
 
 const curMoney = ref(1000)
 const exchangedMoney = computed(() => {
-  const exchangeTo = exchanges.find((el) => el['cur_unit'] === selectedTo.value)
   
   let cur = 0
   if (selectedFrom.value === 'KRW'){
@@ -66,6 +66,15 @@ const exchangedMoney = computed(() => {
   }
   return after
 })
+
+const switchCountry = function () {
+  const tmp = selectedFrom.value
+  selectedFrom.value = selectedTo.value
+  selectedTo.value = tmp
+
+  curMoney.value = exchangedMoney['_value']
+}
+
 </script>
 
 

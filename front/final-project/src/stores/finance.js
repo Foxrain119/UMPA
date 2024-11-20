@@ -10,11 +10,23 @@ export const useFinanceStore = defineStore('finance', () => {
 
   // 금융 상품
   const deposits = ref([])
-  const deposit_options = ref([])
   const savings = ref([])
 
+  const detail = ref([])
+  
   // 환율
   const exchanges = ref([])
+
+  const goDetail = (product) => {
+    detail.value = product
+    console.log(product)
+    router.push({ name: 'detail' })
+  }
+
+  const goBack = () => {
+    router.go(-1)
+  }
+
 
   const getExchages = function () {
     axios({
@@ -62,6 +74,7 @@ export const useFinanceStore = defineStore('finance', () => {
     //   })
     //   .catch(err => console.log(err))
   }
+
 
   const signUp = function (payload) {
     const { username, password1, password2 } = payload
@@ -114,5 +127,5 @@ export const useFinanceStore = defineStore('finance', () => {
     router.push({ name: 'home' })
   }
 
-  return { deposits, savings, deposit_options, exchanges, getProducts, getExchages, token, signUp, logIn, isLogin, logOut }
+  return { deposits, savings, detail, exchanges, goDetail, goBack, getProducts, getExchages, token, signUp, logIn, isLogin, logOut }
 }, { persist: true })
