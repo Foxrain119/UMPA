@@ -51,24 +51,28 @@ class CustomRegisterSerializer(RegisterSerializer):
 
 # 회원 정보 custom serializer
 class CustomUserDetailsSerializer(UserDetailsSerializer):
-
     class Meta:
-        extra_fields = []
-        # see https://github.com/iMerica/dj-rest-auth/issues/181
-        # UserModel.XYZ causing attribute error while importing other
-        # classes from `serializers.py`. So, we need to check whether the auth model has
-        # the attribute or not
-        if hasattr(UserModel, 'USERNAME_FIELD'):
-            extra_fields.append(UserModel.USERNAME_FIELD)
-        if hasattr(UserModel, 'EMAIL_FIELD'):
-            extra_fields.append(UserModel.EMAIL_FIELD)
-        if hasattr(UserModel, 'phone'):
-            extra_fields.append('phone')
-        if hasattr(UserModel, 'age'):
-            extra_fields.append('age')
         model = UserModel
-        fields = ('pk', *extra_fields)
-        # read_only_fields = ('email',)
+        fields = ('pk', 'username', 'email', 'phone', 'age')
+        read_only_fields = ('email',) # 변경 불가 필드들
+
+    # 유니크 필드 검증(유효성 검증)
+    def validate(self, attrs):
+        print("Validating attrs:", attrs)  # 디버깅 출력
+        user = self.context['request'].user
+        print("Current user:", user)  # 현재 사용자 출력
+        unique_fields = ['username', 'phone']
+        for field in unique_fields:
+            value = attrs.get(field)
+            print(f"Checking field {field} with value {value}")  # 필드와 값 출력
+            if value:
+                # 중복 검사 시 현재 사용자를 제외
+                if UserModel.objects.exclude(pk=user.pk).filter(**{field: value}).exists():
+                    print(f"Duplicate found for field {field} with value {value}")  # 중복 발견 시 출력
+                    raise serializers.ValidationError({
+                        field: f'이미 등록된 {field}입니다.'
+                    })
+        return attrs
 
 
 # 로그인 custom serializer

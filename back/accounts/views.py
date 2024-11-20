@@ -3,12 +3,16 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework import status
 from .serializers import CustomUserDetailsSerializer
+from utils.permissions import IsOwnerOrReadOnly
+from django.shortcuts import get_object_or_404, get_list_or_404
+from django.contrib.auth import get_user_model
+
 
 @api_view(['GET', 'PUT', 'DELETE'])
-@permission_classes([IsAuthenticated])
-def profile(request):
-    user = request.user
-    
+@permission_classes([IsAuthenticated, IsOwnerOrReadOnly])
+def profile(request, username):
+    user = get_object_or_404(get_user_model(), username=username)
+
     if request.method == 'GET':
         serializer = CustomUserDetailsSerializer(user)
         return Response(serializer.data)
