@@ -66,16 +66,16 @@ class CustomUserDetailsSerializer(UserDetailsSerializer):
             'phone',
             'age',
             'gender',
-            'property',
+            # 'property',
             'marital_status',
-            'financial_products',
-            'contracted_deposit',
-            'contracted_savings',
-            'salary',
-            'tendency',
-            'bookmark_product_list',
-            'bookmark_article_list',
-            'liked_article_list'
+            # 'financial_products',
+            # 'contracted_deposit',
+            # 'contracted_savings',
+            # 'salary',
+            # 'tendency',
+            # 'bookmark_product_list',
+            # 'bookmark_article_list',
+            # 'liked_article_list'
         )
         read_only_fields = ('username', 'email') # 변경 불가 필드들
 

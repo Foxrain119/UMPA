@@ -4,7 +4,7 @@ from imagekit.models import ProcessedImageField
 from imagekit.processors import ResizeToFill
 from django.core.validators import RegexValidator, MinValueValidator, MaxValueValidator
 from allauth.account.adapter import DefaultAccountAdapter
-from django.contrib.postgres.fields import ArrayField
+# from django.contrib.postgres.fields import ArrayField
 
 minzero_validator = MinValueValidator(0)
 class User(AbstractUser):
@@ -51,7 +51,7 @@ class User(AbstractUser):
     #     null=True
     # )
 
-    bookmark_product_list = ArrayField(models.IntegerField(blank=True))
+    # bookmark_product_list = ArrayField(models.IntegerField(blank=True))
 
     # bookmark_article_list = models.JSONField(
     #     default=list,
@@ -66,7 +66,7 @@ class User(AbstractUser):
     #     blank=True,
     #     null=True
     # )
-    liked_article_list = ArrayField(models.IntegerField(blank=True))
+    # liked_article_list = ArrayField(models.IntegerField(blank=True))
 
     GENDER_CHOICES = [
         ('N', '선택'),
@@ -104,7 +104,7 @@ class User(AbstractUser):
     #     blank=True,
     #     null=True
     # )
-    contracted_deposit = ArrayField(models.IntegerField(blank=True))
+    # contracted_deposit = ArrayField(models.IntegerField(blank=True))
     
     # contracted_savings = models.JSONField(
     #     verbose_name='가입 적금 목록',
@@ -112,7 +112,7 @@ class User(AbstractUser):
     #     blank=True,
     #     null=True
     # )
-    contracted_savings = ArrayField(models.IntegerField(blank=True))
+    # contracted_savings = ArrayField(models.IntegerField(blank=True))
     # salary = models.BigIntegerField(
     #     verbose_name='연봉',
     #     validators=[MinValueValidator(0)],
