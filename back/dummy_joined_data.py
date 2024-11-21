@@ -37,3 +37,4 @@ for saving in Saving.objects.all():
     saving.save()
 
 print("Saving 상품에 가입한 사용자 정보 추가 완료!")
+

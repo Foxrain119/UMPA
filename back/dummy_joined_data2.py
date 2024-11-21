@@ -26,7 +26,7 @@ DEFAULT_PASSWORD = "password123"
 
 # REST Framework 요청 객체 생성
 factory = APIRequestFactory()
-request = factory.post('/api/register/')  # 적절한 URL 경로를 설정하세요
+request = factory.post('/accounts/signup/')  # 적절한 URL 경로를 설정하세요
 
 # 더미 데이터 생성
 for _ in range(10000):
