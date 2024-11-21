@@ -5,6 +5,7 @@ from dj_rest_auth.serializers import UserDetailsSerializer, LoginSerializer
 from django.contrib.auth import get_user_model
 UserModel = get_user_model()
 
+
 # 회원 가입 custom serializer
 class CustomRegisterSerializer(RegisterSerializer):
     nickname = serializers.CharField(
@@ -21,6 +22,13 @@ class CustomRegisterSerializer(RegisterSerializer):
         validators=[minzero_validator]
     )
 
+    property = serializers.IntegerField(
+        required=False
+    )
+
+    marital_status = serializers.BooleanField(
+        required=False
+    )
     # 동적으로 unique 속성 필드에 대한 중복 검사
     def validate(self, attrs):
         unique_fields = ['phone', 'nickname']  # 검사할 필드 추가
@@ -51,6 +59,9 @@ class CustomRegisterSerializer(RegisterSerializer):
         user.save()
         return user
 
+
+# 회원 가입 상품 정보를 위한 serializer
+# from ..financial_products.models import *
 
 
 # 회원 정보 custom serializer
@@ -112,3 +123,25 @@ class CustomLoginSerializer(LoginSerializer):
                 return user
         except UserModel.DoesNotExist:
             return None
+
+
+from financial_products.models import Deposit, Saving
+
+
+class DepositSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Deposit
+        fields = ['fin_prdt_cd', 'fin_prdt_nm', 'kor_co_nm']
+
+class SavingSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Saving
+        fields = ['fin_prdt_cd', 'fin_prdt_nm', 'kor_co_nm']
+
+class UserInfoSerializer(serializers.ModelSerializer):
+    joined_deposits = DepositSerializer(many=True, read_only=True)
+    joined_savings = SavingSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = UserModel
+        fields = ['id', 'age', 'gender', 'property', 'marital_status', 'joined_deposits', 'joined_savings']

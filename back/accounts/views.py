@@ -1,8 +1,8 @@
 from rest_framework.decorators import api_view, permission_classes
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.response import Response
 from rest_framework import status
-from .serializers import CustomUserDetailsSerializer
+from .serializers import CustomUserDetailsSerializer, UserInfoSerializer
 from utils.permissions import IsOwnerOrReadOnly
 from django.shortcuts import get_object_or_404, get_list_or_404
 from django.contrib.auth import get_user_model
@@ -28,11 +28,12 @@ def profile(request, username):
         user.delete()
         return Response({'message': '회원탈퇴가 완료되었습니다.'}, status=status.HTTP_204_NO_CONTENT)
     
-import random
 
-def create_dummy_user(request):
-    first_name = '김이박최정강조윤장임'
-    for i in range(1, 10001):
+User = get_user_model()
 
-    return
-
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def user_info(request):
+    user = request.user
+    serializer = UserInfoSerializer(user)
+    return Response(serializer.data)
