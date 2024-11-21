@@ -27,4 +27,12 @@ def profile(request, username):
     elif request.method == 'DELETE':
         user.delete()
         return Response({'message': '회원탈퇴가 완료되었습니다.'}, status=status.HTTP_204_NO_CONTENT)
+    
+import random
+
+def create_dummy_user(request):
+    first_name = '김이박최정강조윤장임'
+    for i in range(1, 10001):
+
+    return
 

@@ -6,7 +6,7 @@ class Article(models.Model):
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE
     )
     like_users = models.ManyToManyField(
-        settings.AUTH_USER_MODEL, related_name='like_articles', blank=True
+        settings.AUTH_USER_MODEL, related_name='like_articles'
     )
     # bookmarked_users = models.ManyToManyField(
     #     settings.AUTH_USER_MODEL, related_name='bookmarked_articles', blank=True

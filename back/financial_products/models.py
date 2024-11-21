@@ -14,6 +14,7 @@ class Deposit(models.Model):
     spcl_cnd = models.TextField()                # 우대 조건
     max_limit	= models.IntegerField(null=True)   # 최고한도
     joined_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='joined_deposits')
+    bookmark_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='book_deposits')
 
 
 class DepositOption(models.Model):
@@ -37,6 +38,7 @@ class Saving(models.Model):
     spcl_cnd = models.TextField()                # 우대 조건
     max_limit	= models.IntegerField(null=True)   # 최고한도
     joined_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='joined_savings')
+    bookmark_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='book_savings')
 
   
 class SavingOption(models.Model):
