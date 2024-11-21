@@ -4,7 +4,7 @@ from imagekit.models import ProcessedImageField
 from imagekit.processors import ResizeToFill
 from django.core.validators import RegexValidator, MinValueValidator, MaxValueValidator
 from allauth.account.adapter import DefaultAccountAdapter
-
+from django.contrib.postgres.fields import ArrayField
 
 minzero_validator = MinValueValidator(0)
 class User(AbstractUser):
@@ -45,24 +45,29 @@ class User(AbstractUser):
         null=True
     )
 
-    bookmark_product_list = models.JSONField(
-        default=list,
-        blank=True,
-        null=True
-    )
+    # bookmark_product_list = models.JSONField(
+    #     default=list,
+    #     blank=True,
+    #     null=True
+    # )
 
-    bookmark_article_list = models.JSONField(
-        default=list,
-        blank=True,
-        null=True
-    )
+    bookmark_product_list = ArrayField(models.IntegerField(blank=True))
 
-    liked_article_list = models.JSONField(
-        default=list,
-        blank=True,
-        null=True
-    )
-    
+    # bookmark_article_list = models.JSONField(
+    #     default=list,
+    #     blank=True,
+    #     null=True
+    # )
+
+    # bookmark_article_list = ArrayField(models.IntegerField(blank=True))
+
+    # liked_article_list = models.JSONField(
+    #     default=list,
+    #     blank=True,
+    #     null=True
+    # )
+    liked_article_list = ArrayField(models.IntegerField(blank=True))
+
     GENDER_CHOICES = [
         ('N', '선택'),
         ('M', '남성'),
@@ -86,48 +91,49 @@ class User(AbstractUser):
         default=False
     )
     
-    financial_products = models.JSONField(
-        verbose_name='가입 상품 목록',
-        default=list,
-        blank=True,
-        null=True
-    )
+    # financial_products = models.JSONField(
+    #     verbose_name='가입 상품 목록',
+    #     default=list,
+    #     blank=True,
+    #     null=True
+    # )
     
-    contracted_deposit = models.JSONField(
-        verbose_name='가입 예금 목록',
-        default=list,
-        blank=True,
-        null=True
-    )
+    # contracted_deposit = models.JSONField(
+    #     verbose_name='가입 예금 목록',
+    #     default=list,
+    #     blank=True,
+    #     null=True
+    # )
+    contracted_deposit = ArrayField(models.IntegerField(blank=True))
     
-    contracted_savings = models.JSONField(
-        verbose_name='가입 적금 목록',
-        default=list,
-        blank=True,
-        null=True
-    )
-    
-    salary = models.BigIntegerField(
-        verbose_name='연봉',
-        validators=[MinValueValidator(0)],
-        default=0
-    )
-    
-    TENDENCY_CHOICES = [
-        ('NO', '선택'),
-        ('AG', '공격 투자형'),
-        ('AC', '적극 투자형'),
-        ('NE', '위험 중립형'),
-        ('CO', '안정 추구형'),
-        ('ST', '안정형')
-    ]
-    tendency = models.CharField(
-        verbose_name='투자 성향',
-        max_length=2,
-        choices=TENDENCY_CHOICES,
-        default='NO',
-        blank=True
-    ) 
+    # contracted_savings = models.JSONField(
+    #     verbose_name='가입 적금 목록',
+    #     default=list,
+    #     blank=True,
+    #     null=True
+    # )
+    contracted_savings = ArrayField(models.IntegerField(blank=True))
+    # salary = models.BigIntegerField(
+    #     verbose_name='연봉',
+    #     validators=[MinValueValidator(0)],
+    #     default=0
+    # )
+
+    # TENDENCY_CHOICES = [
+    #     ('NO', '선택'),
+    #     ('AG', '공격 투자형'),
+    #     ('AC', '적극 투자형'),
+    #     ('NE', '위험 중립형'),
+    #     ('CO', '안정 추구형'),
+    #     ('ST', '안정형')
+    # ]
+    # tendency = models.CharField(
+    #     verbose_name='투자 성향',
+    #     max_length=2,
+    #     choices=TENDENCY_CHOICES,
+    #     default='NO',
+    #     blank=True
+    # ) 
 
     def __str__(self):
         return self.username

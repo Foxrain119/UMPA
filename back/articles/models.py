@@ -8,9 +8,9 @@ class Article(models.Model):
     like_users = models.ManyToManyField(
         settings.AUTH_USER_MODEL, related_name='like_articles', blank=True
     )
-    bookmarked_users = models.ManyToManyField(
-        settings.AUTH_USER_MODEL, related_name='bookmarked_articles', blank=True
-    )
+    # bookmarked_users = models.ManyToManyField(
+    #     settings.AUTH_USER_MODEL, related_name='bookmarked_articles', blank=True
+    # )
     title = models.CharField(max_length=100)
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
