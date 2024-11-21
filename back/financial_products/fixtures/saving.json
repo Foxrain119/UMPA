@@ -1,0 +1,3334 @@
+[
+{
+    "model": "financial_products.saving",
+    "pk": 1,
+    "fields": {
+        "fin_prdt_cd": "WR0001F",
+        "fin_prdt_nm": "우리SUPER주거래적금",
+        "fin_co_no": "0010001",
+        "kor_co_nm": "우리은행",
+        "etc_note": "1. 가입기간 : 1년/2년/3년\n2. 가입금액 : 월 50만원 이내",
+        "join_deny": 1,
+        "join_member": "실명의 개인",
+        "join_way": "영업점,인터넷,스마트폰,전화(텔레뱅킹)",
+        "spcl_cnd": "1. 거래실적 인정기간 동안 우리은행 입출식 계좌에서 아래 각 항목별 실적이 있는 월 수가 계약기간의 1/2이상인 경우\n가. 급여/연금 이체 : 연 0.7%p\n나. 공과금 자동이체 출금실적 : 0.3%p\n다. 우리카드사 신용/체크카드 결제금액 10만원 이상 출금 : 연 0.3%p\n2. 우리은행 상품서비스 마케팅 동의 항목 중 전화 및 SMS항목을 모두 동의한 후 만기해지시점까지 유지 : 연 0.1%p\n3. 이 상품 가입 시 금리우대쿠폰 적용한 경우",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 2,
+    "fields": {
+        "fin_prdt_cd": "WR0001L",
+        "fin_prdt_nm": "WON적금",
+        "fin_co_no": "0010001",
+        "kor_co_nm": "우리은행",
+        "etc_note": "1. 가입기간 : 1년\n2. 가입금액 : 월 50만원 이내",
+        "join_deny": 1,
+        "join_member": "실명의 개인",
+        "join_way": "스마트폰,전화(텔레뱅킹)",
+        "spcl_cnd": "1. 아래 각 항(가, 나)의 조건을 충족하는 경우 합산 최대 연 0.2%p 우대\n가. 이 적금을 우리꿈통장, WON통장에 연결하여 가입하는 경우 : 0.1%p\n나. 우리 오픈뱅킹 서비스에 타행계좌가 등록되어 있는 경우 : 연 0.1%p",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 3,
+    "fields": {
+        "fin_prdt_cd": "00266451",
+        "fin_prdt_nm": "퍼스트가계적금",
+        "fin_co_no": "0010002",
+        "kor_co_nm": "한국스탠다드차타드은행",
+        "etc_note": "해당없음",
+        "join_deny": 1,
+        "join_member": "개인(개인사업자 포함)",
+        "join_way": "영업점,인터넷,스마트폰",
+        "spcl_cnd": "없음",
+        "max_limit": 10000000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 4,
+    "fields": {
+        "fin_prdt_cd": "10521001000846001",
+        "fin_prdt_nm": "내손안에 적금",
+        "fin_co_no": "0010016",
+        "kor_co_nm": "아이엠뱅크",
+        "etc_note": "1계좌당 가입한도 : 월 100만원(최저 10만원 이상)",
+        "join_deny": 1,
+        "join_member": "실명의 개인",
+        "join_way": "스마트폰",
+        "spcl_cnd": "* 최고우대금리 : 연0.55%p\n - 당행 인터넷/모바일뱅킹을 통하여 최초로 적립식예금 가입 시 : 연0.20%p\n - 상품 가입 전 최근 3개월 이내 당행 인터넷/모바일뱅킹을 통한 이체거래 3회 이상 : 연0.10%p\n- 상품 가입 전 수수료우대 통장 보유 고객 : 연0.20%p\n* 해당 상품을 모바일뱅킹을 통해 가입 : 연0.05%p",
+        "max_limit": 1000000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 5,
+    "fields": {
+        "fin_prdt_cd": "10527001000925000",
+        "fin_prdt_nm": "영플러스적금",
+        "fin_co_no": "0010016",
+        "kor_co_nm": "아이엠뱅크",
+        "etc_note": "1계좌당 가입한도 : 월 50만원(최저 1만원 이상)",
+        "join_deny": 3,
+        "join_member": "만 29세 이하 실명의 개인",
+        "join_way": "영업점,인터넷,스마트폰",
+        "spcl_cnd": "* 최고우대금리 : 연0.55%p\n- 상품 가입 전 영플러스통장 보유 또는 재예치일 기준 영플러스통장 전월 평잔 10만원 이상 : 연0.10%p\n- 예금기간 중 입금횟수 10회 이상 : 연0.10%p\n- 입학 및 졸업 축하금리 : 연0.30%p\n* 해당 상품을 인터넷/모바일뱅킹을 통해 가입 : 연0.05%p",
+        "max_limit": 500000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 6,
+    "fields": {
+        "fin_prdt_cd": "10527001001272000",
+        "fin_prdt_nm": "내가만든 보너스적금",
+        "fin_co_no": "0010016",
+        "kor_co_nm": "아이엠뱅크",
+        "etc_note": "1계좌당 가입한도 : 월20만원\n(최저 1만원 이상)",
+        "join_deny": 1,
+        "join_member": "실명의 개인",
+        "join_way": "영업점,인터넷,스마트폰",
+        "spcl_cnd": "* 최고우대금리 : 연0.80%p\n - 인터넷/모바일뱅킹으로 신규 : 연0.20%p\n - 상품 가입 전 마케팅활용[개인(신용)정보수집이용동의] 전체 동의 : 연0.20%p\n(계약기간 1년인 경우 만기일 기준)\n - 당행 계좌로 자동이체 8회 이상 입금 : 연0.20%p\n - 원금합계 100만원 이상 : 연0.10%p 또는 원금합계 200만원 이상 : 연0.20%p",
+        "max_limit": 200000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 7,
+    "fields": {
+        "fin_prdt_cd": "10527001001278000",
+        "fin_prdt_nm": "iM스마트적금",
+        "fin_co_no": "0010016",
+        "kor_co_nm": "아이엠뱅크",
+        "etc_note": "1계좌당 가입한도 : 월 100만원(최저 5만원 이상)",
+        "join_deny": 1,
+        "join_member": "실명의 개인",
+        "join_way": "인터넷,스마트폰",
+        "spcl_cnd": "* 최고우대금리 : 연0.45%p\n- 가입일로부터 3개월 이내 1가지 이상 요건 충족시 : 연0.20%p\n① 당행 주택청약종합저축 보유\n② 당행 신용(체크)카드 결제실적 보유(결제금액 출금기준)\n- 전체 계약월수 중 1/2이상 당행 계좌에서 자동이체 납입 시 : 연0.20%p\n* 해당 상품을 인터넷/모바일뱅킹을 통해 가입 : 연0.05%p",
+        "max_limit": 1000000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 8,
+    "fields": {
+        "fin_prdt_cd": "01020400490001",
+        "fin_prdt_nm": "펫 적금",
+        "fin_co_no": "0010017",
+        "kor_co_nm": "부산은행",
+        "etc_note": "1. 가입한도: 월 1만원 이상 50만원 이하 원단위\n2. 자유적립식",
+        "join_deny": 1,
+        "join_member": "실명의 개인고객(1인 1계좌)",
+        "join_way": "영업점,스마트폰",
+        "spcl_cnd": "*우대이율 6개월제 최대 0.55%, 12개월제 최대 0.90%",
+        "max_limit": 500000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 9,
+    "fields": {
+        "fin_prdt_cd": "01020400490002",
+        "fin_prdt_nm": "펫 적금",
+        "fin_co_no": "0010017",
+        "kor_co_nm": "부산은행",
+        "etc_note": "1. 가입한도: 월 1만원 이상 50만원 이하 원단위\n2. 정기적립식",
+        "join_deny": 1,
+        "join_member": "실명의 개인고객(1인 1계좌)",
+        "join_way": "영업점,스마트폰",
+        "spcl_cnd": "*우대이율 6개월제 최대 0.55%, 12개월제 최대 0.90%",
+        "max_limit": 500000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 10,
+    "fields": {
+        "fin_prdt_cd": "01020400510001",
+        "fin_prdt_nm": "저탄소 실천\n적금",
+        "fin_co_no": "0010017",
+        "kor_co_nm": "부산은행",
+        "etc_note": "1. 가입한도: 월 1만원 이상 1천만원 이하 원단위 (월 1천만원 이하 불입 가능)\n2. 자유적립식",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "영업점,인터넷,스마트폰",
+        "spcl_cnd": "조건 달성여부에 따라 우대금리 적용\n*개인형 우대이율: 최대0.4%\n*기업형(개인사업자 및 법인)우대이율: 최대0.4%",
+        "max_limit": 10000000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 11,
+    "fields": {
+        "fin_prdt_cd": "01020400530001",
+        "fin_prdt_nm": "BNK내맘대로 \n적금",
+        "fin_co_no": "0010017",
+        "kor_co_nm": "부산은행",
+        "etc_note": "1. 가입금액 :\n   1천원 이상\n2. 가입기간 : \n6개월 이상 60개월 이하(일단위)",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "영업점,인터넷,스마트폰",
+        "spcl_cnd": "*우대이율 최대 0.2%\n- 신규시 우대이율 0.05% 및 해지시 우대이율 최대 0.15%",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 12,
+    "fields": {
+        "fin_prdt_cd": "1020400640001",
+        "fin_prdt_nm": "BNK아기천사적금",
+        "fin_co_no": "0010017",
+        "kor_co_nm": "부산은행",
+        "etc_note": "1. 가입한도: 월 1만원 이상 30만원 이하 원단위\n2.자유적립식",
+        "join_deny": 1,
+        "join_member": "실명의 개인고객(1인 1계좌)",
+        "join_way": "스마트폰",
+        "spcl_cnd": "*우대이율 최대 6.00%",
+        "max_limit": 300000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 13,
+    "fields": {
+        "fin_prdt_cd": "TD11330029000",
+        "fin_prdt_nm": "해피라이프_여행스케치적금V",
+        "fin_co_no": "0010019",
+        "kor_co_nm": "광주은행",
+        "etc_note": "1. 가입기간 : 6개월이상 3년제\n2. 가입금액 : 월5만원 이상 5백만원 이하 (1인1계좌)",
+        "join_deny": 1,
+        "join_member": "제한없음(단,국가및지방자치단체제외)",
+        "join_way": "영업점,스마트폰",
+        "spcl_cnd": "▶ 최고우대금리 1.20%p  \n①해피라이프_여행스케치외화적금V 동일자가입 0.5%p \n②해지원금 기준 500만원이상 : 최고0.2%p\n③신용(체크)카드사용실적300만원이상:최고 0.3%p\n④개인(신용)정보 동의: 0.2%p",
+        "max_limit": 5000000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 14,
+    "fields": {
+        "fin_prdt_cd": "TD11330030000",
+        "fin_prdt_nm": "여행스케치_남도투어적금",
+        "fin_co_no": "0010019",
+        "kor_co_nm": "광주은행",
+        "etc_note": "1. 가입기간 :12개월제,18개월제\n2. 가입금액 : 월 5만원 이상 1백만원 이하 (1인1계좌)\n※ 18개월 정액식 기본금리 3.3%, 최고금리 5.2%",
+        "join_deny": 1,
+        "join_member": "만14세이상 개인 및 개인사업자",
+        "join_way": "영업점,스마트폰",
+        "spcl_cnd": "▶ 최고우대금리 1.9%p \n①예금가입일~만기일전일까지 당행이선정한 전라남도 관광지 방문 인증시 : 최고 1.5%p\n②신용(체크)카드사용실적300만원이상:최고 0.3%p\n③개인(신용)정보 동의: 0.1%p",
+        "max_limit": 1000000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 15,
+    "fields": {
+        "fin_prdt_cd": "TD11330031000",
+        "fin_prdt_nm": "VIP플러스적금",
+        "fin_co_no": "0010019",
+        "kor_co_nm": "광주은행",
+        "etc_note": "1. 가입기간 : 1년제\n2. 가입금액 : 월10만원 이상 5백만원 이하 (1인1계좌)",
+        "join_deny": 1,
+        "join_member": "실명의 개인",
+        "join_way": "영업점,인터넷,스마트폰",
+        "spcl_cnd": "▶ 최고우대금리 0.50%p  \n①이 예금가입시 VIP고객이거나 가입일 이후부터 만기일전일까지 VIP고객에 선정된 경험이 있는 경우 : 0.3%p \n②이 예금 가입일에 정기예금 500만원이상(만기 1년이상) 가입하고 만기일 전일까지 유지한 경우 : 0.2%p",
+        "max_limit": 5000000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 16,
+    "fields": {
+        "fin_prdt_cd": "220002101",
+        "fin_prdt_nm": "jbank 저금통적금",
+        "fin_co_no": "0010020",
+        "kor_co_nm": "제주은행",
+        "etc_note": "월 납입한도 50만원 이하",
+        "join_deny": 1,
+        "join_member": "개인 및 개인사업자",
+        "join_way": "인터넷,스마트폰",
+        "spcl_cnd": "* 거래조건에 따라 최고 2.1%p 우대금리 적용\n① 자투리 출금계좌 평잔 50만원 이상 유지 : 0.8%p\n② 첫거래고객 or JBANK저금통적금 1개월 내 재신규 : 0.5%p\n③ 신규가입 시점에서 적금 목표금액 최소 30만원 이상 설정하고, 적금 신규일로부터 3개월 내 잔액이 목표금액 이상인 경우 :0.5%p\n④ 추천인 우대금리 : 0.30%p",
+        "max_limit": 500000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 17,
+    "fields": {
+        "fin_prdt_cd": "220002501",
+        "fin_prdt_nm": "MZ 플랜적금",
+        "fin_co_no": "0010020",
+        "kor_co_nm": "제주은행",
+        "etc_note": "월 납입한도 30만원 이하",
+        "join_deny": 1,
+        "join_member": "개인 및 개인사업자",
+        "join_way": "영업점,인터넷,스마트폰",
+        "spcl_cnd": "①매월 1회이상 지속적 납입시:1년제: 0.50%\n② 목표 금액 달성:0.50%\n③ 신용카드,체크카드 합산 사용액 월10만원 이상 사용: 0.50%\n* 청년이니까응원합니다 이벤트 : 0.50%",
+        "max_limit": 300000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 18,
+    "fields": {
+        "fin_prdt_cd": "220002701",
+        "fin_prdt_nm": "탐이나요적금",
+        "fin_co_no": "0010020",
+        "kor_co_nm": "제주은행",
+        "etc_note": "월 납입한도 100만원 이하",
+        "join_deny": 1,
+        "join_member": "개인 및 개인사업자",
+        "join_way": "인터넷,스마트폰",
+        "spcl_cnd": "우대요건 충족시 최고 2.7%p 추가 우대(만기시 제공)매월 JBANK로그인 시 0.2%,한 가지라도 수행시 2.5% 제공①추천인 코드로 3명 이상 가입시 ②탐나는전 체크카드 월30만원 이상 사용 유지 ③탐나는전 선불카드 충전계좌를 당행 입출금계좌로 등록 후 평잔 50만원 이상 유지 시",
+        "max_limit": 1000000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 19,
+    "fields": {
+        "fin_prdt_cd": "10-01-30-031-0018-0000",
+        "fin_prdt_nm": "JB 다이렉트적금(자유적립식)",
+        "fin_co_no": "0010022",
+        "kor_co_nm": "전북은행",
+        "etc_note": "1. 초회불입금 1만원이상, 1인당 월별 최고 1천만원이내\n2. 만기직전 1개월간 적립합계는 이전기간 적립금액을 초과할 수 없음\n3. 인터넷뱅킹/스마트폰뱅킹 가입상품",
+        "join_deny": 1,
+        "join_member": "실명의 개인 및 개인사업자(임의단체 제외)",
+        "join_way": "인터넷,스마트폰",
+        "spcl_cnd": "추가우대금리 :\n당행 계좌간 자동이체를 통해 이 예금으로 자동이체 된 금액에 0.1% 금리 우대",
+        "max_limit": 10000000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 20,
+    "fields": {
+        "fin_prdt_cd": "10-01-30-031-0036",
+        "fin_prdt_nm": "JB 다이렉트적금(정액적립식)",
+        "fin_co_no": "0010022",
+        "kor_co_nm": "전북은행",
+        "etc_note": "1. 초회불입금 1만원이상, 1인당 월별 최고 5백만원이내\n2. 인터넷뱅킹/스마트폰뱅킹 가입상품",
+        "join_deny": 1,
+        "join_member": "실명의 개인 및 개인사업자(임의단체 제외)",
+        "join_way": "인터넷,스마트폰",
+        "spcl_cnd": "추가우대금리 :\n당행 계좌간 자동이체를 통해 6회이상 입금한 경우 \n연 0.1% 금리우대",
+        "max_limit": 5000000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 21,
+    "fields": {
+        "fin_prdt_cd": "10-01-30-031-0049-0000",
+        "fin_prdt_nm": "3초 플레이 적금",
+        "fin_co_no": "0010022",
+        "kor_co_nm": "전북은행",
+        "etc_note": "계약기간 6개월\n월별 적립한도 5만원 이상 최고 50만원 이하 (1인 1계좌)",
+        "join_deny": 1,
+        "join_member": "실명의 개인 및 개인사업자(1인 1계좌)",
+        "join_way": "스마트폰",
+        "spcl_cnd": "1. 만기 전전월까지 게임 50회 참여시 0.9%\n2. 3초 플레이 적금 게임에 참여하여 획득한 점수 총 합에 따라 추가 우대금리 (연0.5% ~ 연3.0%)\n3. 가입기간 내 오픈뱅킹을 통해 계좌 추가 등록/유지시 우대 0.1%\n\n※거래실적 인정기준 세부내용은 홈페이지 참조",
+        "max_limit": 500000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 22,
+    "fields": {
+        "fin_prdt_cd": "21000111",
+        "fin_prdt_nm": "행복 DREAM 적금",
+        "fin_co_no": "0010024",
+        "kor_co_nm": "경남은행",
+        "etc_note": "1. 계약기간은 1년 이상 3년 이하 월단위로 한다.\n2. 적립금액은 5만원 이상, 최고금액은 제한없음",
+        "join_deny": 1,
+        "join_member": "실명의 개인 및 개인사업자",
+        "join_way": "영업점,인터넷,스마트폰",
+        "spcl_cnd": "①신규일로부터 6개월전까지 당행 적금 미보유 0.2%\n②월부금이 50만원 이상인 경우 0.20%\n③이 예금을 자동이체로 납입하는 경우 0.2%\n④신용(체크)카드 최초발급 후 10만원 이내 이용 0.2%\n⑤ 전자명함을 통한 신규 시 0.2%",
+        "max_limit": 9999999999,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 23,
+    "fields": {
+        "fin_prdt_cd": "21001116",
+        "fin_prdt_nm": "BNK더조은자유적금",
+        "fin_co_no": "0010024",
+        "kor_co_nm": "경남은행",
+        "etc_note": "1. 계약기간은 6개월 이상 2년 이내 월단위로 한다.\n2. 초입금 1만원 이상 월별 500만원 이내에서 자유롭게 저축\n3. 최대 저축횟수는 999회 이내",
+        "join_deny": 1,
+        "join_member": "거래대상자는 제한을 두지 아니한다. 다만, 국가 및 지방자치단체는 이 예금을 거래할 수 없다.",
+        "join_way": "인터넷,스마트폰",
+        "spcl_cnd": "①오픈뱅킹서비스 가입 0.20%(만기까지 유지)\n②당행 입출금통장에서 자동이체시 입금건별 0.20%\n③이 상품 신규시 금리우대쿠폰을 등록할 경우 0.30%",
+        "max_limit": 5000000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 24,
+    "fields": {
+        "fin_prdt_cd": "21001199",
+        "fin_prdt_nm": "BNK 위더스자유적금",
+        "fin_co_no": "0010024",
+        "kor_co_nm": "경남은행",
+        "etc_note": "1.계약기간은 1개월 이상 36개월 이하 월단위로 한다.\n2..1인 1계좌로 가입가능\n2.매월 최소 1만원 이상, 최고 월 100만원 이하 (천원 단위)",
+        "join_deny": 1,
+        "join_member": "실명의 개인 및 개인사업자",
+        "join_way": "영업점,인터넷,스마트폰,기타",
+        "spcl_cnd": "①ESG 실천 우대금리 0.50%\n②신규고객 우대금리 0.50%\n- 당행 1년 이내예적금(청약포함)신규해지 이력미보유\n③공동가입우대금리 1.50%",
+        "max_limit": 1000000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 25,
+    "fields": {
+        "fin_prdt_cd": "21001236",
+        "fin_prdt_nm": "주거래 프리미엄 적금",
+        "fin_co_no": "0010024",
+        "kor_co_nm": "경남은행",
+        "etc_note": "1.계악기간은 1년제, 2년제, 3년제로 한다.\n2. 적립금액은 매월 1만원이상, 최고금액은 제한없음",
+        "join_deny": 1,
+        "join_member": "실명의 개인 및 개인사업자",
+        "join_way": "영업점,인터넷,스마트폰",
+        "spcl_cnd": "①주거래우대 0.50%\n②공과금 자동이체 0.40~0.60%\n③신규고객 0.20%\n④주택청약종합저축 보유 0.10%\n⑤ 전자명함을 통한 신규 시 0.2%",
+        "max_limit": 9999999999,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 26,
+    "fields": {
+        "fin_prdt_cd": "21001259",
+        "fin_prdt_nm": "오늘도세이브적금",
+        "fin_co_no": "0010024",
+        "kor_co_nm": "경남은행",
+        "etc_note": "1. 계약기간은 1개월 이상 6개월 이내 월단위로 한다.\n2. 초입금 일 1천원 이상 10만원 이하 자유롭게 저축\n3. 최대 저축횟수는 999회 이내",
+        "join_deny": 1,
+        "join_member": "실명의 개인 및 개인사업자",
+        "join_way": "인터넷,스마트폰,기타",
+        "spcl_cnd": "①마케팅동의 0.15%\n②목돈마련 축하이율 0.30~1.00%\n③친구 추천번호 0.30~0.60%",
+        "max_limit": 100000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 27,
+    "fields": {
+        "fin_prdt_cd": "21001268",
+        "fin_prdt_nm": "터치적금",
+        "fin_co_no": "0010024",
+        "kor_co_nm": "경남은행",
+        "etc_note": "1. 계약기간은 1개월로 한다.\n2. 초입금 일 1천원 이상 3만원 이하 자유롭게 저축\n3. 최대 저축횟수는 999회 이내",
+        "join_deny": 1,
+        "join_member": "실명의 개인 및 개인사업자",
+        "join_way": "스마트폰",
+        "spcl_cnd": "①첫거래고객(적금가입 전일기준 당행 활동계좌 미보유) 2.50%\n②기간내 적금 입금일마다 0.10%씩 우대(최대2.50%)\n③마케팅동의 및 모바일메세지 수신동의 만기유지 시 0.50%",
+        "max_limit": 30000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 28,
+    "fields": {
+        "fin_prdt_cd": "01211210113",
+        "fin_prdt_nm": "IBK D-day적금(자유적립식)",
+        "fin_co_no": "0010026",
+        "kor_co_nm": "중소기업은행",
+        "etc_note": "1인당 3계좌 가입 가능하며, 계좌당 20만원 이내 납입 가능",
+        "join_deny": 1,
+        "join_member": "실명의 개인\n(개인사업자 제외)",
+        "join_way": "스마트폰",
+        "spcl_cnd": "최고 연 1.5%p\n1. 목표달성 축하금리 : 연 1.0%p\n  - 당행 입출금식 계좌에서 이 적금으로 자동이체를 통해 3회 이상 납입하고 만기일 전일까지 목표금액(신규 시 직접 설정) 이상 납입하는 경우\n2. 최초거래고객 우대금리 : 연 0.5%p",
+        "max_limit": 600000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 29,
+    "fields": {
+        "fin_prdt_cd": "01211210121",
+        "fin_prdt_nm": "IBK탄소제로적금(자유적립식)",
+        "fin_co_no": "0010026",
+        "kor_co_nm": "중소기업은행",
+        "etc_note": "1인당 1계좌 가입 가능하며, 계좌당 최소 1만원 이상 1백만원까지 납입 가능",
+        "join_deny": 1,
+        "join_member": "실명의 개인\n(개인사업자 제외)",
+        "join_way": "스마트폰",
+        "spcl_cnd": "최고 연 4.00%p\n1. 에너지 절감 우대금리 : 최대 연 2.00%p\n2. 최초거래고객 우대금리 : 연 1.00%p\n3. 지로 또는 공과금 자동이체 우대금리 : 연 1.00%p",
+        "max_limit": 1000000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 30,
+    "fields": {
+        "fin_prdt_cd": "01211210122",
+        "fin_prdt_nm": "IBK중기근로자우대적금\n(자유적립식)",
+        "fin_co_no": "0010026",
+        "kor_co_nm": "중소기업은행",
+        "etc_note": "1인당 1계좌 가입 가능하며, 계좌당 100만원까지 납입 가능",
+        "join_deny": 3,
+        "join_member": "중소기업에서 근무하는\n실명의 개인\n(개인사업자 제외)",
+        "join_way": "영업점,스마트폰",
+        "spcl_cnd": "최고 연 2.20%p\n1. 가입시점 중소기업 근로자로 확인된 경우 : 재직기간에 따라 최고 연 1.2%p\n2. 당행 급여이체 실적(월50만원 이상) 6개월 이상\n   인 경우 : 연 1.0%p",
+        "max_limit": 1000000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 31,
+    "fields": {
+        "fin_prdt_cd": "03101",
+        "fin_prdt_nm": "KDB 기업정기적금",
+        "fin_co_no": "0010030",
+        "kor_co_nm": "한국산업은행",
+        "etc_note": "해당없음",
+        "join_deny": 1,
+        "join_member": "개인사업자, 조합(비영리법인 포함), 법인",
+        "join_way": "영업점,인터넷",
+        "spcl_cnd": "해당없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 32,
+    "fields": {
+        "fin_prdt_cd": "03700",
+        "fin_prdt_nm": "KDB 자유적금",
+        "fin_co_no": "0010030",
+        "kor_co_nm": "한국산업은행",
+        "etc_note": "해당없음",
+        "join_deny": 1,
+        "join_member": "개인, 개인사업자, 임의단체",
+        "join_way": "영업점,인터넷,스마트폰",
+        "spcl_cnd": "해당없음",
+        "max_limit": 5000000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 33,
+    "fields": {
+        "fin_prdt_cd": "010200100051",
+        "fin_prdt_nm": "KB국민프리미엄적금(정액)",
+        "fin_co_no": "0010927",
+        "kor_co_nm": "국민은행",
+        "etc_note": "1인 1계좌",
+        "join_deny": 1,
+        "join_member": "실명의 개인",
+        "join_way": "영업점,인터넷,스마트폰,전화(텔레뱅킹)",
+        "spcl_cnd": "① 단체가입/나라사랑/쿠폰 우대이율: \n    1년: 연 0.6%p, 2년: 연 0.7%p,\n    3년: 연 0.9%p, 5년: 연 1.0%p \n   (중복적용되지 않음, 계약기간별차등적용)\n② 교차거래 우대이율: 연 0.3%p",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 34,
+    "fields": {
+        "fin_prdt_cd": "010200100084",
+        "fin_prdt_nm": "KB맑은하늘적금",
+        "fin_co_no": "0010927",
+        "kor_co_nm": "국민은행",
+        "etc_note": "공동명의 불가\n(1인 최대 3계좌)",
+        "join_deny": 1,
+        "join_member": "실명의 개인",
+        "join_way": "영업점,인터넷,스마트폰",
+        "spcl_cnd": "맑은하늘을 위한 미션별 제공조건을 달성하는 경우 각 미션별 우대이율 제공\n - 1년제 최고 연 0.8%p, 2년제 최고 연 0.9%p, 3년제 최고 연 1.0%p\n① 종이통장 줄이기 미션: 연 0.1%p\n② 종이서식 줄이기 미션: 연 0.2%p\n③ 대중교통 미션: 1년제 연 0.4%p, 2년제 연 0.5%p, 3년제 연 0.6%p\n④ 퀴즈미션: 연 0.1%p",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 35,
+    "fields": {
+        "fin_prdt_cd": "010200100092",
+        "fin_prdt_nm": "KB반려행복적금",
+        "fin_co_no": "0010927",
+        "kor_co_nm": "국민은행",
+        "etc_note": "공동명의 불가\n(1인 최대 3계좌)",
+        "join_deny": 1,
+        "join_member": "실명의 개인",
+        "join_way": "스마트폰",
+        "spcl_cnd": "항목별 적용 조건 충족시, 최고 연 1.5%p\n① 반려동물 등록: 연 0.2%p\n② 미지(유기)입양: 연 0.2%p\n③ 반려동물애정활동: 연 0.2%p\n④ 반려동물요금제: 연 0.2%p\n⑤ KB거래감사: 연 0.2%p\n⑥ KB첫거래: 연 0.5%p",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 36,
+    "fields": {
+        "fin_prdt_cd": "010200100104",
+        "fin_prdt_nm": "KB 특★한 적금",
+        "fin_co_no": "0010927",
+        "kor_co_nm": "국민은행",
+        "etc_note": "개인사업자, 임의단체 및\n공동명의 가입 불가\n(1인 최대 3계좌)",
+        "join_deny": 1,
+        "join_member": "실명의 개인",
+        "join_way": "스마트폰",
+        "spcl_cnd": "항목별 적용 조건 충족시, 최고 연 4.0%p\n① 목표달성 축하 우대이율: 최고 연 1.0%p\n    50만원 이하: 연 0.5%p, 50만원 초과: 연 1.0%p \n② 별 모으기 우대이율 : 최고 연 1.0%p\n    10개: 연 0.5%p, 20개: 연 1.0%p\n③ 함께해요 우대이율: 최고 연 2.0%p",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 37,
+    "fields": {
+        "fin_prdt_cd": "010200100109",
+        "fin_prdt_nm": "KB차차차 적금",
+        "fin_co_no": "0010927",
+        "kor_co_nm": "국민은행",
+        "etc_note": "- 개인사업자, 임의단체 및 공동명의 가입 불가\n(1인 1계좌) \n- KB스타뱅킹 전용상품",
+        "join_deny": 1,
+        "join_member": "만19세이상 실명의 개인",
+        "join_way": "스마트폰",
+        "spcl_cnd": "항목별 적용 조건 충족시, 최고 연 5.5%p\n① 혜택수신 우대이율: 연 1.0%p\n② KB패밀리 우대이율: 연 1.0%p\n③ KB국민인증 우대이율: 연0.5%p \n④ 내차든든 우대이율: 연 3.0%P",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 38,
+    "fields": {
+        "fin_prdt_cd": "230-0119-85",
+        "fin_prdt_nm": "신한 알.쏠 적금",
+        "fin_co_no": "0011625",
+        "kor_co_nm": "신한은행",
+        "etc_note": "1. 가입한도: \n월300만원 이하\n2. 1인 다계좌",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "영업점,스마트폰",
+        "spcl_cnd": "※가산금리 최고 연 1.30%\n- 소득이체 : 연 0.6%\n- 카드이용 : 연 0.3%\n- 오픈뱅킹 : 연 0.6%\n- 청약보유 : 연 0.3%\n- 마케팅동의 : 연 0.1%\n※ 우대금리 항목별 자세한 적용 조건은 상품설명서 참조",
+        "max_limit": 3000000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 39,
+    "fields": {
+        "fin_prdt_cd": "10-047-1360-0002",
+        "fin_prdt_nm": "NH올원e 미니적금",
+        "fin_co_no": "0013175",
+        "kor_co_nm": "농협은행주식회사",
+        "etc_note": "가입기간 1개월 이상 6개월 이하(일 단위)\n\n초입금 및 매일 1천원이상  5만원이내(천원 단위)",
+        "join_deny": 1,
+        "join_member": "개인",
+        "join_way": "스마트폰",
+        "spcl_cnd": "1. 자동이체 입금횟수 우대금리 : 최고 0.5%p\n - 5회이상 : 0.2%p, 10회이상 : 0.3%p, 15회이상 0.5%p\n2. 목표금액 달성 축하금리  : 0.5%p\n3. MZ세대(만 19~34세)) 우대금리 : 0.5%p\n4. 직전 1년간 당행 예적금(청약포함) 미보유 고객 : 0.2%p",
+        "max_limit": 1550000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 40,
+    "fields": {
+        "fin_prdt_cd": "10-047-1365-0001",
+        "fin_prdt_nm": "NH1934월복리적금",
+        "fin_co_no": "0013175",
+        "kor_co_nm": "농협은행주식회사",
+        "etc_note": "초입금 및 매회 1만원 이상, 월 50만원 이내 자유적립\n\n급여이체 실적과 개인사업자 계좌 실적 우대금리는 중복 적용 불가\n\n * 급여입금실적 인정기준\n  - 가입기간 12개월 이하 : 3개월 이상 급여이체\n  - 가입기간 24개월 이하 : 12개월 이상 급여이체",
+        "join_deny": 3,
+        "join_member": "만19세~만34세 개인 및 개인사업자",
+        "join_way": "영업점,인터넷,스마트폰",
+        "spcl_cnd": "1. 급여실적 : 1.0%p (①/② 중복 적용 불가)\n ① 급여이체 실적 : 1.0%p\n ② 개인사업자 계좌 실적 :1.0%p\n2. 비대면 채널 이체 실적 : 0.3%p\n3. 마케팅 동의 : 0.2%p\n4. 농업계고 및 청년농부사관학교 졸업자 : 2.0%p",
+        "max_limit": 500000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 41,
+    "fields": {
+        "fin_prdt_cd": "10-047-1381-0001",
+        "fin_prdt_nm": "NH내가Green초록세상적금",
+        "fin_co_no": "0013175",
+        "kor_co_nm": "농협은행주식회사",
+        "etc_note": "초입금5만원 이상 및 매회 1만원 이상, 매월50만원이내\n(단, 만기일 전 3개월 이내에는 이전 적립금 합계액을 초과하여 입금불가)\n\n※자세한 사항은 상품설명서 참조",
+        "join_deny": 1,
+        "join_member": "개인",
+        "join_way": "영업점,인터넷,스마트폰",
+        "spcl_cnd": "※ 우대금리 최대한도 : 1.0%p(연%, 세전)\n1. 온실가스 줄이기 실천서약서 동의 : 0.1%p\n2. 통장미발급 : 0.3%p\n3. 손하나로인증 서비스 등록 : 0.2%p\n4. 대중교통이용 : 0.2%p\n5. NH내가Green초록세상예금 동시 보유 : 0.2%p",
+        "max_limit": 500000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 42,
+    "fields": {
+        "fin_prdt_cd": "10-047-1387-0001",
+        "fin_prdt_nm": "NH고향사랑기부적금",
+        "fin_co_no": "0013175",
+        "kor_co_nm": "농협은행주식회사",
+        "etc_note": "1.초입금1만원 이상 및 매회 1천원 이상, 매월50만원이내\n\n2. 고향사랑기부금 우대금리는 농협은행/농축협 영업점 또는 고향사랑e음 홈페이지를 통한 고향사랑기부금 납부실적이 확인되는 경우 제공\n\n3. 연간 판매액의 0.1% 공익기금 적립\n\n※자세한 사항은 상품설명서 참조",
+        "join_deny": 1,
+        "join_member": "개인",
+        "join_way": "영업점,인터넷,스마트폰",
+        "spcl_cnd": "1. 고향사랑기부금 납부고객 우대 : 0.5%p\n\n2-1. 만 65세 이상 고령자 우대 : 0.1%p\n2-2. 만 19~34세 MZ고객 우대 : 0.3%p\n\n3. NH채움카드 또는 [zgm.고향으로 카드] 이용실적 우대 : 0.1%p\n\n4. 고향사랑특별금리 : 0.1%p(금리시장상황에 따라 변동 가능)\n - 고향사랑특별금리는 상품 가입고객 모두에게 적용",
+        "max_limit": 500000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 43,
+    "fields": {
+        "fin_prdt_cd": "10-059-1264-0001",
+        "fin_prdt_nm": "NH직장인월복리적금",
+        "fin_co_no": "0013175",
+        "kor_co_nm": "농협은행주식회사",
+        "etc_note": "초입금 및 매회 입금 1만원 이상 원 단위,  1인당 분기별 3백만원 이내 적립 가능\n(단,계약기간 3/4 경과 후 적립할 수 있는 금액은 이전 적립누계액의 1/2이내)",
+        "join_deny": 3,
+        "join_member": "만18세이상 개인",
+        "join_way": "영업점,인터넷,스마트폰",
+        "spcl_cnd": "1. 급여입금실적 보유 고객 중\n - 가입기간 중 3개월 이상 급여이체시 : 0.3%p\n - 주택청약종합저축 또는 펀드가입 : 0.2%p\n - NH채움카드 결제실적 1백만원 이상 : 0.2%p\n2. 인터넷(스마트)뱅킹 또는 올원뱅크로 가입 : 0.1%p",
+        "max_limit": 3000000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 44,
+    "fields": {
+        "fin_prdt_cd": "52",
+        "fin_prdt_nm": "주거래하나 월복리적금",
+        "fin_co_no": "0013909",
+        "kor_co_nm": "하나은행",
+        "etc_note": "1. 1인 1계좌만 가능\n(급여하나월복리적금,연금하나 월복리적금과 중복가입 불가)\n2. 가입금액 \n - 최저1만원~300만원이하\n3. 적립한도\n 분기당 1만원이상 300만원\n (자유적립식)",
+        "join_deny": 1,
+        "join_member": "실명의 개인\n또는 개인사업자",
+        "join_way": "영업점,인터넷,스마트폰",
+        "spcl_cnd": "최고 연1.0%\n- 주거래하나우대(연 0.5%) : 적금만기 전전월말기준 본인명의 당행입출금통장을 통해 계약기간 1/2이상 이체된 주거래실적 1종  - 주거래플러스우대(연 0.9%) : 주거래 하나우대와 동일요건의 거래실적 2종이상 경우 \n- 온라인.재예치우대 연 최대 0.1%",
+        "max_limit": 3000000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 45,
+    "fields": {
+        "fin_prdt_cd": "53",
+        "fin_prdt_nm": "내맘적금",
+        "fin_co_no": "0013909",
+        "kor_co_nm": "하나은행",
+        "etc_note": "1. 1인 다계좌 가능\n2. 가입금액\n   - 1천원 이상~1,000만원 이하(원단위)\n3. 적립한도\n    - 자유적립식 : 매월 1원 이상~1,000만원 이하(원단위)\n    - 정액적립식 : 매월 1천원 이상~1,000만원 이하(원단위)",
+        "join_deny": 1,
+        "join_member": "실명의 개인\n또는 개인사업자(1인 다계좌 가능)",
+        "join_way": "영업점,인터넷,스마트폰,전화(텔레뱅킹)",
+        "spcl_cnd": "하나은행 통장에서 계약기간의 1/2이상 월부금 자동이체실적 충족 시 연 0.50%",
+        "max_limit": 10000000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 46,
+    "fields": {
+        "fin_prdt_cd": "01012000200000000003",
+        "fin_prdt_nm": "코드K 자유적금",
+        "fin_co_no": "0014674",
+        "kor_co_nm": "주식회사 케이뱅크",
+        "etc_note": "가입금액: 1만원 이상 30만원 이하\n가입기간: 6개월, 1년, 2년, 3년 \n(1인 최대 3계좌)",
+        "join_deny": 1,
+        "join_member": "만 17세 이상 실명의 개인 및 개인사업자",
+        "join_way": "스마트폰",
+        "spcl_cnd": "금리우대 코드를 입력하는 경우 우대금리 적용",
+        "max_limit": 300000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 47,
+    "fields": {
+        "fin_prdt_cd": "01012000200000000004",
+        "fin_prdt_nm": "궁금한 적금",
+        "fin_co_no": "0014674",
+        "kor_co_nm": "주식회사 케이뱅크",
+        "etc_note": "가입금액: 0원\n가입기간: 31일\n(1인 최대 1계좌)\n적립방법 : 연결계좌를 통한 직접 입금만 가능하며, 입금은 신규일부터 만기일 전일까지 1일 1회 가능\n납입금액 : 1일(1회) 최소 100원, 최대 5만원",
+        "join_deny": 1,
+        "join_member": "만 17세 이상 실명의 개인 및 개인사업자",
+        "join_way": "스마트폰",
+        "spcl_cnd": "입금할 때마다 우대금리를 랜덤으로 제공하며, 입금 시 제공되는 우대금리를 누적으로 합산하여 만기 해지 시 적용 (최고 연 6.0%)",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 48,
+    "fields": {
+        "fin_prdt_cd": "01012000210000000000",
+        "fin_prdt_nm": "주거래우대 자유적금",
+        "fin_co_no": "0014674",
+        "kor_co_nm": "주식회사 케이뱅크",
+        "etc_note": "가입금액: 1천원 이상 300만원 이하\n가입기간: 6개월 ~ 36개월\n(1인 최대 3계좌)",
+        "join_deny": 1,
+        "join_member": "만 17세 이상 실명의 개인 및 개인사업자",
+        "join_way": "스마트폰",
+        "spcl_cnd": "급여이체 또는 통신비 자동이체, 체크카드 고객에게 우대금리 제공 (최고 연 0.6%)",
+        "max_limit": 3000000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 49,
+    "fields": {
+        "fin_prdt_cd": "10140114300011",
+        "fin_prdt_nm": "Sh해양플라스틱Zero!적금\n(정액적립식)",
+        "fin_co_no": "0014807",
+        "kor_co_nm": "수협은행",
+        "etc_note": "- 1인 1계좌 \n- 월 가입한도 : 100만원",
+        "join_deny": 1,
+        "join_member": "실명의 개인",
+        "join_way": "영업점,인터넷,스마트폰",
+        "spcl_cnd": "* 최대우대금리:0.5%\n1. 해양플라스틱감축서약 : 0.1% (신규시) \n2. 봉사활동 또는 상품홍보 : 0.2% (만기시) \n3. 입출금통장 최초신규 : 0.2% (만기시)\n4. 자동이체 출금실적 : 0.2% (만기시)\n - 수협신용카드 / 당행 펀드 / 수협체크카드\n※단위:연%p",
+        "max_limit": 1000000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 50,
+    "fields": {
+        "fin_prdt_cd": "10141109800021",
+        "fin_prdt_nm": "Sh월복리자유적금",
+        "fin_co_no": "0014807",
+        "kor_co_nm": "수협은행",
+        "etc_note": "- 1인 1계좌\n- 월 가입한도 : 100만원",
+        "join_deny": 1,
+        "join_member": "실명의 개인 및 개인사업자",
+        "join_way": "영업점,인터넷,스마트폰",
+        "spcl_cnd": "*최대우대금리:0.7%\n-첫거래고객:0.3%\n-카드거래:최대0.3%\n-복수거래:0.1%\n-요구불거래:최대0.2%\n-인터넷뱅킹고객:0.1%\n-자동이체실적:0.1%\n※단위:연%p",
+        "max_limit": 1000000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 51,
+    "fields": {
+        "fin_prdt_cd": "10141114300011",
+        "fin_prdt_nm": "Sh해양플라스틱Zero!적금\n(자유적립식)",
+        "fin_co_no": "0014807",
+        "kor_co_nm": "수협은행",
+        "etc_note": "- 1인 1계좌 \n- 월 가입한도 : 20만원",
+        "join_deny": 1,
+        "join_member": "실명의 개인",
+        "join_way": "영업점,인터넷,스마트폰",
+        "spcl_cnd": "* 최대우대금리:0.5%\n1. 해양플라스틱감축서약 : 0.1% (신규시) \n2. 봉사활동 또는 상품홍보 : 0.2% (만기시) \n3. 입출금통장 최초신규 : 0.2% (만기시)\n4. 자동이체 출금실적 : 0.2% (만기시)\n - 수협신용카드 / 당행 펀드 / 수협체크카드\n※단위:연%p",
+        "max_limit": 200000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 52,
+    "fields": {
+        "fin_prdt_cd": "10-01-30-355-0002",
+        "fin_prdt_nm": "카카오뱅크 자유적금",
+        "fin_co_no": "0015130",
+        "kor_co_nm": "주식회사 카카오뱅크",
+        "etc_note": "1. 가입방법 : 스마트폰\n2. 가입금액 : 1천원 이상(원단위)\n3. 가입기간 : 6개월 이상 ~ 36개월 이하(월, 일단위 지정 가능)\n4. 월 적립한도 : 1천원 이상 월 300만원 이하 원단위(단, 자동연장된 원리금은 월 적립한도에 포함되지 않음)",
+        "join_deny": 1,
+        "join_member": "만 17세 이상의 실명의 개인",
+        "join_way": "스마트폰",
+        "spcl_cnd": "자동이체시 우대금리 제공 : 연 0.20%p\n - 제공조건 : 전체 계약월수의 1/2이상을 자동이체로 납입하고 만기 해지하는 경우\n - 유의사항 : 만기 자동연장된 원리금은 우대금리를 제공하지 않음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 53,
+    "fields": {
+        "fin_prdt_cd": "10-01-30-355-0005",
+        "fin_prdt_nm": "카카오뱅크 26주적금",
+        "fin_co_no": "0015130",
+        "kor_co_nm": "주식회사 카카오뱅크",
+        "etc_note": "1. 가입방법 : 스마트폰\n2. 가입금액 : 1천원, 2천원, 3천원, 5천원, 1만원\n3. 가입기간 : 6개월\n4. 26주적금서비스(자동이체)를 통해서 납입이 가능하며, 그 외의 입금은 모두 제한됨\n(단, 26주적금 서비스를 통한 납입 실패 시 빈자리 채우기로 납입 가능)",
+        "join_deny": 1,
+        "join_member": "만 17세 이상의 실명의 개인",
+        "join_way": "스마트폰",
+        "spcl_cnd": "자동이체 연속 성공 우대금리 제공 : 최고 연 3.00%p\n- 제공조건\n① 7주차까지 자동이체 납입을 연속 성공하고 만기해지 하는 경우 연 1.00%p 제공\n② 26주차까지 자동이체 납입을 연속 성공하고 만기해지 하는 경우 연 2.00%p 추가 제공\n- 유의사항 : 자동이체 실패한 주차를 빈자리채우기 하여도 성공으로 인정되지 않음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 54,
+    "fields": {
+        "fin_prdt_cd": "10-01-30-355-0006",
+        "fin_prdt_nm": "카카오뱅크 한달적금",
+        "fin_co_no": "0015130",
+        "kor_co_nm": "주식회사 카카오뱅크",
+        "etc_note": "1. 가입방법 : 스마트폰\n2. 납입금액 : 1회 100원 이상 3만원 이하(원단위)\n3. 가입기간 : 31일\n4. 직접 납입을 통해서 1일 1회만 입금 가능하며, 그 외의 입금은 모두 제한됨",
+        "join_deny": 1,
+        "join_member": "만 17세 이상의 실명의 개인",
+        "join_way": "스마트폰",
+        "spcl_cnd": "매일/보너스 우대금리 제공 : 최고 연 5.50%p\n- 제공조건\n① 매일 우대금리 : 매 입금 시 마다 연 0.10%p 제공(최대 연 3.10%p)\n② 보너스 우대금리 : 누적하여 5/10/15/20/25/31회 입금 시 해당 우대금리 제공(최대 연 2.40%p)\n- 유의사항 : 만기 해지하는 경우에만 제공",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 55,
+    "fields": {
+        "fin_prdt_cd": "1001303001001",
+        "fin_prdt_nm": "토스뱅크 키워봐요 적금",
+        "fin_co_no": "0017801",
+        "kor_co_nm": "토스뱅크 주식회사",
+        "etc_note": "· 1인 1계좌 (단, 이벤트 등으로 토스뱅크가 복수의 계좌개설을 허용하는 경우 추가 개설 가능)\n· 가입금액 : 0원\n· 우대금리는 우대조건을 달성하고 만기 해지하는 경우에만 제공됨",
+        "join_deny": 1,
+        "join_member": "· 토스뱅크 통장 또는 토스뱅크 서브 통장을 보유한 실명의 개인",
+        "join_way": "스마트폰",
+        "spcl_cnd": "· 적금 가입 시 설정되는 주 단위 자동이체를 통하여 25회 이상 적립한 경우 : 연 2.00% 제공",
+        "max_limit": 1000000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 56,
+    "fields": {
+        "fin_prdt_cd": "1001303001003",
+        "fin_prdt_nm": "토스뱅크 굴비 적금",
+        "fin_co_no": "0017801",
+        "kor_co_nm": "토스뱅크 주식회사",
+        "etc_note": "· 1인 1계좌 (단, 이벤트 등으로 토스뱅크가 복수의 계좌개설을 허용하는 경우 추가 개설 가능)\n· 가입금액 : 0원\n· 우대금리는 만기 해지하는 경우에만 제공됨",
+        "join_deny": 1,
+        "join_member": "· 토스뱅크 통장 또는 토스뱅크 서브 통장을 보유한 실명의 개인",
+        "join_way": "스마트폰",
+        "spcl_cnd": "· 만기 해지 시 : 연 2.50% 제공",
+        "max_limit": 300000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 57,
+    "fields": {
+        "fin_prdt_cd": "1001303001004",
+        "fin_prdt_nm": "토스뱅크 자유 적금",
+        "fin_co_no": "0017801",
+        "kor_co_nm": "토스뱅크 주식회사",
+        "etc_note": "· 1인 1계좌 (단, 이벤트 등으로 토스뱅크가 복수의 계좌개설을 허용하는 경우 추가 개설 가능)\n· 가입금액 : 0원 이상 300만원 이하\n· 우대금리는 만기 해지하는 경우에만 제공됨",
+        "join_deny": 1,
+        "join_member": "· 토스뱅크 통장 또는 토스뱅크 서브 통장을 보유한 실명의 개인",
+        "join_way": "스마트폰",
+        "spcl_cnd": "· 적금 가입 시 설정되는 월 단위 자동이체를 모두 성공하는 경우 : 연 0.50% 제공",
+        "max_limit": 3000000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 58,
+    "fields": {
+        "fin_prdt_cd": "1001303001005",
+        "fin_prdt_nm": "토스뱅크 아이 적금",
+        "fin_co_no": "0017801",
+        "kor_co_nm": "토스뱅크 주식회사",
+        "etc_note": "· 1인 1계좌 \n· 가입금액 : 0원\n· 우대금리는 만기 해지하는 경우에만 제공됨",
+        "join_deny": 3,
+        "join_member": "· 토스뱅크 아이 통장을 보유한 15세 이하 실명의 개인",
+        "join_way": "스마트폰",
+        "spcl_cnd": "· 적금 가입 시 설정되는 월 단위 자동이체를 모두 성공하는 경우 : 연 2.50% 제공",
+        "max_limit": 200000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 59,
+    "fields": {
+        "fin_prdt_cd": "HK00002",
+        "fin_prdt_nm": "정기적금",
+        "fin_co_no": "0010345",
+        "kor_co_nm": "애큐온저축은행",
+        "etc_note": "불입금액 : 1만원 이상",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "영업점,인터넷,스마트폰,전화(텔레뱅킹)",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 60,
+    "fields": {
+        "fin_prdt_cd": "HK00003",
+        "fin_prdt_nm": "직장인우대적금",
+        "fin_co_no": "0010345",
+        "kor_co_nm": "애큐온저축은행",
+        "etc_note": "불입금액 : 1만원 이상\n1인 1계좌",
+        "join_deny": 1,
+        "join_member": "만 19세이상 직장인",
+        "join_way": "영업점,인터넷,스마트폰",
+        "spcl_cnd": "최대 연 0.50% 우대금리 적용\n※ 우대금리 적용조건 \n① 첫거래고객(가입시점 당행에 적립식 및 거치식 예금 미보유 고객) : 연 0.2%\n② 전자금융거래로 이체/신규/만기해지 7회이상(신규가입일~만기일) : 연 0.1%\n③ 개인정보 수집이용 동의(마케팅목적) : 연 0.1%",
+        "max_limit": 1000000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 61,
+    "fields": {
+        "fin_prdt_cd": "HK00101",
+        "fin_prdt_nm": "다모아자유적금2",
+        "fin_co_no": "0010345",
+        "kor_co_nm": "애큐온저축은행",
+        "etc_note": "가입금액 1천원~20만원\n1인1계좌\n오픈뱅킹전용가입상품",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "스마트폰",
+        "spcl_cnd": "가입일 ~ 만기일까지 마케팅 동의 유지 : 1.0%\n\n만기시까지 당행 오픈뱅킹 잔액모으기를 통한 해당 적금불입횟수 10회이상 : 1.5%",
+        "max_limit": 200000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 62,
+    "fields": {
+        "fin_prdt_cd": "31000",
+        "fin_prdt_nm": "정기적금",
+        "fin_co_no": "0010346",
+        "kor_co_nm": "오에스비저축은행",
+        "etc_note": "-월 불입금 1만원 이상\n-6개월 이상 ~ 60개월 까지 (월 단위 가능)\n-만기시 이자지급",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "영업점,인터넷,스마트폰",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 63,
+    "fields": {
+        "fin_prdt_cd": "31003",
+        "fin_prdt_nm": "프리스타일적금",
+        "fin_co_no": "0010346",
+        "kor_co_nm": "오에스비저축은행",
+        "etc_note": "-월 불입금 1만원 이상\n-12개월 이상 ~ 36개월 까지 (월 단위 가능)\n-만기시 이자지급\n-월중 입금액은 계약금액의 10%를 초과할 수 없으며, 만기일로부터 1개월 이내는 납입불가",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "영업점,인터넷,스마트폰",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 64,
+    "fields": {
+        "fin_prdt_cd": "0803",
+        "fin_prdt_nm": "M-Dream Big 자유적금 (모바일)",
+        "fin_co_no": "0010349",
+        "kor_co_nm": "디비저축은행",
+        "etc_note": "- 최소가입금액: 1,000원 이상 \n- 한도: 분기당 50만원(연 2백만원) * 분기 예) 1~3월, 4~6월, 7~9월, 10~12월",
+        "join_deny": 1,
+        "join_member": "만 19세 이상 실명의 개인고객 (1인 1계좌 한정)",
+        "join_way": "스마트폰",
+        "spcl_cnd": "* 우대이율: 만기 유지시 만기축하 이율 연 0.40% 적용 - 기본이율 3.60% + 우대이율 0.40% ※ 우대이율은 중도해지시에는 적용되지 않습니다. - 자세한 내용은 당사 모바일뱅킹 APP을 통해 확인하여 주시기 바랍니다.",
+        "max_limit": 2000000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 65,
+    "fields": {
+        "fin_prdt_cd": "310000",
+        "fin_prdt_nm": "정기적금(창구)",
+        "fin_co_no": "0010349",
+        "kor_co_nm": "디비저축은행",
+        "etc_note": "최소가입금액: 1만원 이상 / 가입채널: 대면(창구)",
+        "join_deny": 1,
+        "join_member": "실명의 개인, 법인",
+        "join_way": "영업점",
+        "spcl_cnd": "해당사항없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 66,
+    "fields": {
+        "fin_prdt_cd": "310007",
+        "fin_prdt_nm": "E-정기적금(인터넷)",
+        "fin_co_no": "0010349",
+        "kor_co_nm": "디비저축은행",
+        "etc_note": "최소가입금액: 1만원 이상 / 가입채널: 인터넷뱅킹",
+        "join_deny": 1,
+        "join_member": "실명의 개인, 법인",
+        "join_way": "인터넷",
+        "spcl_cnd": "최고우대금리 : 0.1 / 인터넷 가입시 : 기본이율* + 0.1% (*기본이율: 가입시 12개월 정기적금 고시이율)",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 67,
+    "fields": {
+        "fin_prdt_cd": "310806",
+        "fin_prdt_nm": "M-정기적금(모바일)",
+        "fin_co_no": "0010349",
+        "kor_co_nm": "디비저축은행",
+        "etc_note": "최소가입금액: 1만원 이상 / 가입채널: 스마트뱅킹, SB톡톡+",
+        "join_deny": 1,
+        "join_member": "실명의 개인",
+        "join_way": "스마트폰",
+        "spcl_cnd": "최고우대금리 : 0.2 / 모바일 가입시 : 기본이율* + 0.2% (*기본이율: 가입시 12개월 정기적금 고시이율)",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 68,
+    "fields": {
+        "fin_prdt_cd": "310807",
+        "fin_prdt_nm": "M-With 유 정기적금(모바일)",
+        "fin_co_no": "0010349",
+        "kor_co_nm": "디비저축은행",
+        "etc_note": "가입금액: 1만원 이상 30만원이하까지 / 가입채널: 스마트뱅킹, SB톡톡+",
+        "join_deny": 1,
+        "join_member": "실명의 개인",
+        "join_way": "스마트폰",
+        "spcl_cnd": "약정이율 최대 6.5% =기본4.0% + 우대2.5%(최대) \n1) 가입일기준 당행 예적금가입이력 없는 첫거래/동일상품 한달이내 만기해지이력 존재고객 +1.0%\n2) 만 19세 이상 만 39세 이하 +0.5%\n3) 계약기간중 앱이용 입출금거래 월2회이상 6개월이상 유지 +0.5%\n4) 상품서비스안내 및 마케팅 전체 동의 +0.5%",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 69,
+    "fields": {
+        "fin_prdt_cd": "310010",
+        "fin_prdt_nm": "정기적금",
+        "fin_co_no": "0010350",
+        "kor_co_nm": "스카이저축은행",
+        "etc_note": "최소금액:1만원이상",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "영업점",
+        "spcl_cnd": "*만기후 1개월 이내 : 만기시점 동일상품 동일계약기간의 신규약정금리 *만기후 1개월 초과 :보통예금이율",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 70,
+    "fields": {
+        "fin_prdt_cd": "310011",
+        "fin_prdt_nm": "e-정기적금",
+        "fin_co_no": "0010350",
+        "kor_co_nm": "스카이저축은행",
+        "etc_note": "최소금액:1만원이상",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "인터넷,스마트폰",
+        "spcl_cnd": "*만기후 1개월 이내 : 만기시점 동일상품 동일계약기간의 신규약정금리 *만기후 1개월 초과 :보통예금이율",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 71,
+    "fields": {
+        "fin_prdt_cd": "310013",
+        "fin_prdt_nm": "b-정기적금",
+        "fin_co_no": "0010350",
+        "kor_co_nm": "스카이저축은행",
+        "etc_note": "최소금액:1만원이상",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "인터넷,스마트폰",
+        "spcl_cnd": "*만기후 1개월 이내 : 만기시점 동일상품 동일계약기간의 신규약정금리 *만기후 1개월 초과 :보통예금이율",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 72,
+    "fields": {
+        "fin_prdt_cd": "MK310001",
+        "fin_prdt_nm": "정기적금",
+        "fin_co_no": "0010354",
+        "kor_co_nm": "민국저축은행",
+        "etc_note": "- 중도해지 시 가입 기간에 따라 중도해지이율이 다르게 적용됩니다.",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "영업점",
+        "spcl_cnd": "* 최대우대금리 : 0.1%\n- 3명 이상 창구 방문하여 1년이상 적금 가입시 : 연 0.1%\n- 적금 만기해지 후 1년이상 정기예금 및 적금 신규 가입시 : 연 0.1%",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 73,
+    "fields": {
+        "fin_prdt_cd": "MK310004",
+        "fin_prdt_nm": "e-행복정기적금(인터넷)",
+        "fin_co_no": "0010354",
+        "kor_co_nm": "민국저축은행",
+        "etc_note": "- 중도해지 시 가입 기간에 따라 중도해지이율이 다르게 적용됩니다.",
+        "join_deny": 1,
+        "join_member": "개인",
+        "join_way": "인터넷",
+        "spcl_cnd": "- 없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 74,
+    "fields": {
+        "fin_prdt_cd": "MK310017",
+        "fin_prdt_nm": "비대면정기적금(비대면)",
+        "fin_co_no": "0010354",
+        "kor_co_nm": "민국저축은행",
+        "etc_note": "- 중도해지 시 가입 기간에 따라 중도해지이율이 다르게 적용됩니다.",
+        "join_deny": 1,
+        "join_member": "개인",
+        "join_way": "스마트폰",
+        "spcl_cnd": "- 없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 75,
+    "fields": {
+        "fin_prdt_cd": "MK310022",
+        "fin_prdt_nm": "톡톡정기적금(모바일)",
+        "fin_co_no": "0010354",
+        "kor_co_nm": "민국저축은행",
+        "etc_note": "- 중도해지 시 가입 기간에 따라 중도해지이율이 다르게 적용됩니다.",
+        "join_deny": 1,
+        "join_member": "개인",
+        "join_way": "모집인",
+        "spcl_cnd": "- 없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 76,
+    "fields": {
+        "fin_prdt_cd": "2001",
+        "fin_prdt_nm": "푸른 정기적금",
+        "fin_co_no": "0010356",
+        "kor_co_nm": "푸른상호저축은행",
+        "etc_note": "- 중도해지금리\n1개월 미만 : 0.20%,\n6개월 미만 : 1.65%, \n12개월 미만 : 2.02%,\n12개월 이상 : 2.05%",
+        "join_deny": 1,
+        "join_member": "제한 없음",
+        "join_way": "영업점,인터넷,스마트폰",
+        "spcl_cnd": "- 없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 77,
+    "fields": {
+        "fin_prdt_cd": "2002",
+        "fin_prdt_nm": "프리스타일 적금",
+        "fin_co_no": "0010356",
+        "kor_co_nm": "푸른상호저축은행",
+        "etc_note": "- 중도해지금리\n1개월 미만 : 0.20%,\n3개월 미만 : 1.40%,\n6개월 미만 : 1.90%, \n12개월 미만 : 1.91%,\n12개월 이상 : 1.95% \n\n- 1인 1계좌만 가능\n- 최고한도 : 5억원",
+        "join_deny": 1,
+        "join_member": "개인",
+        "join_way": "영업점,인터넷,스마트폰",
+        "spcl_cnd": "없음",
+        "max_limit": 500000000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 78,
+    "fields": {
+        "fin_prdt_cd": "310002",
+        "fin_prdt_nm": "정기적금",
+        "fin_co_no": "0010358",
+        "kor_co_nm": "HB저축은행",
+        "etc_note": "영업점 가입 전용상품",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "영업점",
+        "spcl_cnd": "해당사항없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 79,
+    "fields": {
+        "fin_prdt_cd": "310003",
+        "fin_prdt_nm": "e-정기적금",
+        "fin_co_no": "0010358",
+        "kor_co_nm": "HB저축은행",
+        "etc_note": "인터넷가입 전용상품",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "인터넷",
+        "spcl_cnd": "해당사항없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 80,
+    "fields": {
+        "fin_prdt_cd": "310004",
+        "fin_prdt_nm": "스마트 정기적금",
+        "fin_co_no": "0010358",
+        "kor_co_nm": "HB저축은행",
+        "etc_note": "스마트폰가입 전용상품",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "스마트폰",
+        "spcl_cnd": "해당사항없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 81,
+    "fields": {
+        "fin_prdt_cd": "310005",
+        "fin_prdt_nm": "키워드림 정기적금",
+        "fin_co_no": "0010359",
+        "kor_co_nm": "키움예스저축은행",
+        "etc_note": "-",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "영업점",
+        "spcl_cnd": "*인터넷뱅킹, 스마트뱅킹, 비대면 가입시 우대금리 적용",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 82,
+    "fields": {
+        "fin_prdt_cd": "310006",
+        "fin_prdt_nm": "키워드림 e-정기적금 (인터넷뱅킹, 스마트뱅킹)",
+        "fin_co_no": "0010359",
+        "kor_co_nm": "키움예스저축은행",
+        "etc_note": "-",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "인터넷,스마트폰",
+        "spcl_cnd": "-",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 83,
+    "fields": {
+        "fin_prdt_cd": "310027",
+        "fin_prdt_nm": "정기적금",
+        "fin_co_no": "0010363",
+        "kor_co_nm": "더케이저축은행",
+        "etc_note": "없음",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "영업점,인터넷,스마트폰",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 84,
+    "fields": {
+        "fin_prdt_cd": "310028",
+        "fin_prdt_nm": "e-정기적금",
+        "fin_co_no": "0010363",
+        "kor_co_nm": "더케이저축은행",
+        "etc_note": "-인터넷뱅킹, 스마트폰뱅킹 전용",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "인터넷,스마트폰",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 85,
+    "fields": {
+        "fin_prdt_cd": "024310001",
+        "fin_prdt_nm": "정기적금(서울본점)",
+        "fin_co_no": "0010366",
+        "kor_co_nm": "조은저축은행",
+        "etc_note": "없음",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "영업점",
+        "spcl_cnd": "*최고우대금리 : 0.1%\n-자영업자, 직장인(증빙서류제출-재직증명서, 사업자등록증, 명함, 사원카드) : 0.1%",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 86,
+    "fields": {
+        "fin_prdt_cd": "024311001",
+        "fin_prdt_nm": "정기적금(여수지점)",
+        "fin_co_no": "0010366",
+        "kor_co_nm": "조은저축은행",
+        "etc_note": "없음",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "영업점",
+        "spcl_cnd": "*최고우대금리 : 0.1%\n-자영업자, 직장인(증빙서류제출-재직증명서, 사업자등록증, 명함, 사원카드) : 0.1%",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 87,
+    "fields": {
+        "fin_prdt_cd": "024312001",
+        "fin_prdt_nm": "e-정기적금",
+        "fin_co_no": "0010366",
+        "kor_co_nm": "조은저축은행",
+        "etc_note": "없음",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "인터넷,스마트폰",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 88,
+    "fields": {
+        "fin_prdt_cd": "380008",
+        "fin_prdt_nm": "자유적금",
+        "fin_co_no": "0010370",
+        "kor_co_nm": "에스비아이저축은행",
+        "etc_note": "없음",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "인터넷,스마트폰",
+        "spcl_cnd": "- 비대면(인터넷뱅킹 또는 사이다뱅크APP)우대금리 : 연0.1%\n\n- 자동연장 시 추가 우대금리 : 연0.05%",
+        "max_limit": 3000000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 89,
+    "fields": {
+        "fin_prdt_cd": "310001",
+        "fin_prdt_nm": "정기적금(월수)",
+        "fin_co_no": "0010378",
+        "kor_co_nm": "바로저축은행",
+        "etc_note": "1. 최소납입금액 10,000원 이상",
+        "join_deny": 1,
+        "join_member": "제한 없음",
+        "join_way": "영업점",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 90,
+    "fields": {
+        "fin_prdt_cd": "310009",
+        "fin_prdt_nm": "SB톡톡 정기적금(비대면)",
+        "fin_co_no": "0010378",
+        "kor_co_nm": "바로저축은행",
+        "etc_note": "1. 최소납입금액 10,000원 이상",
+        "join_deny": 1,
+        "join_member": "제한 없음",
+        "join_way": "스마트폰",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 91,
+    "fields": {
+        "fin_prdt_cd": "310008",
+        "fin_prdt_nm": "아이사랑 정기적금",
+        "fin_co_no": "0010388",
+        "kor_co_nm": "다올저축은행",
+        "etc_note": "* 중도해지이율 (입금액마다 경과기간별 차등 적용) \n- 1개월미만 : 가입일의 보통예금 금리 \n- 6개월미만 : 약정이율X50% \n- 9개월미만 : 약정이율X55% \n- 12개월미만 : 약정이율X60% \n- 12개월이상 : 약정이율X70%",
+        "join_deny": 3,
+        "join_member": "개인 (만 7세 이하 미성년자)",
+        "join_way": "영업점",
+        "spcl_cnd": "[※유의사항] \n-가입대상: 만7세 이하 미성년자 \n-1인 1계좌 / 영업점 전용상품 (부모님 내방) \n-필요서류: 자녀 명의 가족관계서류, 기본증명서, 도장, 부모신분증 \n-부모님 인터넷뱅킹가입 필수 \n-가입금액: 최대 월 불입액 10만원",
+        "max_limit": 100000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 92,
+    "fields": {
+        "fin_prdt_cd": "310018",
+        "fin_prdt_nm": "Fi 정기적금 (대면)",
+        "fin_co_no": "0010388",
+        "kor_co_nm": "다올저축은행",
+        "etc_note": "* 중도해지이율 (입금액마다 경과기간별 차등 적용)\n- 1개월미만 : 가입일의 보통예금 금리\n- 6개월미만 : 약정이율X50%\n- 9개월미만 : 약정이율X55%\n- 12개월미만 : 약정이율X60%\n- 12개월이상 : 약정이율X70%",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "영업점",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 93,
+    "fields": {
+        "fin_prdt_cd": "310019",
+        "fin_prdt_nm": "Fi 정기적금 (비대면)",
+        "fin_co_no": "0010388",
+        "kor_co_nm": "다올저축은행",
+        "etc_note": "* 중도해지이율 (입금액마다 경과기간별 차등 적용)\n- 1개월미만 : 가입일의 보통예금 금리\n- 6개월미만 : 약정이율X50%\n- 9개월미만 : 약정이율X55%\n- 12개월미만 : 약정이율X60%\n- 12개월이상 : 약정이율X70%",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "인터넷,스마트폰",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 94,
+    "fields": {
+        "fin_prdt_cd": "31",
+        "fin_prdt_nm": "정기적금",
+        "fin_co_no": "0010389",
+        "kor_co_nm": "유안타저축은행",
+        "etc_note": "없음",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "영업점",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 95,
+    "fields": {
+        "fin_prdt_cd": "31-1",
+        "fin_prdt_nm": "e-정기적금",
+        "fin_co_no": "0010389",
+        "kor_co_nm": "유안타저축은행",
+        "etc_note": "없음",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "인터넷,스마트폰",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 96,
+    "fields": {
+        "fin_prdt_cd": "310016",
+        "fin_prdt_nm": "보고파 정기적금",
+        "fin_co_no": "0010390",
+        "kor_co_nm": "고려저축은행",
+        "etc_note": "-1인당 최대 100만원까지 가입가능\n-1인1계좌 제한\n-가입기간 : 6개월~36개월",
+        "join_deny": 1,
+        "join_member": "비거주 외국인 외 제한없음",
+        "join_way": "인터넷,스마트폰",
+        "spcl_cnd": "-",
+        "max_limit": 1000000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 97,
+    "fields": {
+        "fin_prdt_cd": "310017",
+        "fin_prdt_nm": "마이버킷 정기적금",
+        "fin_co_no": "0010390",
+        "kor_co_nm": "고려저축은행",
+        "etc_note": "-고뱅크 어플 전용상품\n-1인당 최대 150만원까지 가입가능\n-가입기간 : 6개월~12개월",
+        "join_deny": 1,
+        "join_member": "비거주 외국인 외 제한없음",
+        "join_way": "스마트폰",
+        "spcl_cnd": "* 최고우대금리 : 3.00%\n[워크온 챌린지 참여]\n- 금메달(200,000보) : 3.00%\n- 은메달(180,000보) : 2.00%\n- 동메달(150,000보) : 1.00%",
+        "max_limit": 500000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 98,
+    "fields": {
+        "fin_prdt_cd": "KJ0001B",
+        "fin_prdt_nm": "꿈 찾아 정기적금",
+        "fin_co_no": "0010391",
+        "kor_co_nm": "국제저축은행",
+        "etc_note": "만기후 1개월까지는 계약당시 금리와 만기시점 해당금리를 비교하여 낮은 금리 적용\n만기후 1개월 초과 이후로는 보통예금 금리 적용",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "영업점",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 99,
+    "fields": {
+        "fin_prdt_cd": "KJ0004B",
+        "fin_prdt_nm": "꿈 찾아 정기적금(비대면)",
+        "fin_co_no": "0010391",
+        "kor_co_nm": "국제저축은행",
+        "etc_note": "만기후 1개월까지는 계약당시 금리와 만기시점 해당금리를 비교하여 낮은 금리 적용\n만기후 1개월 초과 이후로는 보통예금 금리 적용",
+        "join_deny": 1,
+        "join_member": "만 19세 이상의 개인",
+        "join_way": "스마트폰",
+        "spcl_cnd": "없음",
+        "max_limit": 2000000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 100,
+    "fields": {
+        "fin_prdt_cd": "DH003",
+        "fin_prdt_nm": "정기적금",
+        "fin_co_no": "0010404",
+        "kor_co_nm": "디에이치저축은행",
+        "etc_note": "없음",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "영업점",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 101,
+    "fields": {
+        "fin_prdt_cd": "DH004",
+        "fin_prdt_nm": "정기적금(비대면)",
+        "fin_co_no": "0010404",
+        "kor_co_nm": "디에이치저축은행",
+        "etc_note": "없음",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "인터넷,스마트폰",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 102,
+    "fields": {
+        "fin_prdt_cd": "310012",
+        "fin_prdt_nm": "비대면 정기적금",
+        "fin_co_no": "0010416",
+        "kor_co_nm": "흥국저축은행",
+        "etc_note": "없음",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "스마트폰",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 103,
+    "fields": {
+        "fin_prdt_cd": "KH3100",
+        "fin_prdt_nm": "정기적금",
+        "fin_co_no": "0010421",
+        "kor_co_nm": "금화저축은행",
+        "etc_note": "중도해지 이율 - ① 1개월 미만 : 보통예금이율 (0.2%)\n② 1개월이상~6개월미만 : 약정이율X50%\n③ 6개월이상~12개월미만 : 약정이율X55%\n④ 12개월이상~24개월미만 : 약정이율X60%\n⑤ 24개월이상~60개월미만 : 약정이율X70%",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "영업점",
+        "spcl_cnd": "창구전용상품",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 104,
+    "fields": {
+        "fin_prdt_cd": "KH3101",
+        "fin_prdt_nm": "e-정기적금",
+        "fin_co_no": "0010421",
+        "kor_co_nm": "금화저축은행",
+        "etc_note": "중도해지 이율 - ① 1개월 미만 : 보통예금이율 (0.2%)\n② 1개월이상~6개월미만 : 약정이율X50%\n③ 6개월이상~12개월미만 : 약정이율X55%\n④ 12개월이상~24개월미만 : 약정이율X60%\n⑤ 24개월이상~60개월미만 : 약정이율X70%",
+        "join_deny": 1,
+        "join_member": "인터넷 및 모바일뱅킹 사용자",
+        "join_way": "인터넷,스마트폰",
+        "spcl_cnd": "-",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 105,
+    "fields": {
+        "fin_prdt_cd": "KH3102",
+        "fin_prdt_nm": "e-행복더드림정기적금",
+        "fin_co_no": "0010421",
+        "kor_co_nm": "금화저축은행",
+        "etc_note": "① 인터넷 및 모바일뱅킹 전용 상품\n② 1인당 최고 월 100만원 불입 가능\n③ 중도해지이율 : 일반 정기적금과 동일",
+        "join_deny": 1,
+        "join_member": "인터넷 및 모바일뱅킹 사용자",
+        "join_way": "인터넷,스마트폰",
+        "spcl_cnd": "인터넷, 모바일\n전용상품",
+        "max_limit": 1000000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 106,
+    "fields": {
+        "fin_prdt_cd": "KH3103",
+        "fin_prdt_nm": "비대면-정기적금",
+        "fin_co_no": "0010421",
+        "kor_co_nm": "금화저축은행",
+        "etc_note": "중도해지 이율 - ① 1개월 미만 : 보통예금이율 (0.2%)\n② 1개월이상~6개월미만 : 약정이율X50%\n③ 6개월이상~12개월미만 : 약정이율X55%\n④ 12개월이상~24개월미만 : 약정이율X60%\n⑤ 24개월이상~60개월미만 : 약정이율X70%",
+        "join_deny": 1,
+        "join_member": "비대면 어플사용자",
+        "join_way": "스마트폰",
+        "spcl_cnd": "-",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 107,
+    "fields": {
+        "fin_prdt_cd": "310035",
+        "fin_prdt_nm": "정기적금",
+        "fin_co_no": "0010430",
+        "kor_co_nm": "모아저축은행",
+        "etc_note": "- 1인당 가입한도 : 계약금액 월 1만원 이상",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "영업점",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 108,
+    "fields": {
+        "fin_prdt_cd": "310036",
+        "fin_prdt_nm": "12干支정기적금",
+        "fin_co_no": "0010430",
+        "kor_co_nm": "모아저축은행",
+        "etc_note": "- 1인당 가입한도 : 월 30만원 이상",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "영업점",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 109,
+    "fields": {
+        "fin_prdt_cd": "310037",
+        "fin_prdt_nm": "생일축하정기적금",
+        "fin_co_no": "0010430",
+        "kor_co_nm": "모아저축은행",
+        "etc_note": "- 1인당 가입한도 : 월 30만원 이상",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "영업점",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 110,
+    "fields": {
+        "fin_prdt_cd": "310038",
+        "fin_prdt_nm": "e-모아 정기적금",
+        "fin_co_no": "0010430",
+        "kor_co_nm": "모아저축은행",
+        "etc_note": "- 1인당 가입한도 : 계약금액 월 1만원 이상",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "인터넷,스마트폰",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 111,
+    "fields": {
+        "fin_prdt_cd": "31-0001",
+        "fin_prdt_nm": "정기적금",
+        "fin_co_no": "0010448",
+        "kor_co_nm": "안국저축은행",
+        "etc_note": "없음",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "영업점",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 112,
+    "fields": {
+        "fin_prdt_cd": "31-0002",
+        "fin_prdt_nm": "e-정기적금",
+        "fin_co_no": "0010448",
+        "kor_co_nm": "안국저축은행",
+        "etc_note": "없음",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "인터넷,스마트폰",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 113,
+    "fields": {
+        "fin_prdt_cd": "31-0003",
+        "fin_prdt_nm": "정기적금(비대면)",
+        "fin_co_no": "0010448",
+        "kor_co_nm": "안국저축은행",
+        "etc_note": "없음",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "스마트폰",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 114,
+    "fields": {
+        "fin_prdt_cd": "NY310006",
+        "fin_prdt_nm": "정기적금",
+        "fin_co_no": "0010449",
+        "kor_co_nm": "남양저축은행",
+        "etc_note": "중도해지 이율 : 1개월미만 : 계약일의 보통예금 금리, 1개월이상 6개월미만 : 약정이율의 50%, 6개월이상 12개월미만 : 약정이율의 55%. 12개월 이상 : 약정이율의 65%",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "영업점",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 115,
+    "fields": {
+        "fin_prdt_cd": "NY310007",
+        "fin_prdt_nm": "e-정기적금",
+        "fin_co_no": "0010449",
+        "kor_co_nm": "남양저축은행",
+        "etc_note": "중도해지 이율 : 1개월미만 : 계약일의 보통예금 금리, 1개월이상 6개월미만 : 약정이율의 50%, 6개월이상 12개월미만 : 약정이율의 55%. 12개월 이상 : 약정이율의 65%",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "인터넷,스마트폰",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 116,
+    "fields": {
+        "fin_prdt_cd": "NY310009",
+        "fin_prdt_nm": "비대면-정기적금",
+        "fin_co_no": "0010449",
+        "kor_co_nm": "남양저축은행",
+        "etc_note": "중도해지 이율 : 1개월미만 : 계약일의 보통예금 금리, 1개월이상 6개월미만 : 약정이율의 50%, 6개월이상 12개월미만 : 약정이율의 55%. 12개월 이상 : 약정이율의 65%",
+        "join_deny": 1,
+        "join_member": "만19세이상 내국인 개인고객, 본인 스마트폰 소지자, 신분증(주민등록증 또는 운전면허증)소지자, 최근 30일이내 전은행에서 입출금통장 개설내역이 없는 고객, 미국인 납세자에 해당하지 않는 고객",
+        "join_way": "스마트폰",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 117,
+    "fields": {
+        "fin_prdt_cd": "3100109",
+        "fin_prdt_nm": "정기적금",
+        "fin_co_no": "0010460",
+        "kor_co_nm": "평택저축은행",
+        "etc_note": "보호금융상품 1인당 최고 5천만원",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "영업점",
+        "spcl_cnd": "해당없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 118,
+    "fields": {
+        "fin_prdt_cd": "380001",
+        "fin_prdt_nm": "자유적립예금",
+        "fin_co_no": "0010464",
+        "kor_co_nm": "영진저축은행",
+        "etc_note": "1천원이상 가입가능, 최소가입기간 3개월이상",
+        "join_deny": 1,
+        "join_member": "내·외국인 대상",
+        "join_way": "영업점",
+        "spcl_cnd": "계약기간이 1년이상인 정기예금, 정기적금, 신용부금 만기수령액 이하를 1년 이상으로 재예치시",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 119,
+    "fields": {
+        "fin_prdt_cd": "311000",
+        "fin_prdt_nm": "e정기적금",
+        "fin_co_no": "0010467",
+        "kor_co_nm": "융창저축은행",
+        "etc_note": "없음",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "인터넷,스마트폰",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 120,
+    "fields": {
+        "fin_prdt_cd": "311100",
+        "fin_prdt_nm": "SB톡톡 정기적금",
+        "fin_co_no": "0010467",
+        "kor_co_nm": "융창저축은행",
+        "etc_note": "없음",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "스마트폰",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 121,
+    "fields": {
+        "fin_prdt_cd": "310052",
+        "fin_prdt_nm": "착한운전정기적금",
+        "fin_co_no": "0010468",
+        "kor_co_nm": "세람상호저축은행",
+        "etc_note": "없음",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "영업점",
+        "spcl_cnd": "조건에 따른 우대금리[최저0.5%~최고1.0%] -착한운전마일리지 신청자, 저공해차량 운전자, 전기차운전자, 수소차운전자, 장애인차량운전자",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 122,
+    "fields": {
+        "fin_prdt_cd": "310056",
+        "fin_prdt_nm": "행복나눔정기적금",
+        "fin_co_no": "0010468",
+        "kor_co_nm": "세람상호저축은행",
+        "etc_note": "없음",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "영업점",
+        "spcl_cnd": "조건에 따른 우대금리[최저0.5%~최고1.0%] -자원봉사자, 헌혈자",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 123,
+    "fields": {
+        "fin_prdt_cd": "310601",
+        "fin_prdt_nm": "내가디자인하는적금",
+        "fin_co_no": "0010468",
+        "kor_co_nm": "세람상호저축은행",
+        "etc_note": "없음",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "영업점",
+        "spcl_cnd": "해당 적용조건에 따른 우대금리 제공[0.1% ~ 0.5%]\n-정기예금 이용 -첫번째 적금 가입 -고객등록5년이상 -2인이상 동반가입 -다자녀(3인)를 두신 -올해의 띠 -60세 이상 -계약기간 24개월 이상 -계약기간36개월 이상 -자동만기재예치 고객",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 124,
+    "fields": {
+        "fin_prdt_cd": "31-0026",
+        "fin_prdt_nm": "정기적금",
+        "fin_co_no": "0010471",
+        "kor_co_nm": "페퍼저축은행",
+        "etc_note": "최소가입금액: 1만원 이상",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "영업점",
+        "spcl_cnd": "우대사항 없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 125,
+    "fields": {
+        "fin_prdt_cd": "31-0027",
+        "fin_prdt_nm": "정기적금 (인터넷,스마트,비대면)",
+        "fin_co_no": "0010471",
+        "kor_co_nm": "페퍼저축은행",
+        "etc_note": "최소가입금액: 1만원 이상",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "인터넷,스마트폰",
+        "spcl_cnd": "우대사항 없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 126,
+    "fields": {
+        "fin_prdt_cd": "31-0031",
+        "fin_prdt_nm": "페퍼스2030적금 (디지털페퍼앱)",
+        "fin_co_no": "0010471",
+        "kor_co_nm": "페퍼저축은행",
+        "etc_note": "비대면 전용, 기본이율 3.5%+우대이율 최고 1.5%(우대이율: 당행 입출금계좌에서 페퍼룰루 2030적금으로 6회이상 자동이체 시, 1.0%, 마케팅 상품서비스 안내문자 전화동의시 0.5%)\n-가입자격: 1인1계좌 당행입출금계좌 보유고객\n-가입기간 12개월\n-가입금액: 1만원~30만원",
+        "join_deny": 1,
+        "join_member": "실명의 개인(1인1계좌, 당행입출금계좌 보유 고객)",
+        "join_way": "스마트폰",
+        "spcl_cnd": "-우대이율 최고 연1.5%적용(우대금리는 만기해지에 한해 조건충족시 적용)\n조건1)당행 입출금계좌에서 페퍼스2030적금 계좌로 6회이상 자동이체 시 1.0% 우대 \n조건2)마케팅 상품서비스 안내(문자,전화 2개항목) 모두 동의 시(신규일부터 만기일까지 유지) 0.5%우대 \n*조건1,2,는 각각 적용 가능",
+        "max_limit": 300000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 127,
+    "fields": {
+        "fin_prdt_cd": "31-0032",
+        "fin_prdt_nm": "페퍼스정기적금 (디지털페퍼앱)",
+        "fin_co_no": "0010471",
+        "kor_co_nm": "페퍼저축은행",
+        "etc_note": "비대면 전용상품\n최소가입금액: 1만원 이상",
+        "join_deny": 1,
+        "join_member": "실명의 개인",
+        "join_way": "스마트폰",
+        "spcl_cnd": "우대사항 없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 128,
+    "fields": {
+        "fin_prdt_cd": "31-0039",
+        "fin_prdt_nm": "페퍼스 펫적금 with 핏펫",
+        "fin_co_no": "0010471",
+        "kor_co_nm": "페퍼저축은행",
+        "etc_note": "최소가입금액: 1만원 이상",
+        "join_deny": 1,
+        "join_member": "개인고객(1인 1계좌, 당행 입출금 보유고객 중 핏펫 앱에서 로그인 후 쿠폰코드를 수령한 고객)",
+        "join_way": "스마트폰",
+        "spcl_cnd": "해당사항 없음",
+        "max_limit": 500000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 129,
+    "fields": {
+        "fin_prdt_cd": "310033",
+        "fin_prdt_nm": "AI Peppers 배구사랑 정기적금",
+        "fin_co_no": "0010471",
+        "kor_co_nm": "페퍼저축은행",
+        "etc_note": "*최소가입금액: 1만원 이상\n*최고한도(단위:원) 50만원(정액 적립식)",
+        "join_deny": 1,
+        "join_member": "개인고객(당행 입출금 계좌 보유 고객 중 페퍼스타디움 방문 관람 시 제공된 쿠폰코드를 수령한 고객, 1인1계좌),\n쿠폰 유효기간에 한함",
+        "join_way": "스마트폰",
+        "spcl_cnd": "우대사항 없음",
+        "max_limit": 500000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 130,
+    "fields": {
+        "fin_prdt_cd": "GP310001",
+        "fin_prdt_nm": "뱅뱅뱅 정기적금",
+        "fin_co_no": "0010473",
+        "kor_co_nm": "상상인저축은행",
+        "etc_note": "없음",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "스마트폰",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 131,
+    "fields": {
+        "fin_prdt_cd": "GP310015",
+        "fin_prdt_nm": "정기적금",
+        "fin_co_no": "0010473",
+        "kor_co_nm": "상상인저축은행",
+        "etc_note": "없음",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "영업점,인터넷,스마트폰",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 132,
+    "fields": {
+        "fin_prdt_cd": "GP310017",
+        "fin_prdt_nm": "비대면 정기적금",
+        "fin_co_no": "0010473",
+        "kor_co_nm": "상상인저축은행",
+        "etc_note": "없음",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "스마트폰",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 133,
+    "fields": {
+        "fin_prdt_cd": "310039",
+        "fin_prdt_nm": "e뱅킹정기적금",
+        "fin_co_no": "0010477",
+        "kor_co_nm": "한화저축은행",
+        "etc_note": "없음",
+        "join_deny": 1,
+        "join_member": "인터넷뱅킹, 스마트폰뱅킹 전용",
+        "join_way": "인터넷,스마트폰",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 134,
+    "fields": {
+        "fin_prdt_cd": "310051",
+        "fin_prdt_nm": "Mymo 정기적금",
+        "fin_co_no": "0010477",
+        "kor_co_nm": "한화저축은행",
+        "etc_note": "자체앱(Mymo) 전용",
+        "join_deny": 1,
+        "join_member": "자체앱(Mymo) 전용",
+        "join_way": "스마트폰",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 135,
+    "fields": {
+        "fin_prdt_cd": "401003",
+        "fin_prdt_nm": "정기적금",
+        "fin_co_no": "0010485",
+        "kor_co_nm": "대명상호저축은행",
+        "etc_note": "없음",
+        "join_deny": 1,
+        "join_member": "누구나가입가능",
+        "join_way": "영업점",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 136,
+    "fields": {
+        "fin_prdt_cd": "310024",
+        "fin_prdt_nm": "정기적금",
+        "fin_co_no": "0010488",
+        "kor_co_nm": "우리금융저축은행",
+        "etc_note": "-",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "영업점",
+        "spcl_cnd": "인터넷/스마트폰뱅킹 가입시 0.1% 우대",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 137,
+    "fields": {
+        "fin_prdt_cd": "310034",
+        "fin_prdt_nm": "e-정기적금",
+        "fin_co_no": "0010488",
+        "kor_co_nm": "우리금융저축은행",
+        "etc_note": "-",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "인터넷,스마트폰",
+        "spcl_cnd": "-",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 138,
+    "fields": {
+        "fin_prdt_cd": "31-0004",
+        "fin_prdt_nm": "정기적금",
+        "fin_co_no": "0010492",
+        "kor_co_nm": "한성저축은행",
+        "etc_note": "*방문가입\n* 중도해지이율\n- 1개월미만 : 계약일의 보통예금 이율\n- 1개월이상 6개월미만 : 약정이율의 50%\n- 6개월이상 12개월미만 : 약정이율의 55%\n- 12개월이상 : 약정이율의 60%\n* 단, 최저금리는 보통예금이율 이상 적용",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "영업점",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 139,
+    "fields": {
+        "fin_prdt_cd": "31-0005",
+        "fin_prdt_nm": "e-정기적금",
+        "fin_co_no": "0010492",
+        "kor_co_nm": "한성저축은행",
+        "etc_note": "* 중도해지이율\n- 1개월미만 : 계약일의 보통예금 이율\n- 1개월이상 6개월미만 : 약정이율의 50%\n- 6개월이상 12개월미만 : 약정이율의 55%\n- 12개월이상 : 약정이율의 60%\n* 단, 최저금리는 보통예금이율 이상 적용",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "인터넷",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 140,
+    "fields": {
+        "fin_prdt_cd": "31-0006",
+        "fin_prdt_nm": "m-정기적금",
+        "fin_co_no": "0010492",
+        "kor_co_nm": "한성저축은행",
+        "etc_note": "* 중도해지이율\n- 1개월미만 : 계약일의 보통예금 이율\n- 1개월이상 6개월미만 : 약정이율의 50%\n- 6개월이상 12개월미만 : 약정이율의 55%\n- 12개월이상 : 약정이율의 60%\n* 단, 최저금리는 보통예금이율 이상 적용",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "스마트폰",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 141,
+    "fields": {
+        "fin_prdt_cd": "02010",
+        "fin_prdt_nm": "정기적금",
+        "fin_co_no": "0010508",
+        "kor_co_nm": "상상인플러스저축은행",
+        "etc_note": "* 중도해지 이율\n1개월 미만 : 연0.1%\n1개월 이상 ~ 12개월 미만 : 약정이율의 50%\n12개월 이상 ~ 24개월 미만 : 약정이율의 55%",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "영업점",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 142,
+    "fields": {
+        "fin_prdt_cd": "02011",
+        "fin_prdt_nm": "e-정기적금",
+        "fin_co_no": "0010508",
+        "kor_co_nm": "상상인플러스저축은행",
+        "etc_note": "* 중도해지 이율\n1개월 미만 : 연0.1%\n1개월 이상 ~ 12개월 미만 : 약정이율의 50%\n12개월 이상 ~ 24개월 미만 : 약정이율의 55%",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "인터넷,스마트폰",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 143,
+    "fields": {
+        "fin_prdt_cd": "02012",
+        "fin_prdt_nm": "비대면 정기적금",
+        "fin_co_no": "0010508",
+        "kor_co_nm": "상상인플러스저축은행",
+        "etc_note": "* 중도해지 이율\n1개월 미만 : 연0.1%\n1개월 이상 ~ 12개월 미만 : 약정이율의 50%\n12개월 이상 ~ 24개월 미만 : 약정이율의 55%",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "스마트폰",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 144,
+    "fields": {
+        "fin_prdt_cd": "02070",
+        "fin_prdt_nm": "크크크 정기적금",
+        "fin_co_no": "0010508",
+        "kor_co_nm": "상상인플러스저축은행",
+        "etc_note": "* 중도해지 이율\n1개월 미만 : 연0.1%\n1개월 이상 ~ 12개월 미만 : 약정이율의 50%\n12개월 이상 ~ 24개월 미만 : 약정이율의 55%",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "스마트폰",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 145,
+    "fields": {
+        "fin_prdt_cd": "240019",
+        "fin_prdt_nm": "SB톡톡-정기예금",
+        "fin_co_no": "0010509",
+        "kor_co_nm": "아산저축은행",
+        "etc_note": "없음",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "스마트폰",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 146,
+    "fields": {
+        "fin_prdt_cd": "38",
+        "fin_prdt_nm": "자유 적립예금",
+        "fin_co_no": "0010533",
+        "kor_co_nm": "센트럴저축은행",
+        "etc_note": "없음",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "영업점",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 147,
+    "fields": {
+        "fin_prdt_cd": "WR0001B",
+        "fin_prdt_nm": "정기적금",
+        "fin_co_no": "0010534",
+        "kor_co_nm": "스마트저축은행",
+        "etc_note": "가입한도 없음",
+        "join_deny": 1,
+        "join_member": "누구나 가입가능",
+        "join_way": "영업점",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 148,
+    "fields": {
+        "fin_prdt_cd": "WR0001K",
+        "fin_prdt_nm": "e-정기적금",
+        "fin_co_no": "0010534",
+        "kor_co_nm": "스마트저축은행",
+        "etc_note": "가입채널 제한(인터넷, 모바일 전용)",
+        "join_deny": 1,
+        "join_member": "누구나 가입가능",
+        "join_way": "인터넷,스마트폰",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 149,
+    "fields": {
+        "fin_prdt_cd": "WR0001N",
+        "fin_prdt_nm": "e-로운 정기적금",
+        "fin_co_no": "0010534",
+        "kor_co_nm": "스마트저축은행",
+        "etc_note": "가입채널 제한(스마트폰 전용)",
+        "join_deny": 1,
+        "join_member": "누구나 가입가능",
+        "join_way": "스마트폰",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 150,
+    "fields": {
+        "fin_prdt_cd": "310030",
+        "fin_prdt_nm": "비대면 정기적금",
+        "fin_co_no": "0010537",
+        "kor_co_nm": "한국투자저축은행",
+        "etc_note": "- 없음",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "스마트폰",
+        "spcl_cnd": "- 없음",
+        "max_limit": 999999999,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 151,
+    "fields": {
+        "fin_prdt_cd": "310041",
+        "fin_prdt_nm": "중도해지안심정기적금",
+        "fin_co_no": "0010537",
+        "kor_co_nm": "한국투자저축은행",
+        "etc_note": "- 없음",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "영업점",
+        "spcl_cnd": "-예적금담보대출 가산금리 우대(상품약정금리+0.5%)창구 방문하여 해당상품을 담보로 제공한 대출 실행 시에만 해당",
+        "max_limit": 1000000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 152,
+    "fields": {
+        "fin_prdt_cd": "310042",
+        "fin_prdt_nm": "오!직창구정기적금",
+        "fin_co_no": "0010537",
+        "kor_co_nm": "한국투자저축은행",
+        "etc_note": "- 없음",
+        "join_deny": 1,
+        "join_member": "신규거래고객",
+        "join_way": "영업점",
+        "spcl_cnd": "-만기 해지 후 (회전)정기예금 전환 가입 시 우대금리 적용(※전환 가입시, 최초1회)\n-만기해지 총금액 50%이상&가입기간 6개월 이상 전환가입: 가입시점(회전)정기예금 기본이율+0.2%\n-만기해지 총금액 50%미만&가입기간 6개월 이상 전환가입: 가입시점(회전)정기예금 기본이율+0.1%",
+        "max_limit": 1000000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 153,
+    "fields": {
+        "fin_prdt_cd": "311098",
+        "fin_prdt_nm": "스마트뱅킹 정기적금",
+        "fin_co_no": "0010537",
+        "kor_co_nm": "한국투자저축은행",
+        "etc_note": "- 없음",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "스마트폰",
+        "spcl_cnd": "- 없음",
+        "max_limit": 999999999,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 154,
+    "fields": {
+        "fin_prdt_cd": "311099",
+        "fin_prdt_nm": "스마트뱅킹 정기적금(자유적립식)",
+        "fin_co_no": "0010537",
+        "kor_co_nm": "한국투자저축은행",
+        "etc_note": "- 없음",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "스마트폰",
+        "spcl_cnd": "- 없음",
+        "max_limit": 999999999,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 155,
+    "fields": {
+        "fin_prdt_cd": "310020",
+        "fin_prdt_nm": "정기적금",
+        "fin_co_no": "0010551",
+        "kor_co_nm": "드림저축은행",
+        "etc_note": "-",
+        "join_deny": 1,
+        "join_member": "- 제한없음",
+        "join_way": "영업점",
+        "spcl_cnd": "-",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 156,
+    "fields": {
+        "fin_prdt_cd": "C614004",
+        "fin_prdt_nm": "정기적금",
+        "fin_co_no": "0010560",
+        "kor_co_nm": "참저축은행",
+        "etc_note": "없음",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "영업점",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 157,
+    "fields": {
+        "fin_prdt_cd": "C614005",
+        "fin_prdt_nm": "비대면정기적금",
+        "fin_co_no": "0010560",
+        "kor_co_nm": "참저축은행",
+        "etc_note": "SB톡톡플러스 비로그인서비스로 신규가입 시",
+        "join_deny": 1,
+        "join_member": "만19세 이상 내국인(법인불가)",
+        "join_way": "스마트폰",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 158,
+    "fields": {
+        "fin_prdt_cd": "C614006",
+        "fin_prdt_nm": "e-정기적금",
+        "fin_co_no": "0010560",
+        "kor_co_nm": "참저축은행",
+        "etc_note": "인터넷뱅킹, SB톡톡플러스 로그인 시",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "인터넷,스마트폰",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 159,
+    "fields": {
+        "fin_prdt_cd": "JH0001B",
+        "fin_prdt_nm": "정기적금",
+        "fin_co_no": "0010575",
+        "kor_co_nm": "조흥저축은행",
+        "etc_note": "제한없음",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "인터넷,스마트폰",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 160,
+    "fields": {
+        "fin_prdt_cd": "JH0001C",
+        "fin_prdt_nm": "정기적금",
+        "fin_co_no": "0010575",
+        "kor_co_nm": "조흥저축은행",
+        "etc_note": "제한없음",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "인터넷,스마트폰",
+        "spcl_cnd": "-",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 161,
+    "fields": {
+        "fin_prdt_cd": "JH0002D",
+        "fin_prdt_nm": "e-정기적금",
+        "fin_co_no": "0010575",
+        "kor_co_nm": "조흥저축은행",
+        "etc_note": "제한없음",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "인터넷,스마트폰",
+        "spcl_cnd": "-",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 162,
+    "fields": {
+        "fin_prdt_cd": "240001",
+        "fin_prdt_nm": "정기예금(진주)",
+        "fin_co_no": "0010576",
+        "kor_co_nm": "진주저축은행",
+        "etc_note": "-만65세 이상 비과세 종합저축 5,000만원 가능",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "영업점,인터넷,스마트폰",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 163,
+    "fields": {
+        "fin_prdt_cd": "310014",
+        "fin_prdt_nm": "지니뱅크-정기적금(비대면)",
+        "fin_co_no": "0010576",
+        "kor_co_nm": "진주저축은행",
+        "etc_note": "-만65세 이상 비과세 종합저축 5,000만원 가능",
+        "join_deny": 1,
+        "join_member": "비거주 외국인 외 제한없음",
+        "join_way": "스마트폰",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 164,
+    "fields": {
+        "fin_prdt_cd": "310015",
+        "fin_prdt_nm": "M-정기적금(비대면)",
+        "fin_co_no": "0010576",
+        "kor_co_nm": "진주저축은행",
+        "etc_note": "-만65세 이상 비과세 종합저축 5,000만원 가능",
+        "join_deny": 1,
+        "join_member": "비거주 외국인 외 제한없음",
+        "join_way": "스마트폰",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 165,
+    "fields": {
+        "fin_prdt_cd": "31001",
+        "fin_prdt_nm": "정기적금",
+        "fin_co_no": "0012711",
+        "kor_co_nm": "엔에이치저축은행",
+        "etc_note": "-가입금액: 월불입금 1만원 이상\n-가입기간: 6개월이상 36개월 이하",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "영업점",
+        "spcl_cnd": "NH멤버스 회원인 경우 연 0.1% 우대금리 적용",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 166,
+    "fields": {
+        "fin_prdt_cd": "31501",
+        "fin_prdt_nm": "비대면정기적금",
+        "fin_co_no": "0012711",
+        "kor_co_nm": "엔에이치저축은행",
+        "etc_note": "-가입금액: 월불입금 1만원 이상\n-가입기간: 6개월이상 36개월 이하",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "인터넷,스마트폰",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 167,
+    "fields": {
+        "fin_prdt_cd": "31535",
+        "fin_prdt_nm": "NH 친환경 행복플러스 정기적금",
+        "fin_co_no": "0012711",
+        "kor_co_nm": "엔에이치저축은행",
+        "etc_note": "-가입금액: 월불입금 1만원 이상\n-가입기간: 12개월, 24개월\n-1인 1계좌 한정",
+        "join_deny": 1,
+        "join_member": "-친환경 자동차를 보유한 실명의 만 19세 이상 개인",
+        "join_way": "인터넷,스마트폰",
+        "spcl_cnd": "마케팅 상품서비스 안내(문자 포함 채널 1개 이상) 동의시 0.1%",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 168,
+    "fields": {
+        "fin_prdt_cd": "JJ05",
+        "fin_prdt_nm": "스마트정기적금",
+        "fin_co_no": "0012840",
+        "kor_co_nm": "대신저축은행",
+        "etc_note": "가입채널 제한 (모바일앱전용상품)",
+        "join_deny": 1,
+        "join_member": "스마트뱅크 가입고객",
+        "join_way": "스마트폰",
+        "spcl_cnd": "-",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 169,
+    "fields": {
+        "fin_prdt_cd": "JJ09",
+        "fin_prdt_nm": "정기적금",
+        "fin_co_no": "0012840",
+        "kor_co_nm": "대신저축은행",
+        "etc_note": "없음",
+        "join_deny": 1,
+        "join_member": "모든고객",
+        "join_way": "영업점,인터넷",
+        "spcl_cnd": "-",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 170,
+    "fields": {
+        "fin_prdt_cd": "JJ10",
+        "fin_prdt_nm": "정기적금(자유식)",
+        "fin_co_no": "0012840",
+        "kor_co_nm": "대신저축은행",
+        "etc_note": "없음",
+        "join_deny": 1,
+        "join_member": "모든고객",
+        "join_way": "영업점,인터넷,스마트폰",
+        "spcl_cnd": "-",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 171,
+    "fields": {
+        "fin_prdt_cd": "310040",
+        "fin_prdt_nm": "참똑똑한IBK저축은행정기적금",
+        "fin_co_no": "0012889",
+        "kor_co_nm": "아이비케이저축은행",
+        "etc_note": "없음",
+        "join_deny": 1,
+        "join_member": "없음",
+        "join_way": "영업점,인터넷,스마트폰",
+        "spcl_cnd": "비대면, 인터넷,모바일 가입시 0.1%우대(12개월이상)",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 172,
+    "fields": {
+        "fin_prdt_cd": "BNK1002",
+        "fin_prdt_nm": "정기적금",
+        "fin_co_no": "0013002",
+        "kor_co_nm": "비엔케이저축은행",
+        "etc_note": "없음",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "영업점,인터넷,스마트폰",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 173,
+    "fields": {
+        "fin_prdt_cd": "240010",
+        "fin_prdt_nm": "파란 하늘 정기적금",
+        "fin_co_no": "0013166",
+        "kor_co_nm": "하나저축은행",
+        "etc_note": "1.6개월 유지시 중도해지 시점 적용된 기본금리+우대금리 이자를 지급하는 정기적금\n\n2. 가입금액 : 1만원이상~100만원이하\n\n3. 중도해지금리\n-1개월미만 : 보통예금 금리 \n-1개월이상~6개월 미만\n약정금리x(경과월수/계약월수)x60%\n(최저금리 : 약정금리 * 50%)\n\n-6개월 이상: 해지시점 기본금리+우대금리",
+        "join_deny": 3,
+        "join_member": "개인(1인,1계좌에 한함_활동좌기준)",
+        "join_way": "영업점,인터넷,스마트폰",
+        "spcl_cnd": "당 저축은행 APP 월1회 이상 로그인 기록 횟수에 따라 차등적용+2.0%\n(7회~9회:0.5%/10회~11회:1.0%/ 12회이상:2.0%)\n*월 최대 로그인 기록은 1회로 제한 적용(ex.12월 3회 로그인→12월 실적 1회 인정)\n당 저축은행 개인(신용)정보 수집·이용 제공동의(상품서비스 안내 등) 및 상품서비스 안내수단 전체 동의 시 1.0%",
+        "max_limit": 1000000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 174,
+    "fields": {
+        "fin_prdt_cd": "JTCSB310010",
+        "fin_prdt_nm": "정기적금",
+        "fin_co_no": "0013308",
+        "kor_co_nm": "제이티친애저축은행",
+        "etc_note": "없음",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "영업점,인터넷",
+        "spcl_cnd": "-",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 175,
+    "fields": {
+        "fin_prdt_cd": "JTCSB310013",
+        "fin_prdt_nm": "JT쩜피플러스 정기적금",
+        "fin_co_no": "0013308",
+        "kor_co_nm": "제이티친애저축은행",
+        "etc_note": "1. 1인당 가입한도 : 월 1만원~50만원 \n(1만원 단위로 가입 가능)\n2. 가입기간 : 12개월 또는 24개월만 가능\n3. 지점방문을 통한 상품가입만 가능\n4. 반려견과 함께 찍은사진 직원 제시 필수\n5. 본인 외 대리인 개설 불가",
+        "join_deny": 3,
+        "join_member": "반려견을 키우는 고객",
+        "join_way": "영업점",
+        "spcl_cnd": "- 반려견을 키우는 고객대상으로 반려견과 함께 찍은 사진 제시\n(스마트폰으로 확인 가능)\n- 본인외 대리인 개설 불가",
+        "max_limit": 500000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 176,
+    "fields": {
+        "fin_prdt_cd": "JTCSB310026",
+        "fin_prdt_nm": "비대면 정기적금",
+        "fin_co_no": "0013308",
+        "kor_co_nm": "제이티친애저축은행",
+        "etc_note": "없음",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "스마트폰",
+        "spcl_cnd": "-",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 177,
+    "fields": {
+        "fin_prdt_cd": "31010",
+        "fin_prdt_nm": "e-정기적금",
+        "fin_co_no": "0013313",
+        "kor_co_nm": "신한저축은행",
+        "etc_note": "- 이자지급방식 : 만기일시지급\n- 가입방법 : 인터넷홈페이지\n- 해지방법 : 인터넷홈페이지/모바일앱에 접속하여 해약",
+        "join_deny": 1,
+        "join_member": "개인",
+        "join_way": "인터넷",
+        "spcl_cnd": "▶탄소포인트제(에코마일리지) 가입 인증 완료시 0.5% 우대금리 제공\n*12개월 가입에 한하여 1인1계좌 가입가능",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 178,
+    "fields": {
+        "fin_prdt_cd": "31030",
+        "fin_prdt_nm": "자유적립적금",
+        "fin_co_no": "0013313",
+        "kor_co_nm": "신한저축은행",
+        "etc_note": "- 이자지급방식 : 만기일시지급\n- 가입방법 : 영업점 방문\n- 해지방법 : 영업점 방문 또는 인터넷홈페이지/모바일앱에 접속하여 해약",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "영업점",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 179,
+    "fields": {
+        "fin_prdt_cd": "31040",
+        "fin_prdt_nm": "e-자유적립적금",
+        "fin_co_no": "0013313",
+        "kor_co_nm": "신한저축은행",
+        "etc_note": "- 이자지급방식 : 만기일시지급\n- 가입방법 : 인터넷홈페이지\n- 해지방법 : 인터넷홈페이지/모바일앱에 접속하여 해약",
+        "join_deny": 1,
+        "join_member": "개인",
+        "join_way": "인터넷",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 180,
+    "fields": {
+        "fin_prdt_cd": "31110",
+        "fin_prdt_nm": "s-정기적금",
+        "fin_co_no": "0013313",
+        "kor_co_nm": "신한저축은행",
+        "etc_note": "- 이자지급방식 : 만기일시지급\n- 가입방법 : 모바일앱\n- 해지방법 : 인터넷홈페이지/모바일앱에 접속하여 해약\n- 2023.02.13 smart-정기적금에서 s-정기적금으로 상품명 변경",
+        "join_deny": 1,
+        "join_member": "개인",
+        "join_way": "스마트폰",
+        "spcl_cnd": "▶탄소포인트제(에코마일리지) 가입 인증 완료시 0.5% 우대금리 제공\n*12개월 가입에 한하여 1인1계좌 가입가능",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 181,
+    "fields": {
+        "fin_prdt_cd": "31115",
+        "fin_prdt_nm": "청포도 청년적금",
+        "fin_co_no": "0013313",
+        "kor_co_nm": "신한저축은행",
+        "etc_note": "①번 우대이율은 가입시점에 지급\n②③번 우대이율은 만기해지시점에 지급/가입일로부터 만기일까지의 기간에 대해 적용되며 중도해지시에는 지급하지 않음\n* 우대이율은 약정금리에 반영되어 중도해지이율, 만기후이율 산정시 포함되며, 만기앞당김해지시에도 포함",
+        "join_deny": 3,
+        "join_member": "19~39세",
+        "join_way": "인터넷,스마트폰",
+        "spcl_cnd": "①개인(신용)정보 수집?이용 동의[상품서비스안내 등] 상품서비스 안내 수단 전체 동의시 0.1 % 우대금리 제공\n②계약기간 총 월불입금 횟수의 1/2이상을 당사 입출금계좌에서 이체하여 불입하는 경우 0.3% 우대금리 제공\n③가입 후 만기해지시까지 통장 미발행시(ESG) 0.6% 우대금리 제공",
+        "max_limit": 300000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 182,
+    "fields": {
+        "fin_prdt_cd": "31140",
+        "fin_prdt_nm": "s-자유적립적금",
+        "fin_co_no": "0013313",
+        "kor_co_nm": "신한저축은행",
+        "etc_note": "- 이자지급방식 : 만기일시지급\n- 가입방법 : 모바일앱\n- 해지방법 : 인터넷홈페이지/모바일앱에 접속하여 해약\n- 2023.02.13 smart-자유적립적금에서 s-자유적립적금으로 상품명 변경",
+        "join_deny": 1,
+        "join_member": "개인",
+        "join_way": "스마트폰",
+        "spcl_cnd": "없음",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 183,
+    "fields": {
+        "fin_prdt_cd": "1130311001",
+        "fin_prdt_nm": "일반정기적금",
+        "fin_co_no": "0013350",
+        "kor_co_nm": "웰컴저축은행",
+        "etc_note": "영업점 전용상품",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "영업점",
+        "spcl_cnd": "계약기간(월수)의 2/3회 이상 당행 입출금통장 통한 자동이체 시 연 0.8%p",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 184,
+    "fields": {
+        "fin_prdt_cd": "1130312001",
+        "fin_prdt_nm": "e정기적금",
+        "fin_co_no": "0013350",
+        "kor_co_nm": "웰컴저축은행",
+        "etc_note": "인터넷뱅킹 전용상품",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "인터넷",
+        "spcl_cnd": "계약기간(월수)의 2/3회 이상 당행 입출금통장 통한 자동이체 시 연 0.8%p",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 185,
+    "fields": {
+        "fin_prdt_cd": "1130312007",
+        "fin_prdt_nm": "WELCOME 첫거래우대 e정기적금",
+        "fin_co_no": "0013350",
+        "kor_co_nm": "웰컴저축은행",
+        "etc_note": "본 상품은 최초 개설한 예·적금 가입일로부터 30일 이내 가입 가능합니다. (30일 경과시 가입 불가)",
+        "join_deny": 1,
+        "join_member": "최초 개설한 예·적금(입출금이 자유로운 예금 포함) 가입일로부터 30일 內 가입",
+        "join_way": "인터넷",
+        "spcl_cnd": "① 8회 이상 당행 입출금통장 통한 자동이체로 납입 시 연 1.8%p \n② 적금 신규일부터 계약상 만기일 전일까지의 입출금통장 평잔 50만원 이상 시 연 1.5%p",
+        "max_limit": 200000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 186,
+    "fields": {
+        "fin_prdt_cd": "1130313002",
+        "fin_prdt_nm": "m정기적금",
+        "fin_co_no": "0013350",
+        "kor_co_nm": "웰컴저축은행",
+        "etc_note": "스마트(모바일)뱅킹 전용상품",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "스마트폰",
+        "spcl_cnd": "계약기간(월수)의 2/3회 이상 당행 입출금통장 통한 자동이체 시 연 0.8%p",
+        "max_limit": null,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 187,
+    "fields": {
+        "fin_prdt_cd": "1130313504",
+        "fin_prdt_nm": "WELCOME 첫거래우대 m정기적금",
+        "fin_co_no": "0013350",
+        "kor_co_nm": "웰컴저축은행",
+        "etc_note": "본 상품은 최초 개설한 예·적금 가입일로부터 30일 이내 가입 가능합니다. (30일 경과시 가입 불가)",
+        "join_deny": 1,
+        "join_member": "최초 개설한 예·적금(입출금이 자유로운 예금 포함) 가입일로부터 30일 內 가입",
+        "join_way": "스마트폰",
+        "spcl_cnd": "① 8회 이상 당행 입출금통장 통한 자동이체로 납입 시 연 1.8%p \n② 적금 신규일부터 계약상 만기일 전일까지의 입출금통장 평잔 50만원 이상 시 연 1.5%p",
+        "max_limit": 200000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 188,
+    "fields": {
+        "fin_prdt_cd": "1130313506",
+        "fin_prdt_nm": "웰뱅 든든적금",
+        "fin_co_no": "0013350",
+        "kor_co_nm": "웰컴저축은행",
+        "etc_note": "※ 신용평점별 우대금리 적용을 위해 적금 가입 시 개인(신용)정보 조회 동의가 필요하며, 미동의 시 신용평점별 우대금리 적용이 불가합니다. ※ 적금 가입 시점 NICE평가정보를 통해 조회된 신용평점을 기준으로 우대이율이 확정됩니다. ※ 월 최대 불입액 : 30만원",
+        "join_deny": 1,
+        "join_member": "- 만 19세 이상 실명의 개인",
+        "join_way": "인터넷,스마트폰",
+        "spcl_cnd": "- 최초 개설한 예·적금 가입일로부터 30일 이내 본 적금 가입 시 : 연 1.0%p\n- 적금 가입 시점 예금주 신용평점에 따라 우대 : 최대 연 3.0%p\n▶ 신용평점 850점 이하 ~ 650점 초과(연 1.0%p), 신용평점 650점 이하 ~ 350점 초과 (연 2.0%p), 신용평점 350점 이하 ~ 1점 이상(연 3.0%p)",
+        "max_limit": 300000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 189,
+    "fields": {
+        "fin_prdt_cd": "1130313507",
+        "fin_prdt_nm": "웰뱅 워킹 적금",
+        "fin_co_no": "0013350",
+        "kor_co_nm": "웰컴저축은행",
+        "etc_note": "※ 월 최대 불입액 : 20만원",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "스마트폰",
+        "spcl_cnd": "① 연간 걸음수 달성여부에 따른 우대금리 지급\n-1백만보 이상 1.0%p \n-2백만보 이상 2.0%p \n-3백만보 이상 3.0%p \n-4백만보 이상 8.0%p \n②6회 이상 당행 입출금 통장을 통한 자동이체로 적금 납입 시 연 1.0%p",
+        "max_limit": 200000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 190,
+    "fields": {
+        "fin_prdt_cd": "1130313561",
+        "fin_prdt_nm": "WELCOME 잔돈모아올림적금",
+        "fin_co_no": "0013350",
+        "kor_co_nm": "웰컴저축은행",
+        "etc_note": "타행 잔돈적립을 위한 연결계좌는 당행 오픈뱅킹에 등록된 타행 입출금 계좌 최대 3개 설정 가능합니다. 1회차 납입금액은 제한이 없으나 2회차 이후 납입금액은 매월 초일부터 말일까지의 입금합계액이 가입한도의 10%를 초과할 수 없습니다. (월 최대 불입액 : 50만원)",
+        "join_deny": 3,
+        "join_member": "제한없음",
+        "join_way": "스마트폰",
+        "spcl_cnd": "①만기 시 총 불입금 1백만원 이상\n②당행 잔돈적립, 타행 잔돈적립 각 4회이상(잔돈적립서비스를 통한 잔돈적립을 의미하며, 동일월 수회 이용시에도 1회납입으로 인정)\n※만기올림서비스 : 만기 해지시 세후 원리금을 만원단위로 올려주는 서비스(①,② 모두 충족시 제공)\n※잔돈적립서비스 : 사전에 지정한 본인명의 입출금계좌의 잔돈을 적금으로 적립하는 서비스",
+        "max_limit": 5000000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 191,
+    "fields": {
+        "fin_prdt_cd": "1130313562",
+        "fin_prdt_nm": "웰뱅 잔돈자동적금",
+        "fin_co_no": "0013350",
+        "kor_co_nm": "웰컴저축은행",
+        "etc_note": "타행 잔돈적립을 위한 연결계좌는 당행 오픈뱅킹에 등록된 타행 입출금 계좌 최대 3개 설정 가능합니다. 1회차 납입금액은 제한이 없으나 2회차 이후 납입금액은 매월 초일부터 말일까지의 입금합계액이 가입한도의 10%를 초과할 수 없습니다. (월 최대 불입액 : 20만원)",
+        "join_deny": 3,
+        "join_member": "제한없음",
+        "join_way": "스마트폰",
+        "spcl_cnd": "①카드 잔돈적립 6회 이상 연 1.0%p\n②주간 잔돈적립 6회 이상 연 1.0%p\n③타행 잔돈적립 6회 이상 연 1.0%p ※잔돈적립서비스를 통한 잔돈적립을 의미하며, 동일월 수회 이용시에도 1회납입으로 인정\n※잔돈적립서비스 : 사전에 지정한 본인명의 입출금계좌의 잔돈을 적금으로 적립하는 서비스",
+        "max_limit": 2000000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 192,
+    "fields": {
+        "fin_prdt_cd": "1130313563",
+        "fin_prdt_nm": "웰뱅 라이킷(LIKIT) 적금",
+        "fin_co_no": "0013350",
+        "kor_co_nm": "웰컴저축은행",
+        "etc_note": "*실적인정기간 : 적금 가입월부터 만기일의 전전월 말일\n*단, 실적인정기간 동안 대상 카드(LOCA LIKIT) 교체/해지/탈회 시 우대금리 미적용 (월 최대 불입액 : 30만원)",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "스마트폰",
+        "spcl_cnd": "① 롯데카드 결제계좌를 당행 입출금통장으로 지정 및 납부실적 3개월 이상 (연 2.0%p)\n롯데카드 우대조건\n② LOCA LIKIT 카드 누적 이용실적 50만원 이상 (연 7.0%p)\n③ LOCA LIKIT 카드 자동이체 납부 실적 3개월 이상 (연 3.0%p)",
+        "max_limit": 300000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 193,
+    "fields": {
+        "fin_prdt_cd": "1130315004",
+        "fin_prdt_nm": "WELCOME 디딤돌적금",
+        "fin_co_no": "0013350",
+        "kor_co_nm": "웰컴저축은행",
+        "etc_note": "중도해지금리 - 일반중도해지 : 1.6% , 특별중도해지 : 4.8%",
+        "join_deny": 1,
+        "join_member": "사회적배려대상자 (기초생활수급자,소년소녀가장,북한이탈주민,차상위계층 중 본인부담 경감대상자, 한부모가족지원 보호대상자, 장애인연금, 장애수당, 장애아동수당 대상자)",
+        "join_way": "영업점",
+        "spcl_cnd": "기본금리 3.1% + 우대금리 1.7% = 적용이율 4.8%",
+        "max_limit": 300000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 194,
+    "fields": {
+        "fin_prdt_cd": "1130315008",
+        "fin_prdt_nm": "WELCOME 아이사랑 정기적금",
+        "fin_co_no": "0013350",
+        "kor_co_nm": "웰컴저축은행",
+        "etc_note": "1인당 가입한도 월 10만원 (1인 1계좌)",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "영업점,스마트폰",
+        "spcl_cnd": "1) 계약기간의 2/3회 이상 웰컴 입출금통장을 통한 자동이체로 납입 : 4.0%p\n2) 가입시점 만 16세이하 가구원수에 따른 우대\n- 1명 : 1.0%p\n- 2명 : 2.0%p\n- 3명 이상 : 5.0%p",
+        "max_limit": 100000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 195,
+    "fields": {
+        "fin_prdt_cd": "1130315009",
+        "fin_prdt_nm": "웰뱅하자 정기적금",
+        "fin_co_no": "0013350",
+        "kor_co_nm": "웰컴저축은행",
+        "etc_note": "1인당 가입한도 월 20만원 (1인 1계좌)",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "영업점,인터넷,스마트폰",
+        "spcl_cnd": "1) 웰컴 입출금통장에서 CMS/지로 자동납부 월 2건이상 실적이 계약기간의 2/3회 이상 : 3.5%p\n2) 웰컴 입출금통장 평잔 실적이 50만원 이상 : 1.0%p",
+        "max_limit": 200000,
+        "joined_users": []
+    }
+},
+{
+    "model": "financial_products.saving",
+    "pk": 196,
+    "fields": {
+        "fin_prdt_cd": "1130315011",
+        "fin_prdt_nm": "웰컴 페이적금",
+        "fin_co_no": "0013350",
+        "kor_co_nm": "웰컴저축은행",
+        "etc_note": "1인당 가입한도 월 30만원 (1인 1계좌, WELCOME 체크플러스2 정기적금 보유자 가입 불가)",
+        "join_deny": 1,
+        "join_member": "제한없음",
+        "join_way": "영업점,인터넷,스마트폰",
+        "spcl_cnd": "1) 계약기간의 2/3회 이상 웰컴 입출금통장을 통한 자동이체로 납입 : 2.0%p\n2) 웰컴 입출금통장을 연결하여 거래한 간편결제 또는 체크카드 월평균 이용 실적\n- 10만원 이상 30만원 미만 : 1.5%p\n- 30만원 이상 50만원 미만 : 2.0%p\n- 50만원 이상 : 3.5%p",
+        "max_limit": 300000,
+        "joined_users": []
+    }
+}
+]

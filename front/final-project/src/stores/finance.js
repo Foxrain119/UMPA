@@ -8,6 +8,74 @@ export const useFinanceStore = defineStore('finance', () => {
   const token = ref(null)
   const router = useRouter()
 
+  // 금융 상품
+  const deposits = ref([])
+  const savings = ref([])
+
+  const detail = ref([])
+  
+  // 환율
+  const exchanges = ref([])
+
+  const goDetail = (product) => {
+    detail.value = product
+    console.log(product)
+    router.push({ name: 'detail' })
+  }
+
+  const goBack = () => {
+    router.go(-1)
+  }
+
+
+  const getExchages = function () {
+    axios({
+      method: 'get',
+      url: `${API_URL}/exchanges/list/`
+    })
+    .then(res => {
+      console.log(res.data)
+      exchanges.value = res.data
+    })
+    .catch(err => console.log(err))
+  }
+
+  const getProducts = function () {
+    // 예금 + 옵션
+    axios({
+      method: 'get',
+      url: `${API_URL}/financial/deposit_list/`,
+    })
+      .then(res => {
+        console.log(res.data)
+        deposits.value = res.data
+      })
+      .catch(err => console.log(err))
+    
+    // 적금 + 옵션
+    axios({
+      method: 'get',
+      url: `${API_URL}/financial/saving_list/`,
+    })
+      .then(res => {
+        console.log(res.data)
+        savings.value = res.data
+      })
+      .catch(err => console.log(err))
+
+    // // 옵션
+    // axios({
+    //   method: 'get',
+    //   url: `${API_URL}/financial/deposit_option_list/`,
+    // })
+    //   .then(res => {
+    //     console.log(res.data)
+    //     deposit_options.value = res.data
+    //   })
+    //   .catch(err => console.log(err))
+  }
+
+
   const signUp = function (payload) {
     const { username, password1, password2 } = payload
 
@@ -59,5 +127,5 @@ export const useFinanceStore = defineStore('finance', () => {
     router.push({ name: 'home' })
   }
 
-  return { token, signUp, logIn, isLogin, logOut }
+  return { deposits, savings, detail, exchanges, goDetail, goBack, getProducts, getExchages, token, signUp, logIn, isLogin, logOut }
 }, { persist: true })
