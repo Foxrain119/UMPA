@@ -7,9 +7,11 @@
     <td>{{ option12 ? `${option12['intr_rate2']}%` : '-' }}</td>
     <td>{{ option24 ? `${option24['intr_rate2']}%` : '-' }}</td>
     <td>{{ option36 ? `${option36['intr_rate2']}%` : '-' }}</td>
-    <button
-      @click.prevent="goDetail"
-    >상세정보</button>
+    <td>
+      <button
+        @click.prevent="goDetail"
+      >상세정보</button>
+    </td>
   </tr>
 </template>
 

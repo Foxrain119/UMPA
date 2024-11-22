@@ -15,7 +15,8 @@ class CustomRegisterSerializer(RegisterSerializer):
     phone = serializers.CharField(
         max_length = 11,
         # validators=[User.phone_regex],
-        required=False
+        required=False,
+        default = ''
     )
     age = serializers.IntegerField(
         required=True,
@@ -23,11 +24,19 @@ class CustomRegisterSerializer(RegisterSerializer):
     )
 
     property = serializers.IntegerField(
+        required=False,
+        default=0
+    )
+
+    gender = serializers.CharField(
+        max_length=1,
+        default='N',
         required=False
     )
 
     marital_status = serializers.BooleanField(
-        required=False
+        required=False,
+        default=False
     )
     # 동적으로 unique 속성 필드에 대한 중복 검사
     def validate(self, attrs):
@@ -37,6 +46,12 @@ class CustomRegisterSerializer(RegisterSerializer):
             if value and User.objects.filter(**{field: value}).exists():
                 raise serializers.ValidationError({field: f"이미 등록된 {field} 입니다."})
         return attrs
+
+    def validate_gender(self, value):
+        valid_choices = ['M', 'F', 'N']
+        if value not in valid_choices:
+            raise serializers.ValidationError(f"'{value}' is not a valid choice for gender.")
+        return value
 
     # 필드 데이터 불러오기
     def get_cleaned_data(self):

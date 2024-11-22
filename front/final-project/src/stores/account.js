@@ -3,19 +3,36 @@ import { useRouter } from 'vue-router'
 import { defineStore } from 'pinia'
 import axios from 'axios'
 
-export const useFinanceStore = defineStore('account', () => {
+export const useAccountStore = defineStore('account', () => {
   const API_URL = 'http://127.0.0.1:8000'
   const token = ref(null)
   const router = useRouter()
 
+  const userInfo = ref([])
+
+  const getUserInfo = function () {
+    axios({
+      method: 'get',
+      url: `${API_URL}/profile/user_info/`,
+      headers: {
+        Authorization: `Token ${token}`
+      }
+    })
+    .then(res => {
+      console.log(res.data)
+      userInfo.value = res.data
+    })
+    .catch(err => console.log(err))
+  }
+
   const signUp = function (payload) {
-    const { username, password1, password2 } = payload
+    const { username, password1, password2, nickname, age } = payload
 
     axios({
       method: 'post',
       url: `${API_URL}/accounts/signup/`,
       data: {
-        username, password1, password2
+        username, password1, password2, nickname, age
       }
     })
       .then(res => {
@@ -59,5 +76,5 @@ export const useFinanceStore = defineStore('account', () => {
     router.push({ name: 'home' })
   }
 
-  return { token, signUp, logIn, isLogin, logOut }
+  return { token, userInfo, getUserInfo, signUp, logIn, isLogin, logOut }
 }, { persist: true })

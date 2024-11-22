@@ -34,6 +34,6 @@ User = get_user_model()
 @api_view(['GET'])
 @permission_classes([AllowAny])
 def user_info(request):
-    user = request.user
-    serializer = UserInfoSerializer(user)
+    users = User.objects.all()
+    serializer = UserInfoSerializer(users, many=True)
     return Response(serializer.data)

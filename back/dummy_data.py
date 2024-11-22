@@ -42,7 +42,7 @@ for _ in range(10000):
     used_phones.add(phone)
 
     # 기타 랜덤 필드 생성
-    gender = random.choice(['M', 'F', 'N'])
+    gender = random.choice(['M', 'F'])
     age = random.randint(18, 85)
     marital_status = random.choice([True, False])
 
