@@ -14,6 +14,7 @@ import CommendProductsView from '@/views/finance/RecommendProductsView.vue'
 import RecommendProductsView from '@/views/finance/RecommendProductsView.vue'
 import ProductDetailView from '@/views/finance/ProductDetailView.vue'
 import RecommendProductsAlgo1View from '@/views/finance/RecommendProductsAlgo1View.vue'
+import RecommendProductsAlgo2View from '@/views/finance/RecommendProductsAlgo2View.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -69,6 +70,11 @@ const router = createRouter({
               path: '/algo1',
               name: 'algo1',
               component: RecommendProductsAlgo1View,
+            },
+            {
+              path: '/algo2',
+              name: 'algo2',
+              component: RecommendProductsAlgo2View
             },
           ]
         },

@@ -3,8 +3,8 @@ from .models import User, minzero_validator
 from dj_rest_auth.registration.serializers import RegisterSerializer
 from dj_rest_auth.serializers import UserDetailsSerializer, LoginSerializer
 from django.contrib.auth import get_user_model
-UserModel = get_user_model()
 
+UserModel = get_user_model()
 
 # 회원 가입 custom serializer
 class CustomRegisterSerializer(RegisterSerializer):
@@ -153,10 +153,18 @@ class SavingSerializer(serializers.ModelSerializer):
         model = Saving
         fields = ['fin_prdt_cd', 'fin_prdt_nm', 'kor_co_nm']
 
-class UserInfoSerializer(serializers.ModelSerializer):
+
+class UserInfoSerializer(UserDetailsSerializer):
     joined_deposits = DepositSerializer(many=True, read_only=True)
     joined_savings = SavingSerializer(many=True, read_only=True)
 
+    # id = CustomUserDetailsSerializer()
+    # age = CustomUserDetailsSerializer()
+    # gender = CustomUserDetailsSerializer()
+    # property = CustomUserDetailsSerializer()
+    # merital_status = CustomUserDetailsSerializer()
+
     class Meta:
         model = UserModel
-        fields = ['id', 'age', 'gender', 'property', 'marital_status', 'joined_deposits', 'joined_savings']
+        # fields = ['id', 'age', 'gender', 'property', 'merital_status', 'joined_deposits', 'joined_savings']
+        fields = '__all__'

@@ -50,9 +50,9 @@ export const useAccountStore = defineStore('account', () => {
   const getUserInfo = function () {
     axios({
       method: 'get',
-      url: `${API_URL}/profile/user_info/`,
+      url: `${PROFILE_URL}/user_info/`,
       headers: {
-        Authorization: `Token ${token}`
+        Authorization: `Token ${token.value}`
       }
     })
     .then(res => {

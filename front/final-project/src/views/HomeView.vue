@@ -2,8 +2,8 @@
   <div>
     <h1>메인 페이지</h1>
     <MainInfo />
-    <div class="container">
-      <MainContainer />
+    <div>
+      <MainProduct />
       <MainSideBar />
     </div>
   </div>
@@ -11,7 +11,7 @@
 
 <script setup>
 import MainInfo from '@/components/MainInfo.vue';
-import MainContainer from '@/components/MainContainer.vue';
+import MainProduct from '@/components/MainProduct.vue';
 import MainSideBar from '@/components/MainSideBar.vue';
 import { useFinanceStore } from '@/stores/finance';
 

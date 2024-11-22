@@ -10,6 +10,7 @@
 
 <style scoped>
 .img-container {
-  
+  height: 300px;
+  border: 1px solid black;
 }
 </style>

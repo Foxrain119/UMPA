@@ -33,7 +33,7 @@ User = get_user_model()
 
 @api_view(['GET'])
 @permission_classes([AllowAny])
-def user_info(request):
+def user_list(request):
     users = User.objects.all()
     serializer = UserInfoSerializer(users, many=True)
     return Response(serializer.data)

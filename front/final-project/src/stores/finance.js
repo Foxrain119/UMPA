@@ -48,7 +48,24 @@ export const useFinanceStore = defineStore('finance', () => {
     })
       .then(res => {
         console.log(res.data)
-        deposits.value = res.data
+        deposits.value = res.data.sort(function (a, b) {
+          const optionA = a.option.reduce((max, cur) => {
+            return cur.intr_rate2 > max.intr_rate2 ? cur : max;
+          }, a.option[0])
+          const optionB = b.option.reduce((max, cur) => {
+            return cur.intr_rate2 > max.intr_rate2 ? cur : max;
+          }, b.option[0])
+
+          if (optionA && optionB) {
+            return optionB.intr_rate2 - optionA.intr_rate2;
+          } else if (optionA) {
+            return -1;
+          } else if (optionB) {
+            return 1;
+          } else {
+            return 0;
+          }
+        })
       })
       .catch(err => console.log(err))
     
@@ -59,10 +76,30 @@ export const useFinanceStore = defineStore('finance', () => {
     })
       .then(res => {
         console.log(res.data)
-        savings.value = res.data
+        savings.value = res.data.sort(function (a, b) {
+          const optionA = a.option.reduce((max, cur) => {
+            return cur.intr_rate2 > max.intr_rate2 ? cur : max;
+          }, a.option[0])
+          const optionB = b.option.reduce((max, cur) => {
+            return cur.intr_rate2 > max.intr_rate2 ? cur : max;
+          }, b.option[0])
+        
+          if (optionA && optionB) {
+            return optionB.intr_rate2 - optionA.intr_rate2;
+          } else if (optionA) {
+            return -1;
+          } else if (optionB) {
+            return 1;
+          } else {
+            return 0;
+          }
+        })
+        console.log('적금 정렬 완료')
       })
       .catch(err => console.log(err))
-
+    
+    
+    
     // // 옵션
     // axios({
     //   method: 'get',

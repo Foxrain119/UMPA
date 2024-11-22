@@ -74,20 +74,21 @@ import { computed, ref } from 'vue'
 import { useFinanceStore } from '@/stores/finance';
 
 const store = useFinanceStore()
-const savings = ref(store.savings.sort(function (a, b) {
-  const optionA = a.option.find(opt => opt.save_trm === 6);
-  const optionB = b.option.find(opt => opt.save_trm === 6);
+const savings = ref(store.savings)
+// const savings = ref(store.savings.sort(function (a, b) {
+//   const optionA = a.option.find(opt => opt.save_trm === 6);
+//   const optionB = b.option.find(opt => opt.save_trm === 6);
 
-  if (optionA && optionB) {
-    return optionB.intr_rate2 - optionA.intr_rate2;
-  } else if (optionA) {
-    return -1;
-  } else if (optionB) {
-    return 1;
-  } else {
-    return 0;
-  }
-}))
+//   if (optionA && optionB) {
+//     return optionB.intr_rate2 - optionA.intr_rate2;
+//   } else if (optionA) {
+//     return -1;
+//   } else if (optionB) {
+//     return 1;
+//   } else {
+//     return 0;
+//   }
+// }))
 
 const searchedSaving = ref()
 searchedSaving.value = savings.value

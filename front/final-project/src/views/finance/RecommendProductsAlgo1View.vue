@@ -1,7 +1,7 @@
 <template>
   <div class="search-box">
     <form class="search-condition">
-      <div>{{ username }}님과 비슷한 유저의 인기 가입 상품</div>
+      <div>{{  }}님과 비슷한 유저의 인기 가입 상품</div>
 
       <div>
         <label for="merital_status">결혼 여부 :</label>
