@@ -9,16 +9,16 @@
         <router-link :to="{ name: 'articles' }">커뮤니티</router-link>
       </div>
       <div class="user-bar">
-        <router-link :to="{ name: 'login' }" v-show="!store.token">
+        <router-link :to="{ name: 'login' }" v-show="!store2.token">
           <button class="login-btn">로그인</button>
         </router-link>
-        <router-link :to="{ name: 'signup' }" v-show="!store.token">
+        <router-link :to="{ name: 'signup' }" v-show="!store2.token">
           <button class="signup-btn">회원가입</button>
         </router-link>
-        <router-link :to="{ name: 'profile' }" v-show="store.token">
+        <router-link :to="{ name: 'profile' }" v-show="store2.token">
           <button class="">프로필</button>
         </router-link>
-        <button v-show="store.token" @click.prevent="logOut">로그아웃</button>
+        <button v-show="store2.token" @click.prevent="logOut">로그아웃</button>
       </div>
     </nav>
   </div>
@@ -27,13 +27,15 @@
 
 <script setup>
 import { RouterLink, RouterView } from 'vue-router';
+import { useAccountStore } from './stores/account';
 import { useFinanceStore } from '@/stores/finance';
 import { onMounted } from 'vue';
 
 const store = useFinanceStore()
+const store2 = useAccountStore(0)
 
 const logOut = function () {
-  store.logOut()
+  store2.logOut()
 }
 
 onMounted(() => {

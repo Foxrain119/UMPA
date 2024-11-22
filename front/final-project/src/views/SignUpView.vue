@@ -2,6 +2,30 @@
   <div>
     <h1>회원 가입 페이지</h1>
     <form @submit.prevent="signUp">
+      <label for="username">이름 : </label>
+      <input type="text" id="username" v-model.trim="username"><br>
+      
+      <label for="nickname">닉네임 : </label>
+      <input type="text" id="nickname" v-model.trim="nickname"><br>
+      
+      <label for="email">이메일 : </label>
+      <input type="text" id="email" v-model.trim="email"><br>
+
+      <label for="password1">비밀번호 : </label>
+      <input type="password" id="password1" v-model.trim="password1"><br>
+
+      <label for="password2">비밀번호 확인 : </label>
+      <input type="password" id="password2" v-model.trim="password2"><br>
+
+      <label for="phone">연락처 : </label>
+      <input type="text" id="phone" v-model.trim="phone"><br>
+      
+      <label for="age">나이 : </label>
+      <input type="number" id="age" v-model.trim="age"><br>
+      
+      <input type="submit" value="SignUp">
+    </form>
+    <!-- <form @submit.prevent="signUp">
       <label for="username">아이디 : </label>
       <input type="text" id="username" v-model.trim="username"><br>
 
@@ -11,14 +35,8 @@
       <label for="password2">비밀번호 확인 : </label>
       <input type="password" id="password2" v-model.trim="password2"><br>
       
-      <label for="nickname">닉네임 : </label>
-      <input type="text" id="nickname" v-model.trim="nickname"><br>
-
-      <label for="age">나이 : </label>
-      <input type="text" id="age" v-model.trim="age"><br>
-
       <input type="submit" value="SignUp">
-    </form>
+    </form> -->
   </div>
 </template>
 
@@ -29,8 +47,10 @@ import { useAccountStore } from '@/stores/account';
 const username = ref(null)
 const password1 = ref(null)
 const password2 = ref(null)
-const nickname = ref(null)
+const email = ref(null)
+const phone = ref(null)
 const age = ref(null)
+const nickname = ref(null)
 
 const store2 = useAccountStore()
 
@@ -39,8 +59,10 @@ const signUp = function () {
     username: username.value,
     password1: password1.value,
     password2: password2.value,
-    nickname: nickname.value,
+    email: email.value,
+    phone: phone.value,
     age: age.value,
+    nickname: nickname.value
   }
   store2.signUp(payload)
 }
