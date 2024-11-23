@@ -23,6 +23,7 @@ urlpatterns = [
     path('profile/', include('accounts.urls')),
     path('financial/', include('financial_products.urls')),
     path('exchanges/', include('exchanges.urls')),
+    path('maps/', include('maps.urls')),
     path('accounts/', include('dj_rest_auth.urls')),
     path('accounts/signup/', include('dj_rest_auth.registration.urls')),
 ]

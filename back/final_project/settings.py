@@ -26,6 +26,7 @@ environ.Env.read_env(
 
 API_KEY = env('API_KEY')
 API_KEY_EX = env('API_KEY_EX')
+KAKAO_MAP_REST_API_KEY = env('KAKAO_MAP_REST_API_KEY')
 
 
 # Quick-start development settings - unsuitable for production
@@ -47,6 +48,7 @@ INSTALLED_APPS = [
     "articles",
     "exchanges",
     "financial_products",
+    "maps",
     "rest_framework",
     "rest_framework.authtoken",
     "dj_rest_auth",

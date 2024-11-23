@@ -17,16 +17,20 @@ class ArticleListSerializer(serializers.ModelSerializer):
 
 class CommentSerializer(serializers.ModelSerializer):
     user = serializers.StringRelatedField(read_only=True)
-    created_at = serializers.DateTimeField(format="%Y-%m-%d %H:%M")
+    created_at = serializers.DateTimeField(format="%Y-%m-%d %H:%M", read_only=True)
+    updated_at = serializers.DateTimeField(read_only=True)
+    article = serializers.PrimaryKeyRelatedField(read_only=True)
 
     class Meta:
         model = Comment
         fields = '__all__'
+        read_only_fields = ('user', 'article', 'created_at', 'updated_at')
 
 
 class ArticleSerializer(serializers.ModelSerializer):
     user = serializers.StringRelatedField(read_only=True)
-    created_at = serializers.DateTimeField(format="%Y-%m-%d %H:%M")
+    created_at = serializers.DateTimeField(format="%Y-%m-%d %H:%M", read_only=True)
+    updated_at = serializers.DateTimeField(read_only=True)
     comment_set = CommentSerializer(many=True, read_only=True)
     comment_count = serializers.IntegerField(source='comment_set.count', read_only=True)
     like_users = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
@@ -34,3 +38,4 @@ class ArticleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Article
         fields = '__all__'
+        read_only_fields = ('user', 'created_at', 'updated_at', 'like_users')

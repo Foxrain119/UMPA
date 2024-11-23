@@ -11,18 +11,22 @@
         <span>작성일: {{ formatDate(article.created_at) }}</span>
       </div>
 
-      <div class="article-content">
+      <div v-if="!isEditing" class="article-content">
         {{ article.content }}
       </div>
 
-      <div class="article-actions">
-        <button 
-          v-if="isOwner" 
-          @click="$emit('delete', article.id)"
-          class="delete-btn"
-        >
-          삭제
-        </button>
+      <div v-else class="article-edit">
+        <ArticleForm 
+          :article="article"
+          :isEdit="true"
+          @submit="handleEdit"
+          @close="isEditing = false"
+        />
+      </div>
+
+      <div v-if="isOwner && !isEditing" class="article-actions">
+        <button @click="isEditing = true" class="edit-btn">수정</button>
+        <button @click="$emit('delete', article.id)" class="delete-btn">삭제</button>
       </div>
 
       <div class="comments-section">
@@ -38,9 +42,10 @@
 </template>
 
 <script setup>
-import { computed, ref } from 'vue';
+import { computed, ref, onMounted } from 'vue';
 import { useAccountStore } from '@/stores/account';
 import CommentList from './CommentList.vue';
+import ArticleForm from './ArticleForm.vue';
 import axios from 'axios';
 
 const props = defineProps({
@@ -53,7 +58,7 @@ const props = defineProps({
 const store2 = useAccountStore();
 
 const isOwner = computed(() => {
-  return props.article.user === store2.profile?.username;
+  return store2.token && store2.profile?.username === props.article.user;
 });
 
 const formatDate = (dateString) => {
@@ -80,6 +85,37 @@ const handleRefresh = async () => {
 };
 
 const emit = defineEmits(['close', 'delete', 'refresh']);
+
+const isEditing = ref(false);
+
+const handleEdit = async (formData) => {
+  try {
+    if (!isOwner.value) {
+      alert('본인이 작성한 게시글만 수정할 수 있습니다.');
+      return;
+    }
+
+    await axios.put(`http://127.0.0.1:8000/articles/${props.article.id}/`, 
+      formData,
+      {
+        headers: { Authorization: `Token ${store2.token}` }
+      }
+    );
+    isEditing.value = false;
+    await handleRefresh();
+  } catch (error) {
+    console.error('게시글 수정 실패:', error);
+    if (error.response?.status === 403) {
+      alert('본인이 작성한 게시글만 수정할 수 있습니다.');
+    } else {
+      alert('게시글 수정에 실패했습니다.');
+    }
+  }
+};
+
+onMounted(() => {
+  handleRefresh();
+});
 </script>
 
 <style scoped>
@@ -135,6 +171,8 @@ const emit = defineEmits(['close', 'delete', 'refresh']);
 }
 
 .article-actions {
+  display: flex;
+  justify-content: flex-end;
   margin-bottom: 20px;
 }
 
@@ -145,6 +183,20 @@ const emit = defineEmits(['close', 'delete', 'refresh']);
   padding: 8px 16px;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.edit-btn {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.edit-btn:hover {
+  background-color: #5a6268;
 }
 
 .comments-section {

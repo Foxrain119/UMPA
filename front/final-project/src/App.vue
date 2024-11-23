@@ -6,12 +6,12 @@
         <router-link :to="{ name: 'deposit' }">예적금 비교</router-link> |
         <router-link :to="{ name: 'exchange' }">환율 계산</router-link> |
         <router-link :to="{ name: 'map' }">주변 은행</router-link> |
-        <router-link :to="{ name: 'articles' }">커뮤니티</router-link>
+        <router-link :to="{ name: 'free-board' }">커뮤니티</router-link>
       </div>
       <div class="user-bar">
-        <!-- <span v-show="store2.token">
-          {{ store2.user.nickname }}님, 환영합니다!
-        </span> -->
+        <span v-show="store2.token">
+          {{ store2.profile.nickname }}님, 환영합니다! &nbsp;
+        </span>
         <router-link :to="{ name: 'login' }" v-show="!store2.token">
           <button class="login-btn">로그인</button>
         </router-link>

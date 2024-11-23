@@ -39,14 +39,18 @@ import axios from 'axios';
 const store2 = useAccountStore();
 const articles = ref([]);
 const showWriteForm = ref(false);
+const isLoading = ref(false);
 
 const fetchArticles = async () => {
   try {
+    isLoading.value = true;
     const response = await axios.get('http://127.0.0.1:8000/articles/');
     console.log('Article data:', response.data);
     articles.value = response.data;
   } catch (error) {
     console.error('게시글 로딩 실패:', error);
+  } finally {
+    isLoading.value = false;
   }
 };
 
@@ -79,11 +83,21 @@ const handleSubmit = async (articleData) => {
 
 const handleDelete = async (articleId) => {
   try {
+    if (!store2.token) {
+      alert('로그인이 필요합니다.');
+      return;
+    }
+
     await axios.delete(`http://127.0.0.1:8000/articles/${articleId}/`, {
       headers: { Authorization: `Token ${store2.token}` }
     });
     await fetchArticles();
   } catch (error) {
+    if (error.response?.status === 403) {
+      alert('본인이 작성한 게시글만 삭제할 수 있습니다.');
+    } else {
+      alert('게시글 삭제에 실패했습니다.');
+    }
     console.error('게시글 삭제 실패:', error);
   }
 };

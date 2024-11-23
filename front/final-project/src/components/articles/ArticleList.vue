@@ -9,16 +9,15 @@
           <th>작성일</th>
           <th>좋아요</th>
           <th>댓글</th>
-          <th>관리</th>
         </tr>
       </thead>
       <tbody>
         <ArticleItem
-          v-for="article in articles"
+          v-for="(article, index) in articles"
           :key="article.id"
           :article="article"
+          :index="index"
           @show-detail="showDetail"
-          @delete="$emit('delete', $event)"
           @like="$emit('like', $event)"
         />
       </tbody>

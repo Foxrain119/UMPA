@@ -6,7 +6,7 @@ import axios from 'axios'
 export const useAccountStore = defineStore('account', () => {
   const API_URL = 'http://127.0.0.1:8000'
   const ARTICLES_URL = `${API_URL}/articles`
-  const PROFILE_URL = `${API_URL}/profile`
+  const PROFILE_URL = `${API_URL}/profile/users`
   const articles = ref([])
   const profile = ref(null)
   const token = ref(null)
@@ -146,5 +146,29 @@ export const useAccountStore = defineStore('account', () => {
     router.push({ name: 'home' })
   }
 
-  return { API_URL, ARTICLES_URL, PROFILE_URL, articles, profile, token, isEditing, signUp, logIn, isLogin, logOut, getProfile, updateProfile }
+  const deleteAccount = async function () {
+    const username = localStorage.getItem('username')
+    
+    try {
+      await axios({
+        method: 'delete',
+        url: `${PROFILE_URL}/${username}/`,
+        headers: {
+          Authorization: `Token ${token.value}`
+        }
+      })
+      
+      // 회원 탈퇴 후 로그아웃 처리
+      token.value = null
+      profile.value = null
+      isEditing.value = false
+      localStorage.removeItem('username')
+      
+    } catch (error) {
+      console.error('Delete account error:', error.response?.data || error)
+      throw error // 에러를 상위로 전파하여 컴포넌트에서 처리할 수 있도록 함
+    }
+  }
+
+  return { API_URL, ARTICLES_URL, PROFILE_URL, articles, profile, token, isEditing, signUp, logIn, isLogin, logOut, getProfile, updateProfile, deleteAccount }
 }, { persist: true })

@@ -1,38 +1,40 @@
 <template>
-  <div class="article-form">
-    <h3>{{ isEdit ? '글 수정' : '새 글 작성' }}</h3>
-    <form @submit.prevent="handleSubmit">
-      <div class="form-group">
-        <label for="title">제목</label>
-        <input 
-          type="text" 
-          id="title" 
-          v-model="form.title" 
-          required
-          class="form-control"
-        >
-      </div>
-      
-      <div class="form-group">
-        <label for="content">내용</label>
-        <textarea 
-          id="content" 
-          v-model="form.content" 
-          required
-          class="form-control"
-          rows="5"
-        ></textarea>
-      </div>
+  <div class="article-form-overlay">
+    <div class="article-form">
+      <h3>{{ isEdit ? '글 수정' : '새 글 작성' }}</h3>
+      <form @submit.prevent="handleSubmit">
+        <div class="form-group">
+          <label for="title">제목</label>
+          <input 
+            type="text" 
+            id="title" 
+            v-model="form.title" 
+            required
+            class="form-control"
+          >
+        </div>
+        
+        <div class="form-group">
+          <label for="content">내용</label>
+          <textarea 
+            id="content" 
+            v-model="form.content" 
+            required
+            class="form-control"
+            rows="5"
+          ></textarea>
+        </div>
 
-      <div class="button-group">
-        <button type="submit" class="submit-btn">
-          {{ isEdit ? '수정' : '작성' }}
-        </button>
-        <button type="button" @click="$emit('close')" class="cancel-btn">
-          취소
-        </button>
-      </div>
-    </form>
+        <div class="button-group">
+          <button type="submit" class="submit-btn">
+            {{ isEdit ? '수정' : '작성' }}
+          </button>
+          <button type="button" @click="$emit('close')" class="cancel-btn">
+            취소
+          </button>
+        </div>
+      </form>
+    </div>
   </div>
 </template>
 
@@ -63,8 +65,22 @@ const handleSubmit = () => {
 </script>
 
 <style scoped>
+.article-form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
 .article-form {
   max-width: 800px;
+  width: 90%;
   margin: 0 auto;
   padding: 20px;
   border: 1px solid #ddd;

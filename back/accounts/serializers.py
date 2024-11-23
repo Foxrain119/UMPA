@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from .models import User, minzero_validator
+from financial_products.models import Deposit, Saving
 from dj_rest_auth.registration.serializers import RegisterSerializer
 from dj_rest_auth.serializers import UserDetailsSerializer, LoginSerializer
 from django.contrib.auth import get_user_model
@@ -66,7 +67,7 @@ class CustomUserDetailsSerializer(UserDetailsSerializer):
             'phone',
             'age',
             'gender',
-            # 'property',
+            'property',
             'marital_status',
             # 'financial_products',
             # 'contracted_deposit',
@@ -120,3 +121,29 @@ class CustomLoginSerializer(LoginSerializer):
                 return user
         except UserModel.DoesNotExist:
             return None
+        
+class DepositSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Deposit
+        fields = ['fin_prdt_cd', 'fin_prdt_nm', 'kor_co_nm']
+
+class SavingSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Saving
+        fields = ['fin_prdt_cd', 'fin_prdt_nm', 'kor_co_nm']
+
+
+class UserInfoSerializer(UserDetailsSerializer):
+    joined_deposits = DepositSerializer(many=True, read_only=True)
+    joined_savings = SavingSerializer(many=True, read_only=True)
+
+    # id = CustomUserDetailsSerializer()
+    # age = CustomUserDetailsSerializer()
+    # gender = CustomUserDetailsSerializer()
+    # property = CustomUserDetailsSerializer()
+    # merital_status = CustomUserDetailsSerializer()
+
+    class Meta:
+        model = UserModel
+        fields = ['id', 'age', 'gender', 'property', 'marital_status', 'joined_deposits', 'joined_savings']
+        # fields = '__all__'

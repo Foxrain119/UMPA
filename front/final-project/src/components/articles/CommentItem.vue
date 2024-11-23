@@ -47,7 +47,7 @@ const isEditing = ref(false);
 const editedContent = ref(props.comment.content);
 
 const isOwner = computed(() => {
-  return props.comment.user === store2.profile?.username;
+  return store2.token && store2.profile?.username === props.comment.user;
 });
 
 const formatDate = (dateString) => {
@@ -66,7 +66,12 @@ const startEdit = () => {
   editedContent.value = props.comment.content;
 };
 
-const saveEdit = () => {
+const saveEdit = async () => {
+  if (!isOwner.value) {
+    alert('본인이 작성한 댓글만 수정할 수 있습니다.');
+    return;
+  }
+
   if (editedContent.value.trim() !== props.comment.content) {
     emit('update', props.comment.id, editedContent.value);
   }

@@ -1,6 +1,6 @@
 <template>
   <tr class="article-item">
-    <td>{{ article.id }}</td>
+    <td>{{ index + 1 }}</td>
     <td>
       <a href="#" @click.prevent="$emit('show-detail', article)">
         {{ article.title }}
@@ -17,15 +17,6 @@
       </button>
     </td>
     <td>{{ article.comment_count }}</td>
-    <td>
-      <button 
-        v-if="isOwner" 
-        @click="$emit('delete', article.id)"
-        class="delete-btn"
-      >
-        삭제
-      </button>
-    </td>
   </tr>
 </template>
 
@@ -36,6 +27,10 @@ import { useAccountStore } from '@/stores/account';
 const props = defineProps({
   article: {
     type: Object,
+    required: true
+  },
+  index: {
+    type: Number,
     required: true
   }
 });
