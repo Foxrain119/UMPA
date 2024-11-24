@@ -1,6 +1,7 @@
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import status
+from django.db.models import Q
 
 # permission Decorators
 from rest_framework.decorators import permission_classes
@@ -105,3 +106,49 @@ def article_bookmarks(request, article_pk):
     else:
         article.bookmarked_users.add(request.user)
     return Response({'message': '북마크 완료'}, status=status.HTTP_200_OK)
+
+
+@api_view(['GET'])
+def article_search(request):
+    """
+    게시글 검색 API
+    
+    Query Parameters:
+    - type: 검색 유형 (title, title_content, user)
+    - keyword: 검색어
+    """
+    search_type = request.query_params.get('type', 'title')
+    keyword = request.query_params.get('keyword', '')
+    
+    if not keyword:
+        return Response([], status=status.HTTP_200_OK)
+    
+    try:
+        # 검색 유형에 따른 필터링
+        if search_type == 'title':
+            articles = Article.objects.filter(title__icontains=keyword)
+        elif search_type == 'title_content':
+            articles = Article.objects.filter(
+                Q(title__icontains=keyword) | 
+                Q(content__icontains=keyword)
+            )
+        elif search_type == 'user':
+            articles = Article.objects.filter(user__username__icontains=keyword)
+        else:
+            return Response(
+                {"error": "Invalid search type"}, 
+                status=status.HTTP_400_BAD_REQUEST
+            )
+        
+        # 검색 결과 정렬 (최신순)
+        articles = articles.order_by('-created_at')
+        
+        # 시리얼라이저를 통한 데이터 직렬화
+        serializer = ArticleSerializer(articles, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    
+    except Exception as e:
+        return Response(
+            {"error": str(e)}, 
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )

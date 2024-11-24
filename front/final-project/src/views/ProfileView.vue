@@ -1,7 +1,7 @@
 <template>
   <div class="profile-container">
     <div class="profile-card">
-      <h2>프로필 정보</h2>
+      <h2>회원 정보 관리</h2>
       
       <ProfileInfo 
         v-if="!store2.isEditing" 

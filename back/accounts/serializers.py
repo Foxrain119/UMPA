@@ -1,10 +1,10 @@
 from rest_framework import serializers
-from .models import User, minzero_validator
 from financial_products.models import Deposit, Saving
 from dj_rest_auth.registration.serializers import RegisterSerializer
 from dj_rest_auth.serializers import UserDetailsSerializer, LoginSerializer
 from django.contrib.auth import get_user_model
 UserModel = get_user_model()
+
 
 # 회원 가입 custom serializer
 class CustomRegisterSerializer(RegisterSerializer):
@@ -15,32 +15,30 @@ class CustomRegisterSerializer(RegisterSerializer):
     phone = serializers.CharField(
         max_length = 11,
         # validators=[User.phone_regex],
-        required=False
+        required=True
     )
     age = serializers.IntegerField(
         required=True,
-        validators=[minzero_validator]
     )
 
-    # 동적으로 unique 속성 필드에 대한 중복 검사
+    # 동적으로 unique 속성 필드에 대한 데이터 유효성 검사
     def validate(self, attrs):
-        unique_fields = ['phone', 'nickname']  # 검사할 필드 추가
+        unique_fields = ['phone', 'nickname', 'email']  # 검사할 필드 추가
         for field in unique_fields:
             value = attrs.get(field)
-            if value and User.objects.filter(**{field: value}).exists():
+            if value and UserModel.objects.filter(**{field: value}).exists():
                 raise serializers.ValidationError({field: f"이미 등록된 {field} 입니다."})
         return attrs
 
     # 필드 데이터 불러오기
     def get_cleaned_data(self):
-        return {
-            'username': self.validated_data.get('username', ''),
+        data = super().get_cleaned_data()
+        data.update({
             'nickname': self.validated_data.get('nickname', ''),
-            'password1': self.validated_data.get('password1', ''),
-            'email': self.validated_data.get('email', ''),
             'phone': self.validated_data.get('phone', ''),
             'age': self.validated_data.get('age', 0),
-        }
+        })
+        return data
     
     # 추가 로직(로그 기록, 외부 API 호출 등) 구현 시 필요한 save 메서드 오버라이드
     def save(self, request):
@@ -78,12 +76,12 @@ class CustomUserDetailsSerializer(UserDetailsSerializer):
             # 'bookmark_article_list',
             # 'liked_article_list'
         )
-        read_only_fields = ('username', 'email') # 변경 불가 필드들
+        read_only_fields = ('username', 'email')
 
     # 유니크 필드 검증(유효성 검증)
     def validate(self, attrs):
         user = self.context['request'].user
-        unique_fields = ['nickname', 'phone', 'email']
+        unique_fields = ['nickname', 'phone']
         for field in unique_fields:
             value = attrs.get(field)
             if value:
@@ -100,7 +98,7 @@ class CustomUserDetailsSerializer(UserDetailsSerializer):
 class CustomLoginSerializer(LoginSerializer):
     username = None
     email = serializers.EmailField(required=True)
-    password = serializers.CharField(style={'input_type': 'password'})
+    password = serializers.CharField(style={'input_type': 'password'}, required=True)
 
     def validate(self, attrs):
         email = attrs.get('email')

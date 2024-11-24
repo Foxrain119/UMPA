@@ -9,8 +9,8 @@
         <router-link :to="{ name: 'free-board' }">커뮤니티</router-link>
       </div>
       <div class="user-bar">
-        <span v-show="store2.token">
-          {{ store2.profile.nickname }}님, 환영합니다! &nbsp;
+        <span v-show="store2.token && store2.profile">
+          {{ store2.profile?.nickname }}님, 환영합니다! &nbsp;
         </span>
         <router-link :to="{ name: 'login' }" v-show="!store2.token">
           <button class="login-btn">로그인</button>

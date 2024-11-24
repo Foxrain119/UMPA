@@ -1,8 +1,8 @@
 <template>
   <div>
-    <h1>커뮤니티 페이지</h1>
+    <h1>커뮤니티</h1>
     <div class="board-nav">
-      <RouterLink :to="{ name: 'free-board' }">자유게시판</RouterLink> |
+      <!-- <RouterLink :to="{ name: 'free-board' }">자유게시판</RouterLink> | -->
       <!-- <RouterLink :to="{ name: 'review-board' }">금융상품 리뷰</RouterLink> |
       <RouterLink :to="{ name: 'showcase-board' }">상품 자랑</RouterLink> -->
     </div>

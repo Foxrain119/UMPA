@@ -1,23 +1,35 @@
 <template>
   <form @submit.prevent="handleSubmit" class="edit-form">
-    <div class="form-group">
-      <label>나이:</label>
-      <input 
-        type="number" 
-        v-model="editForm.age" 
-        class="form-control"
-        min="0"
+    <div class="profile-image-container">
+      <img 
+        :src="imagePreview || getProfileImageUrl(initialData?.profile_img)" 
+        alt="프로필 이미지" 
+        class="profile-image"
       >
+      <input 
+        type="file" 
+        @change="handleImageChange" 
+        accept="image/*"
+      >
+    </div>
+    <div class="form-group">
+      <label>닉네임:</label>
+      <input type="text" v-model="editForm.nickname" class="form-control">
     </div>
 
     <div class="form-group">
-      <label>자산 (만원):</label>
-      <input 
-        type="number" 
-        v-model="editForm.property" 
-        class="form-control"
-        min="0"
-      >
+      <label>연락처:</label>
+      <input type="text" v-model="editForm.phone" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label>나이:</label>
+      <input type="number" v-model="editForm.age" class="form-control" min="0">
+    </div>
+
+    <div class="form-group">
+      <label>자산 (원):</label>
+      <input type="number" v-model="editForm.property" class="form-control" min="0">
     </div>
 
     <div class="form-group">
@@ -68,15 +80,29 @@ const props = defineProps({
 const emit = defineEmits(['submit', 'cancel'])
 
 const editForm = ref({
+  nickname: '',
+  phone: '',
   age: '',
   property: '',
   marital_status: false,
   gender: 'N',
 })
 
+const imagePreview = ref(null)
+const imageFile = ref(null)
+
+const getProfileImageUrl = (profileImg) => {
+  if (!profileImg) {
+    return 'http://localhost:8000/media/profile_images/default_profile.png'
+  }
+  return `http://localhost:8000${profileImg}`
+}
+
 onMounted(() => {
   // 초기 데이터로 폼 초기화
   editForm.value = {
+    nickname: props.initialData?.nickname || '',
+    phone: props.initialData?.phone || '',
     age: props.initialData?.age || '',
     property: props.initialData?.property || '',
     marital_status: props.initialData?.marital_status || false,
@@ -84,31 +110,30 @@ onMounted(() => {
   }
 })
 
+const handleImageChange = (event) => {
+  const file = event.target.files[0]
+  if (file) {
+    imageFile.value = file
+    imagePreview.value = URL.createObjectURL(file)
+  }
+}
+
 const handleSubmit = () => {
-  // 유효성 검사
-  if (editForm.value.gender === 'N') {
-    window.alert('성별을 선택해주세요.')
-    return
+  const formData = new FormData()
+  
+  if (imageFile.value) {
+    formData.append('profile_img', imageFile.value)
   }
-
-  if (editForm.value.age && editForm.value.age < 0) {
-    window.alert('나이는 0보다 작을 수 없습니다.')
-    return
-  }
-
-  if (editForm.value.property && editForm.value.property < 0) {
-    window.alert('자산은 0보다 작을 수 없습니다.')
-    return
-  }
-
-  // 숫자 타입으로 변환 (빈 문자열이면 null로 설정)
-  const userData = {
-    ...editForm.value,
-    age: editForm.value.age ? Number(editForm.value.age) : null,
-    property: editForm.value.property ? Number(editForm.value.property) : null,
-  }
-
-  emit('submit', userData)
+  
+  // 다른 폼 데이터 추가
+  formData.append('nickname', editForm.value.nickname)
+  formData.append('phone', editForm.value.phone)
+  formData.append('age', editForm.value.age)
+  formData.append('property', editForm.value.property)
+  formData.append('marital_status', editForm.value.marital_status)
+  formData.append('gender', editForm.value.gender)
+  
+  emit('submit', formData)
 }
 
 const confirmDelete = async () => {
@@ -187,5 +212,17 @@ const confirmDelete = async () => {
 
 .delete-btn:hover {
   background: #dc3545;
+}
+
+.profile-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.profile-image-container {
+  margin-bottom: 1rem;
+  text-align: center;
 }
 </style> 

@@ -34,8 +34,12 @@ class ArticleSerializer(serializers.ModelSerializer):
     comment_set = CommentSerializer(many=True, read_only=True)
     comment_count = serializers.IntegerField(source='comment_set.count', read_only=True)
     like_users = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
+    like_count = serializers.SerializerMethodField()
 
     class Meta:
         model = Article
         fields = '__all__'
         read_only_fields = ('user', 'created_at', 'updated_at', 'like_users')
+
+    def get_like_count(self, obj):
+        return obj.like_users.count()

@@ -47,7 +47,8 @@ const isEditing = ref(false);
 const editedContent = ref(props.comment.content);
 
 const isOwner = computed(() => {
-  return store2.token && store2.profile?.username === props.comment.user;
+  const currentUsername = localStorage.getItem('username')
+  return store2.token && currentUsername === props.comment.user
 });
 
 const formatDate = (dateString) => {

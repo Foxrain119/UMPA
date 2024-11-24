@@ -58,8 +58,9 @@ const props = defineProps({
 const store2 = useAccountStore();
 
 const isOwner = computed(() => {
-  return store2.token && store2.profile?.username === props.article.user;
-});
+  const currentUsername = localStorage.getItem('username')
+  return store2.token && currentUsername === props.article.user
+})
 
 const formatDate = (dateString) => {
   const date = new Date(dateString);
@@ -90,9 +91,10 @@ const isEditing = ref(false);
 
 const handleEdit = async (formData) => {
   try {
-    if (!isOwner.value) {
-      alert('본인이 작성한 게시글만 수정할 수 있습니다.');
-      return;
+    const currentUsername = localStorage.getItem('username')
+    if (!store2.token || currentUsername !== props.article.user) {
+      alert('본인이 작성한 게시글만 수정할 수 있습니다.')
+      return
     }
 
     await axios.put(`http://127.0.0.1:8000/articles/${props.article.id}/`, 

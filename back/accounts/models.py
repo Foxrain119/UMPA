@@ -4,9 +4,10 @@ from imagekit.models import ProcessedImageField
 from imagekit.processors import ResizeToFill
 from django.core.validators import RegexValidator, MinValueValidator, MaxValueValidator
 from allauth.account.adapter import DefaultAccountAdapter
+from django.conf import settings
 # from django.contrib.postgres.fields import ArrayField
 
-minzero_validator = MinValueValidator(0)
+
 class User(AbstractUser):
     # phone_regex = RegexValidator(
     #     regex = r'^01([0|1|6|7|8|9]?)-?([0-9]{3,4})-?([0-9]{4})$',
@@ -26,7 +27,7 @@ class User(AbstractUser):
     # )
     phone = models.CharField(max_length=11, blank=True)
 
-    age = models.IntegerField(null=True, blank=True)
+    age = models.IntegerField(validators=[MinValueValidator(0)], null=True, blank=True)
     
     profile_img = ProcessedImageField(
         upload_to='profile_images/',
@@ -35,7 +36,7 @@ class User(AbstractUser):
         options={'quality': 90},
         blank=True,
         null=True,
-        default='default_profile.jpg'  # 기본 이미지 파일명 (static 폴더에 위치)
+        default='profile_images/default_profile.png'
     )
     
     nickname = models.CharField(

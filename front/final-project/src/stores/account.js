@@ -56,6 +56,7 @@ export const useAccountStore = defineStore('account', () => {
       url: `${PROFILE_URL}/${username}/`,
       data: payload,
       headers: {
+        'Content-Type': 'multipart/form-data',
         Authorization: `Token ${token.value}`
       }
     })
@@ -90,46 +91,37 @@ export const useAccountStore = defineStore('account', () => {
       .catch(err => console.log(err))
   }
 
-  const logIn = function (payload) {
-    const email = payload.email
-    const password = payload.password
-
-    axios({
-      method: 'post',
-      url: `${API_URL}/accounts/login/`,
-      data: {
-        email, password
-      }
-    })
-     .then(res => {
-       console.log('Login response:', res.data)  // 로그인 응답 데이터 확인
-       token.value = res.data.key
-       // username이 응답에 포함되어 있는지 확인
-       if (res.data.username) {
-         localStorage.setItem('username', res.data.username)
-         console.log('Stored username:', res.data.username)
-       } else {
-         // username이 없다면 추가 요청으로 사용자 정보 가져오기
-         return axios({
-           method: 'get',
-           url: `${API_URL}/accounts/user/`,
-           headers: {
-             Authorization: `Token ${res.data.key}`
-           }
-         })
-       }
-     })
-     .then(userRes => {
-       if (userRes) {
-         localStorage.setItem('username', userRes.data.username)
-         console.log('Stored username from user info:', userRes.data.username)
-       }
-       router.push({ name: 'home' })
-     })
-     .catch(err => {
-       console.error('Login error:', err.response || err)
-       window.alert('로그인에 실패했습니다.')
-     })
+  const logIn = async function (payload) {
+    try {
+      const { email, password } = payload
+      
+      const loginRes = await axios({
+        method: 'post',
+        url: `${API_URL}/accounts/login/`,
+        data: { email, password }
+      })
+      
+      token.value = loginRes.data.key
+      
+      // 사용자 정보 가져오기
+      const userRes = await axios({
+        method: 'get',
+        url: `${API_URL}/accounts/user/`,
+        headers: {
+          Authorization: `Token ${loginRes.data.key}`
+        }
+      })
+      
+      localStorage.setItem('username', userRes.data.username)
+      
+      // 프로필 정보 즉시 가져오기
+      await getProfile()
+      
+      router.push({ name: 'home' })
+    } catch (error) {
+      console.error('Login error:', error.response || error)
+      window.alert('로그인에 실패했습니다.')
+    }
   }
 
   const isLogin = computed(() => {
@@ -141,9 +133,11 @@ export const useAccountStore = defineStore('account', () => {
   })
 
   const logOut = function () {
-    window.alert('로그아웃이 완료되었습니다.')
     token.value = null
+    localStorage.removeItem('username')
+    profile.value = null
     router.push({ name: 'home' })
+    window.alert('로그아웃이 완료되었습니다.')
   }
 
   const deleteAccount = async function () {
