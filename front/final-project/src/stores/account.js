@@ -11,6 +11,7 @@ export const useAccountStore = defineStore('account', () => {
   const router = useRouter()
   const profile = ref(null)
   const userInfo = ref([])
+  const isEditing = ref(false)
 
   const getProfile = function () {
     if (!token.value) {
@@ -30,7 +31,7 @@ export const useAccountStore = defineStore('account', () => {
 
     axios({
       method: 'get',
-      url: `${PROFILE_URL}/${username}/`,
+      url: `${PROFILE_URL}/users/${username}/`,
       headers: {
         Authorization: `Token ${token.value}`
       }
@@ -45,15 +46,38 @@ export const useAccountStore = defineStore('account', () => {
         window.alert('프로필 정보를 불러오는 데 실패했습니다.')
         router.push({ name: 'home' })
       })
-    }
+  }
+  
+  const updateProfile = function (payload) {
+    const username = localStorage.getItem('username')
+
+    axios({
+      method: 'put',
+      url: `${PROFILE_URL}/users/${username}/`,
+      data: payload,
+      headers: {
+        Authorization: `Token ${token.value}`
+      }
+    })
+      .then(res => {
+        profile.value = res.data
+        isEditing.value = false
+        window.alert('프로필 정보가 수정되었습니다.')
+        getProfile()
+      })
+      .catch(err => {
+        console.error('Profile update error:', err.response?.data || err)
+        window.alert('프로필 정보 수정에 실패했습니다.')
+      })
+  }
 
   const getUserInfo = function () {
     axios({
       method: 'get',
-      url: `${PROFILE_URL}/user_info/`,
-      headers: {
-        Authorization: `Token ${token.value}`
-      }
+      url: `${PROFILE_URL}/user_list/`,
+      // headers: {
+      //   Authorization: `Token ${token.value}`
+      // }
     })
     .then(res => {
       console.log(res.data)
@@ -139,5 +163,5 @@ export const useAccountStore = defineStore('account', () => {
     router.push({ name: 'home' })
   }
 
-  return { token, userInfo, getProfile, getUserInfo, signUp, logIn, isLogin, logOut }
+  return { token, userInfo, profile, isEditing, getProfile, updateProfile, getUserInfo, signUp, logIn, isLogin, logOut }
 }, { persist: true })

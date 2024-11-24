@@ -41,6 +41,7 @@ const logOut = function () {
 onMounted(() => {
   store.getProducts()
   store.getExchages()
+  store2.getUserInfo()
 })
 </script>
 

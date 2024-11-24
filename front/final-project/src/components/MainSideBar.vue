@@ -1,10 +1,11 @@
 <template>
   <div>
-    <p>MainSideBar</p>
+    <ExchangeSideBar />
   </div>
 </template>
 
 <script setup>
+import ExchangeSideBar from '@/components/exchange/ExchangeSideBar.vue';
 
 </script>
 

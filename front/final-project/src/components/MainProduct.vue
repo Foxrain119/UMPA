@@ -75,7 +75,8 @@ const toSav = () => {
 <style scoped>
 article {
   border: 1px solid black;
-  min-width: 500px;
+  width: 500px;
+  margin: auto;
 }
 .card-wth {
   cursor: pointer;

@@ -94,7 +94,7 @@ export const useFinanceStore = defineStore('finance', () => {
             return 0;
           }
         })
-        console.log('적금 정렬 완료')
+        console.log('상품 정렬 완료')
       })
       .catch(err => console.log(err))
     

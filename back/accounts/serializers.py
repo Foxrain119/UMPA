@@ -140,18 +140,21 @@ class CustomLoginSerializer(LoginSerializer):
             return None
 
 
+
+
+
 from financial_products.models import Deposit, Saving
 
 
 class DepositSerializer(serializers.ModelSerializer):
     class Meta:
         model = Deposit
-        fields = ['fin_prdt_cd', 'fin_prdt_nm', 'kor_co_nm']
+        fields = ['id']
 
 class SavingSerializer(serializers.ModelSerializer):
     class Meta:
         model = Saving
-        fields = ['fin_prdt_cd', 'fin_prdt_nm', 'kor_co_nm']
+        fields = ['id']
 
 
 class UserInfoSerializer(UserDetailsSerializer):
