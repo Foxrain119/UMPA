@@ -2,7 +2,13 @@
   <div class="finance-container">
     <h1>금융 상품 비교</h1>
     <div class="nav-links">
-      <RouterLink to="deposit" class="nav-link">예적금 상품 검색</RouterLink>
+      <RouterLink 
+        to="search_products" 
+        class="nav-link"
+        :class="{ 'router-link-active': $route.path.includes('deposit') || $route.path.includes('saving') }"
+      >
+        예적금 상품 검색
+      </RouterLink>
       <RouterLink to="recommend_products" class="nav-link">상품 추천</RouterLink>
     </div>
     <RouterView />

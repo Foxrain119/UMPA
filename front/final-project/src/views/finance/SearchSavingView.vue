@@ -1,6 +1,19 @@
 <template>
   <div class="search-container">
-    <form @submit.prevent="searchSavings" class="search-form">
+    <form @submit.prevent="searchingSaving" class="search-form">
+      <div class="form-group">
+        <label for="period">기간 :</label>
+        <select name="period" id="period" v-model="period">
+          <option :value="null">전체</option>
+          <option value="1">1개월</option>
+          <option value="3">3개월</option>
+          <option value="6">6개월</option>
+          <option value="12">12개월</option>
+          <option value="24">24개월</option>
+          <option value="36">36개월</option>
+        </select>
+      </div>
+
       <div class="form-group">
         <label for="rateMethod">이자 계산 방식 :</label>
         <select name="rateMethod" id="rateMethod" v-model="rateMethod">
@@ -191,14 +204,8 @@ onMounted(async () => {
   font-size: 0.9rem;
 }
 
-.submit-group {
-  display: flex;
-  align-items: flex-end;
-}
-
 .search-btn {
-  width: 100%;
-  padding: 0.7rem;
+  padding: 0.7rem 2rem;
   background-color: #007bff;
   color: white;
   border: none;

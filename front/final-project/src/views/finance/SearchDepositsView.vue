@@ -1,6 +1,19 @@
 <template>
   <div class="search-container">
-    <form @submit.prevent="searchProducts" class="search-form">
+    <form @submit.prevent="searchingDeposit" class="search-form">
+      <div class="form-group">
+        <label for="period">기간 :</label>
+        <select name="period" id="period" v-model="period">
+          <option :value="null">전체</option>
+          <option value="1">1개월</option>
+          <option value="3">3개월</option>
+          <option value="6">6개월</option>
+          <option value="12">12개월</option>
+          <option value="24">24개월</option>
+          <option value="36">36개월</option>
+        </select>
+      </div>
+
       <div class="form-group">
         <label for="rateMethod">이자 계산 방식 :</label>
         <select name="rateMethod" id="rateMethod" v-model="rateMethod">
@@ -61,7 +74,7 @@
 
 <script setup>
 import ProductItem from '@/components/finance/ProductItem.vue';
-import { computed, ref, onMounted, watch } from 'vue'
+import { computed, ref, onMounted } from 'vue'
 import { useFinanceStore } from '@/stores/finance';
 
 const store = useFinanceStore()
@@ -70,15 +83,23 @@ onMounted(async () => {
   await store.getProducts()
 })
 
-const deposits = computed(() => store.deposits)
+const deposits = ref(store.deposits.sort(function (a, b) {
+  const optionA = a.option.find(opt => opt.save_trm === 6);
+  const optionB = b.option.find(opt => opt.save_trm === 6);
 
-// searchedDeposit을 computed로 변경하여 deposits의 변화를 감지
-const searchedDeposit = ref([])
+  if (optionA && optionB) {
+    return optionB.intr_rate2 - optionA.intr_rate2;
+  } else if (optionA) {
+    return -1;
+  } else if (optionB) {
+    return 1;
+  } else {
+    return 0;
+  }
+}))
 
-// deposits가 변경될 때마다 searchedDeposit 업데이트
-watch(() => deposits.value, (newDeposits) => {
-  searchedDeposit.value = newDeposits
-}, { immediate: true })
+const searchedDeposit = ref()
+searchedDeposit.value = deposits.value
 
 // 검색 조건
 const period = ref(null)
@@ -87,13 +108,19 @@ const maxLimit = ref(null)
 const rate = ref(null)
 const keyword = ref(null)
 
-// 검색 실행 함수
-const searchProducts = () => {
-  let searched = [...deposits.value]
-  
+// 기존 검색 알고리즘 유지
+const searchingDeposit = function () {
+  let searched = deposits.value
+  if (period.value) {
+    searched = searched.filter((el) => {
+      return el.option.some((el) => {
+        return el.save_trm.toString() === period.value
+      })
+    })
+  }
   if (rateMethod.value) {
     searched = searched.filter((el) => {
-      return el.option.some((opt) => opt.intr_rate_type_nm === rateMethod.value)
+      return el.option.some((el) => el.intr_rate_type_nm === rateMethod.value)
     })
   }
   if (maxLimit.value) {
@@ -103,7 +130,7 @@ const searchProducts = () => {
   }
   if (rate.value) {
     searched = searched.filter((el) => {
-      return el.option.some((opt) => opt.intr_rate2 >= rate.value)
+      return el.option.some((el) => el.intr_rate2 >= rate.value)
     })
   }
   if (keyword.value) {
@@ -119,6 +146,7 @@ const searchProducts = () => {
         return false
       })
     })
+    keyword.value = null
   }
   searchedDeposit.value = searched
   currentPage.value = 1
@@ -141,7 +169,6 @@ const prePage = () => {
 const nextPage = () => {
   currentPage.value += 1
 }
-
 </script>
 
 <style scoped>

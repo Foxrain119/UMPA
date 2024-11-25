@@ -52,8 +52,9 @@ const router = createRouter({
               path: '/saving',
               name: 'saving',
               component: SearchSavingView,
-            },
-          ]
+            }
+          ],
+          redirect: '/deposit'
         },
         {
           path: '/detail',
