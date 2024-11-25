@@ -11,15 +11,20 @@ export const useFinanceStore = defineStore('finance', () => {
   // 금융 상품
   const deposits = ref([])
   const savings = ref([])
-
-  const detail = ref([])
+  const detail = ref({})
   
   // 환율
   const exchanges = ref([])
 
   const goDetail = (product) => {
-    detail.value = product
-    console.log(product)
+    const product_type = product.rsrv_type_nm ? 'saving' : 'deposit'
+    
+    detail.value = {
+      ...product,
+      product_type
+    }
+    
+    console.log('Setting detail with type:', detail.value)
     router.push({ name: 'detail' })
   }
 
@@ -40,94 +45,91 @@ export const useFinanceStore = defineStore('finance', () => {
     .catch(err => console.log(err))
   }
 
-  const getProducts = function () {
-    // 예금 + 옵션
-    axios({
-      method: 'get',
-      url: `${API_URL}/financial/deposit_list/`,
-    })
-      .then(res => {
-        console.log(res.data)
-        deposits.value = res.data
+  // 예금 상품 목록 조회
+  const getDepositList = async function () {
+    try {
+      const response = await axios({
+        method: 'get',
+        url: `${API_URL}/financial/deposit_list/`,
       })
-      .catch(err => console.log(err))
-    
-    // 적금 + 옵션
-    axios({
-      method: 'get',
-      url: `${API_URL}/financial/saving_list/`,
-    })
-      .then(res => {
-        console.log(res.data)
-        savings.value = res.data
-      })
-      .catch(err => console.log(err))
-
-    // // 옵션
-    // axios({
-    //   method: 'get',
-    //   url: `${API_URL}/financial/deposit_option_list/`,
-    // })
-    //   .then(res => {
-    //     console.log(res.data)
-    //     deposit_options.value = res.data
-    //   })
-    //   .catch(err => console.log(err))
+      deposits.value = response.data
+    } catch (error) {
+      console.error('예금 상품 목록 조회 실패:', error)
+      throw error
+    }
   }
 
+  // 적금 상품 목록 조회
+  const getSavingList = async function () {
+    try {
+      const response = await axios({
+        method: 'get',
+        url: `${API_URL}/financial/saving_list/`,
+      })
+      savings.value = response.data
+    } catch (error) {
+      console.error('적금 상품 목록 조회 실패:', error)
+      throw error
+    }
+  }
 
-  // const signUp = function (payload) {
-  //   const { username, password1, password2 } = payload
+  // 전체 상품 목록 조회
+  const getProducts = async function () {
+    await Promise.all([
+      getDepositList(),
+      getSavingList()
+    ])
+  }
 
-  //   axios({
-  //     method: 'post',
-  //     url: `${API_URL}/accounts/signup/`,
-  //     data: {
-  //       username, password1, password2
-  //     }
-  //   })
-  //     .then(res => {
-  //       console.log('회원가입이 완료되었습니다.')
-  //       const password = password1
-  //       logIn({ username, password })
-  //       router.push({ name: 'home' })
-  //     })
-  //     .catch(err => console.log(err))
-  // }
+  // 예금 상품 상세 정보 조회
+  const getDepositDetail = async (fin_prdt_cd) => {
+    try {
+      const response = await axios.get(`${API_URL}/financial/deposit_list/${fin_prdt_cd}/`)
+      return response.data
+    } catch (error) {
+      console.error('예금 상품 상세 정보 조회 실패:', error)
+      throw error
+    }
+  }
 
-  // const logIn = function (payload) {
-  //   const username = payload.username
-  //   const password = payload.password
-  //   axios({
-  //     method: 'post',
-  //     url: `${API_URL}/accounts/login/`,
-  //     data: {
-  //       username, password
-  //     }
-  //   })
-  //    .then(res => {
-  //     console.log('로그인이 완료되었습니다.')
-  //     console.log(res.data)
-  //     token.value = res.data.key
-  //     router.push({ name: 'home' })
-  //    })
-  //    .catch(err => console.log(err))
-  // }
+  // 적금 상품 상세 정보 조회
+  const getSavingDetail = async (fin_prdt_cd) => {
+    try {
+      const response = await axios.get(`${API_URL}/financial/saving_list/${fin_prdt_cd}/`)
+      return response.data
+    } catch (error) {
+      console.error('적금 상품 상세 정보 조회 실패:', error)
+      throw error
+    }
+  }
 
-  // const isLogin = computed(() => {
-  //   if (token.value === null) {
-  //     return false
-  //   } else {
-  //     return true
-  //   }
-  // })
+  // 상품의 금리 정보 조회
+  const getProductRates = async (products) => {
+    const rates = []
+    
+    for (const product of products) {
+      try {
+        let detail
+        if (product.type === 'deposit') {
+          detail = await getDepositDetail(product.fin_prdt_cd)
+        } else {
+          detail = await getSavingDetail(product.fin_prdt_cd)
+        }
+        
+        // 선택된 기간에 맞는 금리 정보 추출
+        const rate = {
+          name: `${product.kor_co_nm} ${product.fin_prdt_nm}`,
+          rates: detail.options || []  // 옵션에서 금리 정보 추출
+        }
+        rates.push(rate)
+      } catch (error) {
+        console.error(`상품 ${product.fin_prdt_cd} 금리 정보 조회 실패:`, error)
+      }
+    }
+    
+    return rates
+  }
 
-  // const logOut = function () {
-  //   token.value = null
-  //   router.push({ name: 'home' })
-  // }
-
-  return { deposits, savings, detail, exchanges, goDetail, goBack, getProducts, getExchages, token
-    // signUp, logIn, isLogin, logOut
+  return { deposits, savings, detail, exchanges, goDetail, goBack, getProducts, getExchages, token, getDepositList, getSavingList, getDepositDetail, getSavingDetail, getProductRates
   }
 }, { persist: true })

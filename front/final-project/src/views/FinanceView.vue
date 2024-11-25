@@ -1,9 +1,9 @@
 <template>
-  <div>
-    <h1>금융 페이지</h1>
-    <div class="txt_box">
-      <RouterLink to="deposit">예적금 상품 검색</RouterLink> |
-      <RouterLink to="recommend_products">상품 추천</RouterLink>
+  <div class="finance-container">
+    <h1>금융 상품 비교</h1>
+    <div class="nav-links">
+      <RouterLink to="deposit" class="nav-link">예적금 상품 검색</RouterLink>
+      <RouterLink to="recommend_products" class="nav-link">상품 추천</RouterLink>
     </div>
     <RouterView />
   </div>
@@ -16,7 +16,40 @@ import { RouterLink, RouterView } from 'vue-router';
 </script>
 
 <style scoped>
-/* .txt_box {
+.finance-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 2rem;
   text-align: center;
-} */
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.nav-link {
+  padding: 0.5rem 1rem;
+  color: #666;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #007bff;
+  background-color: #f8f9fa;
+}
+
+.router-link-active {
+  color: #007bff;
+  font-weight: bold;
+}
 </style>

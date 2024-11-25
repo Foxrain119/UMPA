@@ -164,5 +164,54 @@ export const useAccountStore = defineStore('account', () => {
     }
   }
 
-  return { API_URL, ARTICLES_URL, PROFILE_URL, articles, profile, token, isEditing, signUp, logIn, isLogin, logOut, getProfile, updateProfile, deleteAccount }
+  // 상품 가입 취소
+  const cancelProduct = async function (productId, type) {
+    const username = localStorage.getItem('username')
+    
+    try {
+      await axios({
+        method: 'delete',
+        url: `${PROFILE_URL}/${username}/products/cancel/`,
+        data: {
+          fin_prdt_cd: productId,
+          product_type: type
+        },
+        headers: {
+          Authorization: `Token ${token.value}`
+        }
+      })
+      
+      // 프로필 정보 갱신
+      await getProfile()
+      
+    } catch (error) {
+      console.error('상품 가입 취소 실패:', error.response?.data || error)
+      throw error
+    }
+  }
+
+  // 상품 가입
+  const joinProduct = async function (productData) {
+    const username = localStorage.getItem('username')
+    
+    try {
+      await axios({
+        method: 'post',
+        url: `${PROFILE_URL}/${username}/products/join/`,
+        data: productData,
+        headers: {
+          Authorization: `Token ${token.value}`
+        }
+      })
+      
+      // 프로필 정보 갱신
+      await getProfile()
+      
+    } catch (error) {
+      console.error('상품 가입 실패:', error.response?.data || error)
+      throw error
+    }
+  }
+
+  return { API_URL, ARTICLES_URL, PROFILE_URL, articles, profile, token, isEditing, signUp, logIn, isLogin, logOut, getProfile, updateProfile, deleteAccount, cancelProduct, joinProduct }
 }, { persist: true })

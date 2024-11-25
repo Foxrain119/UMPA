@@ -13,7 +13,7 @@ class Deposit(models.Model):
     join_way = models.TextField()                # 가입 방법
     spcl_cnd = models.TextField()                # 우대 조건
     max_limit	= models.IntegerField(null=True)   # 최고한도
-    joined_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='joined_deposits')
+    joined_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='joined_deposits', blank=True)
 
 
 class DepositOption(models.Model):
@@ -36,7 +36,7 @@ class Saving(models.Model):
     join_way = models.TextField()                # 가입 방법
     spcl_cnd = models.TextField()                # 우대 조건
     max_limit	= models.IntegerField(null=True)   # 최고한도
-    joined_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='joined_savings')
+    joined_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='joined_savings', blank=True)
 
   
 class SavingOption(models.Model):

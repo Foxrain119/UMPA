@@ -2,14 +2,17 @@
   <div>
     <div class="txt_box">
       <RouterLink 
-        :to="{ name: 'deposit' }"
-        class="router-link-active router-link-exact-active"
-        aria-current="page"
+        to="deposit"
+        class="nav-link"
+        :class="{ active: $route.name === 'deposit' }"
       >예금</RouterLink> |
-      <RouterLink :to="{ name: 'saving' }">적금</RouterLink>
+      <RouterLink 
+        to="saving"
+        class="nav-link"
+        :class="{ active: $route.name === 'saving' }"
+      >적금</RouterLink>
     </div>
     <RouterView />
-    <br><br><br><br><br>
   </div>
 </template>
 
@@ -21,5 +24,22 @@ import { RouterLink, RouterView } from 'vue-router';
 <style scoped>
 .txt_box {
   text-align: center;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+}
+
+.nav-link {
+  padding: 0.5rem 1rem;
+  color: #666;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-link.active {
+  color: #007bff;
+  font-weight: bold;
 }
 </style>
