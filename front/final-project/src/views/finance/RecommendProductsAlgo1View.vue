@@ -1,5 +1,5 @@
 <template>
-  <div v-if="token && profile">
+  <div v-if="token && userInfo && profile">
     <div class="search-box">
       <form class="search-condition" @submit.prevent="recommend">
         <div>{{ userInfo.nickname }}님과 비슷한 유저의 인기 가입 상품 top 5</div>
@@ -7,7 +7,7 @@
         <div>
           <label for="marital_status">결혼 여부 :</label>
           <select name="marital_status" id="marital_status" v-model="marital_status">
-            <option :value="null">전체</option>
+            <option value="null">전체</option>
             <option :value="false">미혼</option>
             <option :value="true">기혼</option>
           </select>
@@ -48,22 +48,22 @@
     </div>
 
     <!-- 추천 상품 목록 -->
-    <div>
+    <div v-if="recommendDeposit && recommendSaving">
       <div>
         <p>예금 추천 top 5</p>
         <div 
         class="card card-wth m-1 row"
-          v-for="c in 5"
-          :key="c"
-          @click.prevent="goDetail(recommendProducts[c-1])"
+          v-for="(product, index) in recommendDeposit"
+          :key="index"
+          @click.prevent="goDetail(product)"
         >
           <div class="card-detail">
-          <p style="margin-right: 10px;">{{ c }}</p>
-          <p class="pdt-name">{{ recommendProducts[c-1].fin_prdt_nm }}</p>
-          <p class="pdt-bank">{{ recommendProducts[c-1].kor_co_nm }}</p>
-          <p>{{ recommendProducts[c-1].option.reduce((max, cur) => {
+          <p style="margin-right: 10px;">{{ index + 1 }}</p>
+          <p class="pdt-name">{{ product.fin_prdt_nm }}</p>
+          <p class="pdt-bank">{{ product.kor_co_nm }}</p>
+          <p>{{ product.option.reduce((max, cur) => {
                 return cur.intr_rate2 > max ? cur.intr_rate2 : max;
-              }, recommendProducts[c-1].option[0].intr_rate2) }}%</p>
+              }, product.option[0]?.intr_rate2 || 0) }}%</p>
           </div>
         </div>
       </div>
@@ -72,57 +72,61 @@
         <p>적금 추천 top 5</p>
         <div 
         class="card card-wth m-1 row"
-          v-for="c in 5"
-          :key="c"
-          @click.prevent="goDetail(recommendProducts[c+4])"
+        v-for="(product, index) in recommendSaving"
+        :key="index"
+          @click.prevent="goDetail(product)"
         >
           <div class="card-detail">
-          <p style="margin-right: 10px;">{{ c }}</p>
-          <p class="pdt-name">{{ recommendProducts[c+4].fin_prdt_nm }}</p>
-          <p class="pdt-bank">{{ recommendProducts[c+4].kor_co_nm }}</p>
-          <p>{{ recommendProducts[c+4].option.reduce((max, cur) => {
+          <p style="margin-right: 10px;">{{ index + 1 }}</p>
+          <p class="pdt-name">{{ product.fin_prdt_nm }}</p>
+          <p class="pdt-bank">{{ product.kor_co_nm }}</p>
+          <p>{{ product.option.reduce((max, cur) => {
                 return cur.intr_rate2 > max ? cur.intr_rate2 : max;
-              }, recommendProducts[c+4].option[0].intr_rate2) }}%</p>
+              }, product.option[0].intr_rate2) }}%</p>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <div v-if="!token">
+  <div v-else>
     <p>로그인이 필요합니다</p>
   </div>
 </template>
 
 
 <script setup>
-import { computed, ref } from 'vue'
+import { computed, ref, onMounted } from 'vue'
 import { useAccountStore } from '@/stores/account';
 import { useFinanceStore } from '@/stores/finance';
-// import { onMounted } from 'vue';
 
 const store = useFinanceStore()
 const store2 = useAccountStore()
 
-// onMounted(() => {
-//   store2.getProfile()
-// })
+const token = store2.token
+
+onMounted(() => {
+  if (token) {
+    store2.getProfile();
+  }
+})
 
 const userInfo = store2.userInfo
 const profile = store2.profile
-const token = store2.token
 
-const marital_status = ref(profile.marital_status)
-const age = ref(profile.age)
+const marital_status = ref(profile?.marital_status)
+const age = ref(profile?.age)
 const ageRange = ref(0)
-const gender = ref(profile.gender)
-const property = ref(profile.property)
+const gender = ref(profile?.gender)
+const property = ref(profile?.property)
 const propertyRange = ref(5)
 
 const deposits = store.deposits
 const savings = store.savings
 
-const recommendProducts = ref(deposits.slice(0,5).concat(savings.slice(0,5)))
+const recommendDeposit = ref(null)
+const recommendSaving = ref(null)
+
 
 const recommend = function () {
   let info = store2.userInfo
@@ -213,7 +217,8 @@ const recommend = function () {
       return 0;
     }
   })
-  recommendProducts.value = recommend_deposit.concat(recommend_saving)
+  recommendDeposit.value = recommend_deposit
+  recommendSaving.value = recommend_saving
 }
 
 

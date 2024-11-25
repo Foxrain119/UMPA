@@ -160,3 +160,71 @@ def saving_list(request):
     savings = Saving.objects.all()
     serializer = SavingFullListSerializer(savings, many=True)
     return Response(serializer.data)
+
+
+from rest_framework.views import APIView
+from django.http import JsonResponse
+import json
+from openai import OpenAI
+
+@api_view(['POST'])
+def chat_bot(request):
+    client = OpenAI()
+
+    completion = client.chat.completions.create(
+    model="ft:gpt-4o-mini-org-IXoNrsw32kBeTEghLnl6ZYzD",
+    messages=[
+        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "user", "content": "Hello!"}
+    ]
+    )
+    print(completion.choices[0].message)
+
+    # user_input = json.loads(request.body).get("message")  # 클라이언트에서 받은 입력값
+    # print(user_input)
+    # headers = {
+    #     "Authorization": f"Bearer {settings.API_KEY_AI}",
+    #     "Content-Type": "application/json",
+    # }
+    # data = {
+    #     # "model": "gpt-4",
+    #     "model": "ft:gpt-4o-mini:my-org:custom_suffix:ftjob-DfIsYT7W7teVmOv6briv8Jz0",
+    #     "messages": [{"role": "user", "content": user_input}],
+    # }
+    # response = requests.post(
+    #     "https://api.openai.com/v1/chat/completions", 
+    #     headers=headers, 
+    #     json=data
+    # )
+    # print(response.json())
+    # return JsonResponse(response.json())
+
+    # if request.method == "POST":
+    #     try:
+    #         body = json.loads(request.body)
+    #         user_message = body.get("message", "").strip()
+            
+    #         if not user_message:
+    #             return JsonResponse({"error": "No message provided"}, status=400)
+            
+    #         # 커스텀 ChatGPT URL로 요청 보내기
+    #         response = requests.post(
+    #             "https://chatgpt.com/g/g-6743d16a95988191a61df6ea1ac3ba78-umpa-yejeoggeum-sangpum-cuceon-chat-bot",
+    #             json={"message": user_message},  # 요청 데이터
+    #             headers={
+    #                 "Content-Type": "application/json",  # 데이터 타입 설정
+    #                 # 필요한 경우 추가 헤더 (인증 토큰 등)
+    #                 # "Authorization": "Bearer YOUR_ACCESS_TOKEN"
+    #             }
+    #         )
+            
+    #         if response.status_code == 200:
+    #             # 응답 데이터 파싱
+    #             response_data = response.json()
+    #             return JsonResponse({"message": response_data.get("message", "No response received.")})
+    #         else:
+    #             return JsonResponse({"error": "Failed to fetch response from custom ChatGPT."}, status=response.status_code)
+        
+    #     except json.JSONDecodeError:
+    #         return JsonResponse({"error": "Invalid JSON format"}, status=400)
+    # return JsonResponse({"error": "Invalid request method"}, status=405)

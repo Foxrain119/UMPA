@@ -10,7 +10,7 @@
         <p><strong>나이:</strong> {{ store2.profile?.age }}</p>
         <p><strong>자산:</strong> {{ store2.profile?.property }}만원</p>
         <p><strong>결혼여부:</strong> {{ store2.profile?.marital_status ? '기혼' : '미혼' }}</p>
-        <p><strong>성별:</strong> {{ store2.profile?.gender === 'M' ? '남성' : '여성' }}</p>
+        <p><strong>성별:</strong> {{ store2.profile?.gender === 'M' ? '남성' : store2.profile?.gender === 'F' ? '여성' : '' }}</p>
         
         <button @click="startEdit" class="edit-btn">
           정보 수정

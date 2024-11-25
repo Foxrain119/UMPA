@@ -7,17 +7,17 @@
       <div v-show="flag">
         <div 
         class="card card-wth m-1 row"
-          v-for="c in count"
-          :key="c"
-          @click.prevent="goDetail(deposits[c-1])"
+          v-for="(product, index)  in deposits"
+          :key="index"
+          @click.prevent="goDetail(product)"
         >
           <div class="card-detail">
-          <p style="margin-right: 10px;">{{ c }}</p>
-          <p class="pdt-name">{{ deposits[c-1].fin_prdt_nm }}</p>
-          <p class="pdt-bank">{{ deposits[c-1].kor_co_nm }}</p>
-          <p>{{ deposits[c-1].option.reduce((max, cur) => {
+          <p style="margin-right: 10px;">{{ index + 1 }}</p>
+          <p class="pdt-name">{{ product.fin_prdt_nm }}</p>
+          <p class="pdt-bank">{{ product.kor_co_nm }}</p>
+          <p>{{ product.option.reduce((max, cur) => {
                 return cur.intr_rate2 > max ? cur.intr_rate2 : max;
-              }, deposits[c-1].option[0].intr_rate2) }}%</p>
+              }, product.option[0].intr_rate2) }}%</p>
           </div>
         </div>
       </div>
@@ -25,17 +25,17 @@
       <div v-show="!flag">
         <div 
         class="card card-wth m-1 row"
-          v-for="c in count"
-          :key="c"
-          @click.prevent="goDetail(savings[c-1])"
+          v-for="(product, index) in savings"
+          :key="index"
+          @click.prevent="goDetail(product)"
         >
           <div class="card-detail">
-          <p style="margin-right: 10px;">{{ c }}</p>
-          <p class="pdt-name">{{ savings[c-1].fin_prdt_nm }}</p>
-          <p class="pdt-bank">{{ savings[c-1].kor_co_nm }}</p>
-          <p>{{ savings[c-1].option.reduce((max, cur) => {
+          <p style="margin-right: 10px;">{{ index + 1 }}</p>
+          <p class="pdt-name">{{ product.fin_prdt_nm }}</p>
+          <p class="pdt-bank">{{ product.kor_co_nm }}</p>
+          <p>{{ product.option.reduce((max, cur) => {
                 return cur.intr_rate2 > max ? cur.intr_rate2 : max;
-              }, savings[c-1].option[0].intr_rate2) }}%</p>
+              }, product.option[0].intr_rate2) }}%</p>
           </div>
         </div>
       </div>

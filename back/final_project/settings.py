@@ -26,6 +26,7 @@ environ.Env.read_env(
 
 API_KEY = env('API_KEY')
 API_KEY_EX = env('API_KEY_EX')
+API_KEY_AI = env('API_KEY_AI')
 
 
 # Quick-start development settings - unsuitable for production
@@ -105,6 +106,8 @@ MIDDLEWARE = [
 ]
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+CORS_ALLOW_ALL_ORIGINS = True  # 모든 도메인 허용 (필요 시 제한 가능)
 
 CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:5173",
