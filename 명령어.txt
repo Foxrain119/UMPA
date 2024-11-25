@@ -1,0 +1,1 @@
+python manage.py loaddata deposit.json deposit_option.json saving.json saving_option.json exchange.json

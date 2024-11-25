@@ -55,9 +55,10 @@ client = OpenAI()
 # id = ftjob-DfIsYT7W7teVmOv6briv8Jz0
 # FineTuningJob(id='ftjob-DfIsYT7W7teVmOv6briv8Jz0', created_at=1732525011, error=Error(code=None, message=None, param=None), fine_tuned_model=None, finished_at=None, hyperparameters=Hyperparameters(n_epochs='auto', batch_size='auto', learning_rate_multiplier='auto'), model='gpt-4o-mini-2024-07-18', object='fine_tuning.job', organization_id='org-IXoNrsw32kBeTEghLnl6ZYzD', result_files=[], seed=1950629790, status='validating_files', trained_tokens=None, training_file='file-6SGMqxPz9QJP2KnXMXg1Jx', validation_file=None, estimated_finish=None, integrations=[], user_provided_suffix=None)
 
+# FineTuningJob(id='ftjob-uo221LscGUdHQwkHJ94PwOEq', created_at=1732526835, error=Error(code=None, message=None, param=None), fine_tuned_model=None, finished_at=None, hyperparameters=Hyperparameters(n_epochs='auto', batch_size='auto', learning_rate_multiplier='auto'), model='gpt-4o-mini-2024-07-18', object='fine_tuning.job', organization_id='org-IXoNrsw32kBeTEghLnl6ZYzD', result_files=[], seed=1431451670, status='validating_files', trained_tokens=None, training_file='file-6SGMqxPz9QJP2KnXMXg1Jx', validation_file=None, estimated_finish=None, integrations=[], user_provided_suffix=None)
 
 # 미세 조정 작업 완료 확인
-job_id = "ftjob-DfIsYT7W7teVmOv6briv8Jz0"  # 미세 조정 작업의 ID를 입력하세요
+job_id = "ftjob-uo221LscGUdHQwkHJ94PwOEq"  # 미세 조정 작업의 ID를 입력하세요
 job = client.fine_tuning.jobs.retrieve(job_id)
 
 print(f"Job Status: {job.status}")

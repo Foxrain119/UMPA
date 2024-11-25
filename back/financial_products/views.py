@@ -169,35 +169,35 @@ from openai import OpenAI
 
 @api_view(['POST'])
 def chat_bot(request):
-    client = OpenAI()
+    # client = OpenAI()
 
-    completion = client.chat.completions.create(
-    model="ft:gpt-4o-mini-org-IXoNrsw32kBeTEghLnl6ZYzD",
-    messages=[
-        {"role": "system", "content": "You are a helpful assistant."},
-        {"role": "user", "content": "Hello!"}
-    ]
-    )
-    print(completion.choices[0].message)
-
-    # user_input = json.loads(request.body).get("message")  # 클라이언트에서 받은 입력값
-    # print(user_input)
-    # headers = {
-    #     "Authorization": f"Bearer {settings.API_KEY_AI}",
-    #     "Content-Type": "application/json",
-    # }
-    # data = {
-    #     # "model": "gpt-4",
-    #     "model": "ft:gpt-4o-mini:my-org:custom_suffix:ftjob-DfIsYT7W7teVmOv6briv8Jz0",
-    #     "messages": [{"role": "user", "content": user_input}],
-    # }
-    # response = requests.post(
-    #     "https://api.openai.com/v1/chat/completions", 
-    #     headers=headers, 
-    #     json=data
+    # completion = client.chat.completions.create(
+    # model="ft:gpt-4o-mini-org-IXoNrsw32kBeTEghLnl6ZYzD",
+    # messages=[
+    #     {"role": "system", "content": "You are a helpful assistant."},
+    #     {"role": "user", "content": "Hello!"}
+    # ]
     # )
-    # print(response.json())
-    # return JsonResponse(response.json())
+    # print(completion.choices[0].message)
+
+    user_input = json.loads(request.body).get("message")  # 클라이언트에서 받은 입력값
+    print(user_input)
+    headers = {
+        "Authorization": f"Bearer {settings.API_KEY_AI}",
+        "Content-Type": "application/json",
+    }
+    data = {
+        "model": "gpt-4",
+        # "model": "ft:gpt-4o-mini:my-org:custom_suffix:ftjob-DfIsYT7W7teVmOv6briv8Jz0",
+        "messages": [{"role": "user", "content": user_input}],
+    }
+    response = requests.post(
+        "https://api.openai.com/v1/chat/completions", 
+        headers=headers, 
+        json=data
+    )
+    print(response.json())
+    return JsonResponse(response.json())
 
     # if request.method == "POST":
     #     try:
