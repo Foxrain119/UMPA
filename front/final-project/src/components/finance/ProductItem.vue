@@ -23,6 +23,10 @@ const props = defineProps({
   product: {
     type: Object,
     required: true
+  },
+  type: {
+    type: String,
+    required: true
   }
 })
 
@@ -32,9 +36,12 @@ const getOptionRate = (term) => {
 }
 
 const showDetail = () => {
+  const productType = props.product.rsrv_type_nm ? 'saving' : 'deposit'
+  console.log('Product Type in ProductItem:', productType)
+  
   financeStore.goDetail({
     ...props.product,
-    type: props.product.rsrv_type_nm ? 'saving' : 'deposit'
+    product_type: productType
   })
 }
 </script>

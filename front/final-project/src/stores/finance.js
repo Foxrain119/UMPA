@@ -24,12 +24,23 @@ export const useFinanceStore = defineStore('finance', () => {
       product_type
     }
     
-    console.log('Setting detail with type:', detail.value)
-    router.push({ name: 'detail' })
+    // 상품 ID를 포함한 URL로 이동
+    router.push({ 
+      name: 'product_detail',
+      params: { productId: product.fin_prdt_cd }
+    })
   }
 
   const goBack = () => {
-    router.go(-1)
+    // 이전 경로가 프로필 페이지인 경우
+    if (router.options.history.state.back?.includes('/profile')) {
+      router.push({ 
+        name: 'profile',
+        query: { tab: 'products' }  // 가입 상품 관리 탭으로 이동
+      })
+    } else {
+      router.go(-1)  // 그 외의 경우 이전 페이지로 이동
+    }
   }
 
 
@@ -201,10 +212,14 @@ export const useFinanceStore = defineStore('finance', () => {
 
   // 전체 상품 목록 조회
   const getProducts = async function () {
-    await Promise.all([
-      getDepositList(),
-      getSavingList()
-    ])
+    try {
+      const response = await axios.get(`${API_URL}/financial/products/`)
+      deposits.value = response.data.deposits
+      savings.value = response.data.savings
+    } catch (error) {
+      console.error('상품 목록 조회 실패:', error)
+      throw error
+    }
   }
 
   // 예금 상품 상세 정보 조회
@@ -256,6 +271,18 @@ export const useFinanceStore = defineStore('finance', () => {
     return rates
   }
 
-  return { deposits, savings, detail, exchanges, goDetail, goBack, getProducts, getExchages, token, getDepositList, getSavingList, getDepositDetail, getSavingDetail, getProductRates
+  // 상품 상세 정보 조회
+  const getProductDetail = async (productId) => {
+    try {
+      // 상품 타입에 따라 적절한 API 엔드포인트 호출
+      const response = await axios.get(`${API_URL}/financial/products/${productId}/`)
+      return response.data
+    } catch (error) {
+      console.error('상품 상세 정보 조회 실패:', error)
+      throw error
+    }
+  }
+
+  return { deposits, savings, detail, exchanges, goDetail, goBack, getProducts, getExchages, token, getDepositList, getSavingList, getDepositDetail, getSavingDetail, getProductRates, getProductDetail
   }
 }, { persist: true })

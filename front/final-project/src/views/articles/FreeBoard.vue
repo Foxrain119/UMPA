@@ -1,7 +1,7 @@
 <template>
   <div class="free-board">
     <div class="board-header">
-      <h2>금융 팁이 있다면 공유해주세요!</h2>
+      <h2>금융 팁이 있다면 공유해보세요!</h2>
       <button v-if="store2.token" @click="showArticleForm" class="write-btn">
         글쓰기
       </button>

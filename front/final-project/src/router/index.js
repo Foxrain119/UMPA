@@ -59,9 +59,10 @@ const router = createRouter({
           redirect: '/deposit'
         },
         {
-          path: '/detail',
-          name: 'detail',
+          path: 'products/:productId',
+          name: 'product_detail',
           component: ProductDetailView,
+          props: true
         },
         {
           path: '/recommend_products',

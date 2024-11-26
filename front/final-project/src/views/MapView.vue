@@ -1,22 +1,30 @@
 <template>
-  <div class="map-container">
-    <h1>주변 은행 찾기</h1>
-    <div class="map-content">
-      <BankSearchForm 
-        @search-banks="searchNearbyBanks"
-        :provinces="provinces"
-        :districts="districts"
-        :banks="banks"
-      />
-      
-      <KakaoMap 
-        v-if="isMapReady"
-        ref="kakaoMapRef"
-        :searchResults="searchResults"
-        :isLoading="isLoading"
-      />
-      <div v-else class="map-loading">
-        지도를 불러오는 중...
+  <div class="page-container">
+    <div class="title-container">
+      <h1>주변 은행</h1>
+    </div>
+    <div class="content-container">
+      <div class="map-content">
+        <div class="search-section">
+          <BankSearchForm 
+            @search-banks="searchNearbyBanks"
+            :provinces="provinces"
+            :districts="districts"
+            :banks="banks"
+          />
+        </div>
+        
+        <div class="map-section">
+          <KakaoMap 
+            v-if="isMapReady"
+            ref="kakaoMapRef"
+            :searchResults="searchResults"
+            :isLoading="isLoading"
+          />
+          <div v-else class="map-loading">
+            지도를 불러오는 중...
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -91,25 +99,72 @@ const searchNearbyBanks = async (searchParams) => {
 </script>
 
 <style scoped>
-.map-container {
-  padding: 20px;
+.page-container {
+  width: 100%;
+}
+
+.title-container {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #333;
+  font-family: 'S-CoreDream-6Bold';
+  position: relative;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 3px;
+  background-color: #007bff;
+}
+
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  box-shadow: 5px 5px 10px rgba(109, 106, 106, 0.5);
 }
 
 .map-content {
   display: flex;
-  gap: 20px;
-  margin-top: 20px;
+  gap: 0;
+  margin-top: 2rem;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 2rem;
 }
 
-h1 {
-  margin-bottom: 20px;
-  color: #333;
+.search-section {
+  flex: 0 0 300px; /* 검색창 너비 고정 */
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+  /* margin-right: 2rem; */
+}
+
+.map-section {
+  flex: 1; /* 남은 공간 모두 차지 */
+  min-height: 600px;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .map-loading {
-  flex: 1;
+  width: 100%;
+  height: 100%;
   min-height: 600px;
   display: flex;
   justify-content: center;
@@ -118,5 +173,21 @@ h1 {
   border-radius: 8px;
   font-size: 1.2rem;
   color: #666;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 992px) {
+  .map-content {
+    flex-direction: column;
+  }
+
+  .search-section {
+    flex: none;
+    width: 100%;
+  }
+
+  .map-section {
+    width: 100%;
+  }
 }
 </style>

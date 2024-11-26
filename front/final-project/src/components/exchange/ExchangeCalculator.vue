@@ -39,6 +39,7 @@
             {{ country['cur_unit'] }}
           </option>
         </select>
+        <input type="text" :value="exchangedMoney" readonly class="result-input">
       </form>
       <p class="answer">{{ exchangedMoney }}</p>
     </div>

@@ -1,6 +1,5 @@
 <template>
   <div class="search-form">
-    <h3>은행 찾기</h3>
     <form @submit.prevent="handleSubmit">
       <!-- 시/도 선택 -->
       <div class="form-group">

@@ -27,11 +27,36 @@ import ExchangeCalculator from '@/components/exchange/ExchangeCalculator.vue';
 .exchange-box {
   /* border: 1px solid black; */
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  gap: 10px;
-  padding: 10px;
+}
 
+h1 {
+  font-size: 2.5rem;
+  color: #333;
+  font-family: 'S-CoreDream-6Bold';
+  position: relative;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 3px;
+  background-color: #007bff;
+}
+
+.exchange-box {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 </style>

@@ -110,6 +110,7 @@ select:focus {
 
   font-size: 17px;
 }
+
 .search-box {
   /* border: 1px solid black; */
   width: 700px;

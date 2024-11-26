@@ -2,14 +2,14 @@
   <div>
     <div class="txt_box">
       <RouterLink 
-        to="deposit"
+        to="/deposit"
         class="nav-link"
-        :class="{ active: $route.name === 'deposit' }"
+        :class="{ active: $route.path.includes('deposit') }"
       >예금</RouterLink> |
       <RouterLink 
-        to="saving"
+        to="/saving"
         class="nav-link"
-        :class="{ active: $route.name === 'saving' }"
+        :class="{ active: $route.path.includes('saving') }"
       >적금</RouterLink>
     </div>
     <RouterView />
@@ -18,7 +18,6 @@
 
 <script setup>
 import { RouterLink, RouterView } from 'vue-router';
-
 </script>
 
 <style scoped>

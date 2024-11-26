@@ -15,14 +15,14 @@ def profile(request, username):
     user = get_object_or_404(get_user_model(), username=username)
 
     if request.method == 'GET':
-        serializer = CustomUserDetailsSerializer(user)
+        serializer = UserInfoSerializer(user)
         return Response(serializer.data)
     
     elif request.method == 'PUT':
-        serializer = CustomUserDetailsSerializer(user, data=request.data, partial=True, context={'request': request})
+        serializer = CustomUserDetailsSerializer(user, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.save()
-            return Response(serializer.data)
+            return Response(UserInfoSerializer(user).data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
     elif request.method == 'DELETE':
