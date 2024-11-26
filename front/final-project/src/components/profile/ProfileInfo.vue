@@ -31,8 +31,8 @@ const props = defineProps({
 })
 
 const profileImageUrl = computed(() => {
-  if (!props.profile?.profile_img) {
-    return 'http://localhost:8000/media/profile_images/default_profile.png'
+  if (!props.profile?.profile_img || props.profile?.profile_img === '/media/profile_images/default_profile.png') {
+    return 'http://localhost:8000/static/profile_images/default_profile.png'
   }
   return `http://localhost:8000${props.profile.profile_img}`
 })

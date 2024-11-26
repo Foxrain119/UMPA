@@ -121,6 +121,9 @@ def get_statics(request):
             'uri': f'{BASIC_URL}/static/bank/uri.png',
             'sinhan': f'{BASIC_URL}/static/bank/sinhan.png',
             'nong': f'{BASIC_URL}/static/bank/nong.png',
+        },
+        'flag': {
+            
         }
     }
     return JsonResponse(context)

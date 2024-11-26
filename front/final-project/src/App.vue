@@ -73,7 +73,7 @@ button {
 }
 .logo {
   width: 90px;
-  margin: 5px 25px;
+  margin: 5px 40px;
 }
 .menu {
   font-size: 18px;

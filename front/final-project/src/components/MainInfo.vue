@@ -7,9 +7,9 @@
         <span>  </span>
         <span class="upgrade-text">Upgrade</span> 하세요!
       </p>
+
       <img class="up-img" :src="mascotte" alt="mascotte">
     </div>
-    
   </div>
 </template>
 
@@ -24,25 +24,26 @@ const mascotte = store2.images.main_page.mascotte
 
 <style scoped>
 .img-container {
-  height: 300px;
+  height: 500px;
   /* border: 1px solid black; */
   background-color: rgb(159, 239, 255);
+  align-content: center;
 }
 .main-box {
-  width: 600px;
-  position: relative;
-  text-align: center;
-  justify-content: center;
+  width: 1000px;
+  display: flex;
+  justify-content: space-between;
   margin: auto;
 }
 .main-text {
-  position: absolute;
-  top: 120px;
-  left: px;
+  /* position: absolute;
+  top: 90px; */
+  text-align: center;
+  align-content: center;
 
   font-family: 'Paperlogy-8ExtraBold';
   color: #000;
-  font-size: 22px;
+  font-size: 30px;
   
 }
 .umpa-text {
@@ -54,18 +55,17 @@ const mascotte = store2.images.main_page.mascotte
     1px 1px 1px #000; /* 글자 테두리 */
 }
 .upgrade-text {
-  font-size: 30px;
-  /* color: rgb(156, 0, 196); */
-  /* text-shadow: 
-    -1px -1px 0 rgb(255, 77, 77),  
-    1px -1px 0 rgb(255, 77, 77),
-    -1px 1px 0 rgb(255, 77, 77),
-    1px 1px 0 rgb(255, 77, 77); */
+  font-size: 45px;
+  background: linear-gradient(45deg, blue, red); /* 그라데이션 적용, 방향과 색상 조정 가능 */
+  -webkit-background-clip: text; /* 크롬, 사파리 등의 브라우저에 대한 설정 */
+  background-clip: text; /* 텍스트 영역으로 배경 제한 */
+  color: transparent; /* 글자 색상 투명으로 설정해 배경 그라데이션만 보이도록 함 */
+  padding: 6px 0; /* 상단과 하단에 패딩 추가 */
 }
 .up-img {
-  position: absolute;
-  width: 180px;
-  top: 80px;
-  right: 0px;
+  width: 280px;
+  /* position: absolute; */
+  /* top: 40px;
+  right: 50px; */
 }
 </style>

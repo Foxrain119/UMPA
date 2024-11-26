@@ -181,7 +181,7 @@ button {
 .content {
   display: flex;
   justify-content: space-between;
-  padding: 100px 70px;
+  padding: 100px 80px;
 
   /* border: 1px solid rgb(226, 226, 226); */
   border-radius: 10px;
