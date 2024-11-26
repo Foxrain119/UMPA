@@ -7,7 +7,7 @@
         <span>  </span>
         <span class="upgrade-text">Upgrade</span> 하세요!
       </p>
-      <img class="up-img" :src="upgrade_fin" alt="upgrade_fin">
+      <img class="up-img" :src="mascotte" alt="mascotte">
     </div>
     
   </div>
@@ -19,6 +19,7 @@ import { useAccountStore } from '@/stores/account';
 const store2 = useAccountStore()
 
 const upgrade_fin = store2.images.main_page.upgrade_fin
+const mascotte = store2.images.main_page.mascotte
 </script>
 
 <style scoped>
@@ -63,8 +64,8 @@ const upgrade_fin = store2.images.main_page.upgrade_fin
 }
 .up-img {
   position: absolute;
-  width: 80px;
+  width: 180px;
   top: 80px;
-  right: 100px;
+  right: 0px;
 }
 </style>

@@ -10,16 +10,17 @@
         <button @click.prevent="goFinance">검색 기능 이용하기  ></button>
       </div>
       
-      <div>
+      <div class="basic-shadow">
         <div class="content-name">
           <p>최고 금리 상품</p>
         </div>
-        <div class="product-switch">
+        <span class="product-switch">
           <span class="pdt-deposit" @click.prevent="toDep">예금</span><span class="pdt-saving" @click.prevent="toSav">적금</span>
-        </div>
+        </span>
+
         <div v-show="flag">
           <div 
-          class="card card-wth m-1 row"
+          class="card card-wth m-2 row"
             v-for="(product, index)  in deposits"
             :key="index"
             @click.prevent="goDetail(product)"
@@ -37,7 +38,7 @@
   
         <div v-show="!flag">
           <div 
-          class="card card-wth m-1 row"
+          class="card card-wth m-2 row"
             v-for="(product, index) in savings"
             :key="index"
             @click.prevent="goDetail(product)"
@@ -184,13 +185,19 @@ button {
 
   /* border: 1px solid rgb(226, 226, 226); */
   border-radius: 10px;
-  width: 1200px;
+  min-width: 1200px;
 }
 
 .even-content {
   background-color: rgb(249, 252, 253);
 }
 
+.basic-shadow {
+  box-shadow: 5px 5px 10px rgba(160, 160, 160, 0.5);
+  border-radius: 15px;
+  padding: 10px;
+
+}
 
 .info-box {
   padding-top: 10px;
@@ -202,6 +209,7 @@ button {
   border-radius: 15px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
+
 
 .title {
   font-family: 'S-CoreDream-6Bold';
@@ -229,7 +237,8 @@ button {
 
 .content-name {
   font-family: 'S-CoreDream-6Bold';
-  margin-top: 10px;
+  /* margin-top: 10px; */
+  margin-left: 5px;
   font-size: 18px;
 }
 
@@ -239,6 +248,10 @@ button {
 .card-wth {
   cursor: pointer;
   width: 420px;
+  box-shadow: 2px 2px 4px rgba(129, 129, 129, 0.5);
+  border-style: none;
+  background-color: rgb(255, 255, 255);
+  margin-bottom: 5px;
 }
 .card-detail {
   display: flex;

@@ -72,8 +72,8 @@ button {
   color: white;
 }
 .logo {
-  width: 100px;
-  margin: 0 25px;
+  width: 90px;
+  margin: 5px 25px;
 }
 .menu {
   font-size: 18px;

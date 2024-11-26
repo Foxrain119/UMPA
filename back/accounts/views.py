@@ -113,6 +113,7 @@ def get_statics(request):
             'recommend': f'{BASIC_URL}/static/main_page/recommend.jpg',
             'exchange': f'{BASIC_URL}/static/main_page/exchange.jpg',
             'map': f'{BASIC_URL}/static/main_page/bankmap.jpg',
+            'mascotte': f'{BASIC_URL}/static/main_page/mascotte.png',
         },
         'bank': {
             'gukmin': f'{BASIC_URL}/static/bank/gukmin.png',
