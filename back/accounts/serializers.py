@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import User, minzero_validator
+from .models import User
 from dj_rest_auth.registration.serializers import RegisterSerializer
 from dj_rest_auth.serializers import UserDetailsSerializer, LoginSerializer
 from django.contrib.auth import get_user_model
@@ -20,24 +20,23 @@ class CustomRegisterSerializer(RegisterSerializer):
     )
     age = serializers.IntegerField(
         required=True,
-        validators=[minzero_validator]
     )
 
-    property = serializers.IntegerField(
-        required=False,
-        default=0
-    )
+    # property = serializers.IntegerField(
+    #     required=False,
+    #     default=0
+    # )
 
-    gender = serializers.CharField(
-        max_length=1,
-        default='N',
-        required=False
-    )
+    # gender = serializers.CharField(
+    #     max_length=1,
+    #     default='N',
+    #     required=False
+    # )
 
-    marital_status = serializers.BooleanField(
-        required=False,
-        default=False
-    )
+    # marital_status = serializers.BooleanField(
+    #     required=False,
+    #     default=False
+    # )
     # 동적으로 unique 속성 필드에 대한 중복 검사
     def validate(self, attrs):
         unique_fields = ['phone', 'nickname']  # 검사할 필드 추가

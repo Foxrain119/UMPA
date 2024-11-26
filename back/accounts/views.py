@@ -1,5 +1,5 @@
 from rest_framework.decorators import api_view, permission_classes
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.response import Response
 from rest_framework import status
 from .serializers import CustomUserDetailsSerializer, UserInfoSerializer
@@ -30,6 +30,7 @@ def profile(request, username):
         return Response({'message': '회원탈퇴가 완료되었습니다.'}, status=status.HTTP_204_NO_CONTENT)
 
 @api_view(['GET'])
+@permission_classes([AllowAny])
 def user_list(request):
     users = get_list_or_404(get_user_model())
     serializer = UserInfoSerializer(users, many=True)
@@ -96,3 +97,23 @@ def cancel_product(request, username):
     except Exception as e:
         print(f"Error in cancel_product: {str(e)}")
         return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+from django.conf import settings
+from django.http import JsonResponse
+
+
+def get_statics(request):
+    BASIC_URL = 'http://127.0.0.1:8000'
+    logo_image_url = f'{BASIC_URL}/static/UMPA_logo.png'
+    context = {
+        'logo': logo_image_url,
+        'main_page': {
+            'upgrade_fin': f'{BASIC_URL}/static/main_page/upgrade_fin.png',
+            'recommend': f'{BASIC_URL}/static/main_page/recommend.jpg',
+            'exchange': f'{BASIC_URL}/static/main_page/exchange.jpg',
+            'map': f'{BASIC_URL}/static/main_page/bankmap.jpg',
+        },
+    }
+    return JsonResponse(context)
+    
