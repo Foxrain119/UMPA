@@ -16,7 +16,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 import os
-import environ
+import environ 
 
 env = environ.Env(DEBUG=(bool, True))
 
@@ -26,6 +26,7 @@ environ.Env.read_env(
 
 API_KEY = env('API_KEY')
 API_KEY_EX = env('API_KEY_EX')
+KAKAO_MAP_REST_API_KEY = env('KAKAO_MAP_REST_API_KEY')
 API_KEY_AI = env('API_KEY_AI')
 
 
@@ -48,6 +49,7 @@ INSTALLED_APPS = [
     "articles",
     "exchanges",
     "financial_products",
+    "maps",
     "rest_framework",
     "rest_framework.authtoken",
     "dj_rest_auth",
@@ -70,12 +72,12 @@ SITE_ID = 1
 
 REST_FRAMEWORK = {
     # Authentication
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.TokenAuthentication',
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework.authentication.TokenAuthentication",
     ],
     # permission
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.AllowAny',
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.AllowAny",
     ],
 }
 
@@ -106,8 +108,6 @@ MIDDLEWARE = [
 ]
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
-
-CORS_ALLOW_ALL_ORIGINS = True  # 모든 도메인 허용 (필요 시 제한 가능)
 
 CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:5173",
@@ -180,7 +180,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = "static/"
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+
+# Media files (User uploaded files)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

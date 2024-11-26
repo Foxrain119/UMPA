@@ -6,12 +6,12 @@ import axios from 'axios'
 export const useAccountStore = defineStore('account', () => {
   const API_URL = 'http://127.0.0.1:8000'
   const ARTICLES_URL = `${API_URL}/articles`
-  const PROFILE_URL = `${API_URL}/profile`
-  const token = ref(null)
-  const router = useRouter()
+  const PROFILE_URL = `${API_URL}/profile/users`
+  const articles = ref([])
   const profile = ref(null)
-  const userInfo = ref([])
+  const token = ref(null)
   const isEditing = ref(false)
+  const router = useRouter()
 
   const getProfile = function () {
     if (!token.value) {
@@ -31,7 +31,7 @@ export const useAccountStore = defineStore('account', () => {
 
     axios({
       method: 'get',
-      url: `${PROFILE_URL}/users/${username}/`,
+      url: `${PROFILE_URL}/${username}/`,
       headers: {
         Authorization: `Token ${token.value}`
       }
@@ -46,16 +46,17 @@ export const useAccountStore = defineStore('account', () => {
         window.alert('프로필 정보를 불러오는 데 실패했습니다.')
         router.push({ name: 'home' })
       })
-  }
-  
+    }
+
   const updateProfile = function (payload) {
     const username = localStorage.getItem('username')
 
     axios({
       method: 'put',
-      url: `${PROFILE_URL}/users/${username}/`,
+      url: `${PROFILE_URL}/${username}/`,
       data: payload,
       headers: {
+        'Content-Type': 'multipart/form-data',
         Authorization: `Token ${token.value}`
       }
     })
@@ -69,21 +70,6 @@ export const useAccountStore = defineStore('account', () => {
         console.error('Profile update error:', err.response?.data || err)
         window.alert('프로필 정보 수정에 실패했습니다.')
       })
-  }
-
-  const getUserInfo = function () {
-    axios({
-      method: 'get',
-      url: `${PROFILE_URL}/user_list/`,
-      // headers: {
-      //   Authorization: `Token ${token.value}`
-      // }
-    })
-    .then(res => {
-      console.log(res.data)
-      userInfo.value = res.data
-    })
-    .catch(err => console.log(err))
   }
 
   const signUp = function (payload) {
@@ -105,48 +91,37 @@ export const useAccountStore = defineStore('account', () => {
       .catch(err => console.log(err))
   }
 
-  const logIn = function (payload) {
-    const email = payload.email
-    const password = payload.password
-
-    axios({
-      method: 'post',
-      url: `${API_URL}/accounts/login/`,
-      data: {
-        email, password
-      }
-    })
-     .then(res => {
-       console.log('Login response:', res.data)  // 로그인 응답 데이터 확인
-       token.value = res.data.key
-
-       // username이 응답에 포함되어 있는지 확인
-       if (res.data.username) {
-         localStorage.setItem('username', res.data.username)
-         console.log('Stored username:', res.data.username)
-       } else {
-         // username이 없다면 추가 요청으로 사용자 정보 가져오기
-         return axios({
-           method: 'get',
-           url: `${API_URL}/accounts/user/`,
-           headers: {
-             Authorization: `Token ${res.data.key}`
-           }
-         })
-       }
-     })
-     .then(userRes => {
-       if (userRes) {
-         localStorage.setItem('username', userRes.data.username)
-         console.log('Stored username from user info:', userRes.data.username)
-         getProfile()
-       }
-       router.push({ name: 'home' })
-     })
-     .catch(err => {
-       console.error('Login error:', err.response || err)
-       window.alert('로그인에 실패했습니다.')
-     })
+  const logIn = async function (payload) {
+    try {
+      const { email, password } = payload
+      
+      const loginRes = await axios({
+        method: 'post',
+        url: `${API_URL}/accounts/login/`,
+        data: { email, password }
+      })
+      
+      token.value = loginRes.data.key
+      
+      // 사용자 정보 가져오기
+      const userRes = await axios({
+        method: 'get',
+        url: `${API_URL}/accounts/user/`,
+        headers: {
+          Authorization: `Token ${loginRes.data.key}`
+        }
+      })
+      
+      localStorage.setItem('username', userRes.data.username)
+      
+      // 프로필 정보 즉시 가져오기
+      await getProfile()
+      
+      router.push({ name: 'home' })
+    } catch (error) {
+      console.error('Login error:', error.response || error)
+      window.alert('로그인에 실패했습니다.')
+    }
   }
 
   const isLogin = computed(() => {
@@ -158,10 +133,85 @@ export const useAccountStore = defineStore('account', () => {
   })
 
   const logOut = function () {
-    window.alert('로그아웃이 완료되었습니다.')
     token.value = null
+    localStorage.removeItem('username')
+    profile.value = null
     router.push({ name: 'home' })
+    window.alert('로그아웃이 완료되었습니다.')
   }
 
-  return { token, userInfo, profile, isEditing, getProfile, updateProfile, getUserInfo, signUp, logIn, isLogin, logOut }
+  const deleteAccount = async function () {
+    const username = localStorage.getItem('username')
+    
+    try {
+      await axios({
+        method: 'delete',
+        url: `${PROFILE_URL}/${username}/`,
+        headers: {
+          Authorization: `Token ${token.value}`
+        }
+      })
+      
+      // 회원 탈퇴 후 로그아웃 처리
+      token.value = null
+      profile.value = null
+      isEditing.value = false
+      localStorage.removeItem('username')
+      
+    } catch (error) {
+      console.error('Delete account error:', error.response?.data || error)
+      throw error // 에러를 상위로 전파하여 컴포넌트에서 처리할 수 있도록 함
+    }
+  }
+
+  // 상품 가입 취소
+  const cancelProduct = async function (productId, type) {
+    const username = localStorage.getItem('username')
+    
+    try {
+      await axios({
+        method: 'delete',
+        url: `${PROFILE_URL}/${username}/products/cancel/`,
+        data: {
+          fin_prdt_cd: productId,
+          product_type: type
+        },
+        headers: {
+          Authorization: `Token ${token.value}`
+        }
+      })
+      
+      // 프로필 정보 갱신
+      await getProfile()
+      
+    } catch (error) {
+      console.error('상품 가입 취소 실패:', error.response?.data || error)
+      throw error
+    }
+  }
+
+  // 상품 가입
+  const joinProduct = async function (productData) {
+    const username = localStorage.getItem('username')
+    
+    try {
+      await axios({
+        method: 'post',
+        url: `${PROFILE_URL}/${username}/products/join/`,
+        data: productData,
+        headers: {
+          Authorization: `Token ${token.value}`
+        }
+      })
+      
+      // 프로필 정보 갱신
+      await getProfile()
+      
+    } catch (error) {
+      console.error('상품 가입 실패:', error.response?.data || error)
+      throw error
+    }
+  }
+
+  return { API_URL, ARTICLES_URL, PROFILE_URL, articles, profile, token, isEditing, signUp, logIn, isLogin, logOut, getProfile, updateProfile, deleteAccount, cancelProduct, joinProduct }
 }, { persist: true })

@@ -15,6 +15,7 @@ import RecommendProductsView from '@/views/finance/RecommendProductsView.vue'
 import ProductDetailView from '@/views/finance/ProductDetailView.vue'
 import RecommendProductsAlgo1View from '@/views/finance/RecommendProductsAlgo1View.vue'
 import RecommendProductsAlgo2View from '@/views/finance/RecommendProductsAlgo2View.vue'
+import FreeBoard from '@/views/articles/FreeBoard.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -53,8 +54,9 @@ const router = createRouter({
               path: '/saving',
               name: 'saving',
               component: SearchSavingView,
-            },
-          ]
+            }
+          ],
+          redirect: '/deposit'
         },
         {
           path: '/detail',
@@ -94,6 +96,14 @@ const router = createRouter({
       path: '/articles',
       name: 'articles',
       component: ArticleView,
+      children: [
+        {
+          path: 'free',
+          name: 'free-board',
+          component: FreeBoard
+        }
+        // 추후 다른 게시판 추가 가능
+      ]
     },
     {
       path: '/profile',

@@ -6,9 +6,12 @@
         <router-link :to="{ name: 'deposit' }">예적금 비교</router-link> |
         <router-link :to="{ name: 'exchange' }">환율 계산</router-link> |
         <router-link :to="{ name: 'map' }">주변 은행</router-link> |
-        <router-link :to="{ name: 'articles' }">커뮤니티</router-link>
+        <router-link :to="{ name: 'free-board' }">커뮤니티</router-link>
       </div>
       <div class="user-bar">
+        <span v-show="store2.token && store2.profile">
+          {{ store2.profile?.nickname }}님, 환영합니다! &nbsp;
+        </span>
         <router-link :to="{ name: 'login' }" v-show="!store2.token">
           <button class="login-btn">로그인</button>
         </router-link>
@@ -30,9 +33,10 @@ import { RouterLink, RouterView } from 'vue-router';
 import { useAccountStore } from './stores/account';
 import { useFinanceStore } from '@/stores/finance';
 import { onMounted } from 'vue';
+import { useAccountStore } from '@/stores/account';
 
 const store = useFinanceStore()
-const store2 = useAccountStore(0)
+const store2 = useAccountStore()
 
 const logOut = function () {
   store2.logOut()
@@ -43,6 +47,7 @@ onMounted(() => {
   store.getExchages()
   store2.getUserInfo()
 })
+
 </script>
 
 <style scoped>
