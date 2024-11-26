@@ -251,5 +251,5 @@ export const useAccountStore = defineStore('account', () => {
     }
   }
 
-  return { API_URL, ARTICLES_URL, PROFILE_URL, articles, profile, token, isEditing, images, getStaticFiles, signUp, logIn, isLogin, logOut, getProfile, updateProfile, getUserInfo, deleteAccount, cancelProduct, joinProduct }
+  return { API_URL, ARTICLES_URL, PROFILE_URL, articles, profile, userInfo, token, isEditing, images, getStaticFiles, signUp, logIn, isLogin, logOut, getProfile, updateProfile, getUserInfo, deleteAccount, cancelProduct, joinProduct }
 }, { persist: true })

@@ -162,6 +162,7 @@ def saving_list(request):
     serializer = SavingFullListSerializer(savings, many=True)
     return Response(serializer.data)
 
+
 @api_view(['GET'])
 def product_detail(request, product_id):
     try:
@@ -177,6 +178,7 @@ def product_detail(request, product_id):
         return Response(serializer.data)
     except:
         return Response({'error': '상품을 찾을 수 없습니다.'}, status=status.HTTP_404_NOT_FOUND)
+
 
 @api_view(['GET'])
 def product_list(request):

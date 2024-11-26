@@ -1,14 +1,14 @@
 <template>
   <div class="img-container">
     <div class="main-box">
-      <p class="main-text">당신의 금융, 
+      <p class="main-text" data-aos="fade-up">당신의 금융, 
         <br> 
         <span class="umpa-text">UMPA</span> 와 함께 &nbsp;
         <span>  </span>
         <span class="upgrade-text">Upgrade</span> 하세요!
       </p>
 
-      <img class="up-img" :src="mascotte" alt="mascotte">
+      <img class="up-img" :src="mascotte" alt="mascotte" data-aos="zoom-in">
     </div>
   </div>
 </template>

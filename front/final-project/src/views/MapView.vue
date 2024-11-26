@@ -27,6 +27,7 @@
         </div>
       </div>
     </div>
+    <br><br><br>
   </div>
 </template>
 
@@ -120,7 +121,7 @@ h1 {
   text-align: center;
 }
 
-h1::after {
+/* h1::after {
   content: '';
   position: absolute;
   bottom: -10px;
@@ -129,22 +130,23 @@ h1::after {
   width: 100%;
   height: 3px;
   background-color: #007bff;
-}
+} */
 
 .content-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+  border-radius: 15px;
   box-shadow: 5px 5px 10px rgba(109, 106, 106, 0.5);
 }
 
 .map-content {
   display: flex;
   gap: 0;
-  margin-top: 2rem;
+  margin-top: 20px;
   background-color: #fff;
   border-radius: 8px;
-  padding: 2rem;
+  padding: 2rem 0;
 }
 
 .search-section {

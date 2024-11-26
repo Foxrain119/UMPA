@@ -27,7 +27,11 @@ import ExchangeCalculator from '@/components/exchange/ExchangeCalculator.vue';
 .exchange-box {
   /* border: 1px solid black; */
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin: auto;
 }
 
 h1 {
@@ -50,13 +54,5 @@ h1::after {
   background-color: #007bff;
 }
 
-.exchange-box {
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 2rem;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+
 </style>

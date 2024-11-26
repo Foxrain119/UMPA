@@ -2,7 +2,7 @@
   <article>
     <!-- 검색 -->
     <div class="container content">
-      <div class="info-box">
+      <div data-aos="fade-right" class="info-box">
         <p class="title">Seaching Financial Products</p>
         <p class="title2">예적금 상품 검색 기능</p>
         <p class="sub-txt">당신이 찾는 상품을 검색해보세요</p>
@@ -10,7 +10,7 @@
         <button @click.prevent="goFinance">검색 기능 이용하기  ></button>
       </div>
       
-      <div class="basic-shadow">
+      <div data-aos="fade-left" class="basic-shadow">
         <div class="content-name">
           <p>최고 금리 상품</p>
         </div>
@@ -58,11 +58,11 @@
 
     <!-- 추천 -->
     <div class="container content even-content">
-      <div class="content-name">
+      <div data-aos="fade-right" class="content-name">
         <img class="recommend-img" :src="recommend" alt="recommend">
       </div>
 
-      <div class="info-box">
+      <div data-aos="fade-left" class="info-box">
         <p class="title-right">Recommend Financial Products</p>
         <p class="title2">나에게 맞는 상품 추천</p>
         <p class="sub-txt">당신에게 적합한 상품을 추천해드립니다</p>
@@ -73,7 +73,7 @@
     </div>
 
     <!-- 환율 -->
-    <div class="container content">
+    <div data-aos="fade-right" class="container content">
       <div class="info-box">
         <p class="title" style="color: rgb(255, 64, 64);">Exchange Information</p>
         <p class="title2">환율 정보 및 계산기</p>
@@ -83,18 +83,18 @@
         <button @click.prevent="goExchange">환율 기능 이용하기  ></button>
       </div>
       
-      <div class="content-name">
+      <div data-aos="fade-left" class="content-name">
         <img class="recommend-img" :src="exchange" alt="exchange">
       </div>
     </div>
 
     <!-- 은행 -->
-    <div class="container content even-content">
+    <div data-aos="fade-right" class="container content even-content">
       <div class="content-name">
         <img class="recommend-img" :src="map" alt="map">
       </div>
 
-      <div class="info-box">
+      <div data-aos="fade-left" class="info-box">
         <p class="title">Rocation of Bank</p>
         <p class="title2">나에게 가까운 은행 찾기</p>
         <p class="sub-txt">가까운 은행을 확인하세요</p>

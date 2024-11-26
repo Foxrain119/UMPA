@@ -38,7 +38,7 @@ h1 {
   text-align: center;
 }
 
-h1::after {
+/* h1::after {
   content: '';
   position: absolute;
   bottom: -10px;
@@ -47,7 +47,7 @@ h1::after {
   width: 100%;
   height: 3px;
   background-color: #007bff;
-}
+} */
 
 .board-nav {
   margin: 20px 0;

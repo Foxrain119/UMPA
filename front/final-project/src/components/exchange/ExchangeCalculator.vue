@@ -36,10 +36,9 @@
             :value="country['cur_unit']"
             :selected="country['cur_unit'] === 'USD' ? true : false"
           >
-            {{ country['cur_unit'] }}
-          </option>
+          {{ country['cur_unit'] }} {{ country['cur_nm'] }}
+        </option>
         </select>
-        <input type="text" :value="exchangedMoney" readonly class="result-input">
       </form>
       <p class="answer">{{ exchangedMoney }}</p>
     </div>

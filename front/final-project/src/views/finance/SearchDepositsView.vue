@@ -33,12 +33,10 @@
         <input type="number" id="rate" name="rate" v-model="rate" step="0.01">
       </div>
       
-      <div class="form-group">
+      <div class="form-group submit-group">
         <label for="keyword">검색어 :</label>
         <input type="text" id="keyword" name="keyword" v-model="keyword">
-      </div>
-      
-      <div class="form-group submit-group">
+
         <input type="submit" value="검색" class="search-btn">
       </div>
     </form>
@@ -66,9 +64,9 @@
     </table>
 
     <div class="page_btn">
-      <button v-show="currentPage > 1" @click.prevent="prePage" class="left-btn"><</button>
+      <button v-show="currentPage > 1" @click.prevent="prePage" class="left-btn">이전</button>
       <span>{{ currentPage }} / {{ totalPage }}</span>
-      <button v-show="currentPage < totalPage" @click.prevent="nextPage" class="right-btn">></button>
+      <button v-show="currentPage < totalPage" @click.prevent="nextPage" class="right-btn">다음</button>
     </div>
   </div>
 </template>
@@ -179,7 +177,18 @@ const nextPage = () => {
 
 
 <style scoped>
+button {
+  position: absolute;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  background-color: white;
+  
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 .search-container {
+  position: relative;
   padding: 1rem;
   min-width: 800px;
 }
@@ -203,14 +212,14 @@ const nextPage = () => {
 
 .form-group label {
   color: #333;
-  font-size: 0.9rem;
+  font-size: 17px;
   font-weight: 500;
   white-space: nowrap;
 }
 
 .form-group input,
 .form-group select {
-  padding: 0.7rem;
+  padding: 5px 10px;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -220,7 +229,7 @@ const nextPage = () => {
   height: 45px;
   padding: 0;
   margin: auto;
-  background-color: #007bff;
+  background-color: #2b92ff;
   color: white;
   border: none;
   border-radius: 4px;
@@ -278,16 +287,12 @@ const nextPage = () => {
   margin-top: 2rem;
 }
 
-.left-btn, .right-btn {
-  padding: 0.5rem 1rem;
-  border: none;
-  background-color: #007bff;
-  color: white;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.left-btn {
+  left: 465px;
 }
-
+.right-btn {
+  right: 465px
+}
 .left-btn:hover, .right-btn:hover {
   background-color: #0056b3;
 }
@@ -306,5 +311,9 @@ const nextPage = () => {
   border-radius: 8px;
   margin-top: 1rem;
   color: #666;
+}
+
+.submit-group {
+  margin: auto;
 }
 </style>

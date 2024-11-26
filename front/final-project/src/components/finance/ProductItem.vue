@@ -47,6 +47,12 @@ const showDetail = () => {
 </script>
 
 <style scoped>
+td {
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 .product-row {
   border-bottom: 1px solid #dee2e6;
 }
@@ -58,19 +64,19 @@ const showDetail = () => {
 
 .rate-col {
   padding: 0.8rem;
-  text-align: center;
-  font-size: 0.9rem;
+  text-align: left;
+
 }
 
 .detail-col {
   padding: 0.8rem;
-  text-align: center;
+  text-align: left;
   white-space: nowrap;
 }
 
 .detail-btn {
   padding: 0.4rem 0.8rem;
-  background-color: #007bff;
+  background-color: #2b92ff;
   color: white;
   border: none;
   border-radius: 4px;

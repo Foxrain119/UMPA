@@ -16,7 +16,13 @@
         </div>
         <span class="divider">|</span>
         <div>
-          <RouterLink to="recommend_products" class="nav-link">맞춤형 상품 추천</RouterLink>
+          <RouterLink 
+            to="algo1"
+            class="nav-link"
+            :class="{ 'router-link-active': $route.path.includes('algo1') || $route.path.includes('algo2') }"
+          >
+            맞춤형 상품 추천
+          </RouterLink>
         </div>
       </div>
     </div>
@@ -30,7 +36,7 @@ import { RouterLink, RouterView } from 'vue-router';
 
 <style scoped>
 .finance-container {
-  max-width: 1200px;
+  width: 1200px;
   margin: 0 auto;
   padding: 2rem;
 }

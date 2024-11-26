@@ -7,6 +7,22 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router'
 
+// AOS
+// import AOS from 'aos';
+// import "aos/dist/aos.css";
+
+// new Vue({
+//     created() {
+//         AOS.init();
+//     },
+//   el: '#app',
+//   router,
+//   render: h => h(App)
+// })
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
 // 카카오맵 API 스크립트 로드
 const script = document.createElement('script')
 script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${import.meta.env.VITE_KAKAO_MAP_API_KEY}&libraries=services,clusterer,drawing&autoload=false`

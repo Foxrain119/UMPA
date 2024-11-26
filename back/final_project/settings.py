@@ -67,7 +67,9 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
 ]
-
+INSTALLED_APPS += [
+    'django_extensions',
+]
 SITE_ID = 1
 
 REST_FRAMEWORK = {

@@ -37,6 +37,8 @@
           </a>
         </div>
       </template>
+      <div v-else class="no-search">
+      </div>
     </div>
   </div>
 </template>
@@ -212,6 +214,12 @@ defineExpose({
   padding: 20px;
   text-align: center;
   color: #666;
+}
+.no-search{
+  text-align: center;
+  padding-left: 20px;
+  color: #666;
+
 }
 
 .result-count {

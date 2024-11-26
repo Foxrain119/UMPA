@@ -1,6 +1,7 @@
 <template>
-  <div>
-    <h1>회원 가입 페이지</h1>
+  <div class="signup-box">
+    <h1>회원 가입</h1>
+    <br>
     <form @submit.prevent="signUp">
       <label for="username">이름 : </label>
       <input type="text" id="username" v-model.trim="username"><br>
@@ -22,8 +23,8 @@
       
       <label for="age">나이 : </label>
       <input type="number" id="age" v-model.trim="age"><br>
-      
-      <input type="submit" value="SignUp">
+      <br>
+      <input type="submit" value="SignUp" class="signup">
     </form>
     <!-- <form @submit.prevent="signUp">
       <label for="username">아이디 : </label>
@@ -69,5 +70,28 @@ const signUp = function () {
 </script>
 
 <style scoped>
-
+h1 {
+  font-family: 'Freesentation-7Bold';
+}
+label {
+  width: 120px;
+}
+input {
+  width: 500px;
+  margin: 10px 0;
+  border: 1px solid rgb(240, 240, 240);
+  border-radius: 8px;
+  box-shadow: 3px 3px 4px rgba(192, 192, 192, 0.5);
+}
+.signup-box {
+  width: 700px;
+  margin: 40px 100px;
+}
+.signup {
+  width:  620px;
+  background-color: antiquewhite;
+}
+.signup:hover {
+  background-color: rgb(218, 184, 139);
+}
 </style>
