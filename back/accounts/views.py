@@ -114,6 +114,13 @@ def get_statics(request):
             'exchange': f'{BASIC_URL}/static/main_page/exchange.jpg',
             'map': f'{BASIC_URL}/static/main_page/bankmap.jpg',
         },
+        'bank': {
+            'gukmin': f'{BASIC_URL}/static/bank/gukmin.png',
+            'hana': f'{BASIC_URL}/static/bank/hana.jpg',
+            'uri': f'{BASIC_URL}/static/bank/uri.png',
+            'sinhan': f'{BASIC_URL}/static/bank/sinhan.png',
+            'nong': f'{BASIC_URL}/static/bank/nong.png',
+        }
     }
     return JsonResponse(context)
     

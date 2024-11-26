@@ -1,18 +1,16 @@
 <template>
   <div>
-    <h1>메인 페이지</h1>
     <MainInfo />
 
     <div class="home-article">
       <MainProduct />
     </div>
-    <div class="side-bar">
+    <div class="bottom-banner">
       <MainSideBar />
     </div>
 
   </div>
-  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <br><br>
 </template>
 
 <script setup>
@@ -44,13 +42,7 @@ const computedTop = computed(() => {
 .home-article {
   /* wi */
 }
-.side-bar {
-  /* position: fixed; */
-  top: 10px; /* 초기 위치 */
-  left: 0;
-  width: 200px;
-  /* background-color: lightgray; */
-  padding: 20px;
-  transition: top 10s ease; /* 부드러운 움직임 */
+.bottom-banner {
+
 }
 </style>

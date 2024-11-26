@@ -13,6 +13,23 @@ export const useAccountStore = defineStore('account', () => {
   const isEditing = ref(false)
   const router = useRouter()
 
+  const userInfo = ref(null)
+
+  const images = ref([])
+
+  // static 파일 가져오기
+  const getStaticFiles = async () => {
+    try{
+      const response = await axios.get(`${API_URL}/profile/static/`)
+      images.value =  response.data
+      console.log(response.data)
+      return response.data
+    } catch (error) {
+      console.error('static 로딩 실패:', error)
+      throw error
+    }
+  }
+
   const getProfile = function () {
     if (!token.value) {
       window.alert('로그인이 필요합니다.')
@@ -71,6 +88,23 @@ export const useAccountStore = defineStore('account', () => {
         window.alert('프로필 정보 수정에 실패했습니다.')
       })
   }
+
+
+  const getUserInfo = function () {
+    axios({
+      method: 'get',
+      url: `http://127.0.0.1:8000/profile/user_list/`,
+      // headers: {
+      //   Authorization: `Token ${token.value}`
+      // }
+    })
+    .then(res => {
+      console.log(res.data)
+      userInfo.value = res.data
+    })
+    .catch(err => console.log(err))
+  }
+
 
   const signUp = function (payload) {
     const { username, password1, password2, email, phone, age, nickname } = payload
@@ -213,5 +247,5 @@ export const useAccountStore = defineStore('account', () => {
     }
   }
 
-  return { API_URL, ARTICLES_URL, PROFILE_URL, articles, profile, token, isEditing, signUp, logIn, isLogin, logOut, getProfile, updateProfile, deleteAccount, cancelProduct, joinProduct }
+  return { API_URL, ARTICLES_URL, PROFILE_URL, articles, profile, token, isEditing, images, getStaticFiles, signUp, logIn, isLogin, logOut, getProfile, updateProfile, getUserInfo, deleteAccount, cancelProduct, joinProduct }
 }, { persist: true })

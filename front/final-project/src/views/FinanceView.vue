@@ -9,7 +9,7 @@
       >
         예적금 상품 검색
       </RouterLink>
-      <RouterLink to="recommend_products" class="nav-link">상품 추천</RouterLink>
+      <RouterLink to="algo1" class="nav-link">상품 추천</RouterLink>
     </div>
     <RouterView />
   </div>

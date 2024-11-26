@@ -1,8 +1,8 @@
 <template>
-  <div v-if="token && userInfo && profile">
+  <div v-if="token && profile">
     <div class="search-box">
       <form class="search-condition" @submit.prevent="recommend">
-        <div>{{ userInfo.nickname }}님과 비슷한 유저의 인기 가입 상품 top 5</div>
+        <div>{{ profile.nickname }}님과 비슷한 유저의 인기 가입 상품 top 5</div>
 
         <div>
           <label for="marital_status">결혼 여부 :</label>
@@ -89,7 +89,7 @@
     </div>
   </div>
 
-  <div v-else>
+  <div v-if="!token || !profile">
     <p>로그인이 필요합니다</p>
   </div>
 </template>
