@@ -189,6 +189,7 @@ const nextPage = () => {
   padding: 1.5rem;
   border-radius: 8px;
   margin-bottom: 2rem;
+  box-shadow: 4px 4px 10px rgba(161, 159, 159, 0.5);
 }
 
 .form-group {

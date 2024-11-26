@@ -15,7 +15,7 @@
           <p>최고 금리 상품</p>
         </div>
         <span class="product-switch">
-          <span class="pdt-deposit" @click.prevent="toDep">예금</span><span class="pdt-saving" @click.prevent="toSav">적금</span>
+          <span :class="`pdt-deposit ${flag?`pdt-color`:''}`" @click.prevent="toDep">예금</span><span :class="`pdt-saving ${!flag?`pdt-color`:''}`" @click.prevent="toSav">적금</span>
         </span>
 
         <div v-show="flag">
@@ -271,14 +271,17 @@ button {
 }
 .pdt-saving {
   cursor: pointer;
-  color: white;
   border: 1px solid rgb(15, 137, 255);
-  background-color: rgb(15, 137, 255);
   border-radius: 0 10px 10px 0;
   padding-left: 5px;
   padding-right: 10px;
 
 }
+.pdt-color {
+  background-color: rgb(15, 137, 255);
+  color: white;
+}
+
 
 .pdt-name {
   width: 160px;

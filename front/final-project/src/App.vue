@@ -74,6 +74,7 @@ button {
 .logo {
   width: 90px;
   margin: 5px 40px;
+  margin-right: 30px;
 }
 .menu {
   font-size: 18px;

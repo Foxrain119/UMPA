@@ -177,10 +177,11 @@ const nextPage = () => {
 }
 </script>
 
+
 <style scoped>
 .search-container {
   padding: 1rem;
-  
+  min-width: 800px;
 }
 
 .search-form {
@@ -191,7 +192,7 @@ const nextPage = () => {
   padding: 1.5rem;
   border-radius: 8px;
   margin-bottom: 2rem;
-  box-shadow: 5px 5px 10px rgba(109, 106, 106, 0.5);
+  box-shadow: 4px 4px 10px rgba(161, 159, 159, 0.5);
 }
 
 .form-group {
@@ -212,17 +213,19 @@ const nextPage = () => {
   padding: 0.7rem;
   border: 1px solid #ddd;
   border-radius: 4px;
-  font-size: 0.9rem;
 }
 
 .search-btn {
-  padding: 0.7rem 2rem;
+  width: 80px;
+  height: 45px;
+  padding: 0;
+  margin: auto;
   background-color: #007bff;
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: 15px;
   transition: background-color 0.3s ease;
 }
 

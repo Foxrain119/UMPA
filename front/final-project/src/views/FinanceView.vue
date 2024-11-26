@@ -5,15 +5,19 @@
     </div>
     <div class="menu-container">
       <div class="nav-links">
-        <RouterLink 
-          to="search_products" 
-          class="nav-link"
-          :class="{ 'router-link-active': $route.path.includes('deposit') || $route.path.includes('saving') }"
-        >
-          예적금 상품 검색
-        </RouterLink>
+        <div>
+          <RouterLink 
+            to="search_products" 
+            class="nav-link"
+            :class="{ 'router-link-active': $route.path.includes('deposit') || $route.path.includes('saving') }"
+          >
+            예적금 상품 검색
+          </RouterLink>
+        </div>
         <span class="divider">|</span>
-        <RouterLink to="recommend_products" class="nav-link">상품 추천</RouterLink>
+        <div>
+          <RouterLink to="recommend_products" class="nav-link">맞춤형 상품 추천</RouterLink>
+        </div>
       </div>
     </div>
     <RouterView />
@@ -45,7 +49,7 @@ h1 {
   text-align: center;
 }
 
-h1::after {
+/* h1::after {
   content: '';
   position: absolute;
   bottom: -10px;
@@ -54,7 +58,7 @@ h1::after {
   width: 100%;
   height: 3px;
   background-color: #007bff;
-}
+} */
 
 .menu-container {
   display: flex;
