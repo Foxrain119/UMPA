@@ -3,6 +3,7 @@ from financial_products.models import Deposit, Saving
 from dj_rest_auth.registration.serializers import RegisterSerializer
 from dj_rest_auth.serializers import UserDetailsSerializer, LoginSerializer
 from django.contrib.auth import get_user_model
+from financial_products.serializers import DepositFullListSerializer, SavingFullListSerializer
 UserModel = get_user_model()
 
 
@@ -131,17 +132,12 @@ class SavingSerializer(serializers.ModelSerializer):
         fields = ['fin_prdt_cd', 'fin_prdt_nm', 'kor_co_nm']
 
 
-class UserInfoSerializer(UserDetailsSerializer):
-    joined_deposits = DepositSerializer(many=True, read_only=True)
-    joined_savings = SavingSerializer(many=True, read_only=True)
+class UserInfoSerializer(CustomUserDetailsSerializer):
+    # FullListSerializer 사용하여 option 정보 포함
+    joined_deposits = DepositFullListSerializer(many=True, read_only=True)
+    joined_savings = SavingFullListSerializer(many=True, read_only=True)
 
-    # id = CustomUserDetailsSerializer()
-    # age = CustomUserDetailsSerializer()
-    # gender = CustomUserDetailsSerializer()
-    # property = CustomUserDetailsSerializer()
-    # merital_status = CustomUserDetailsSerializer()
-
-    class Meta:
-        model = UserModel
-        fields = ['id', 'age', 'gender', 'property', 'marital_status', 'joined_deposits', 'joined_savings']
-        # fields = '__all__'
+    class Meta(CustomUserDetailsSerializer.Meta):
+        fields = CustomUserDetailsSerializer.Meta.fields + (
+            'joined_deposits', 'joined_savings'
+        )

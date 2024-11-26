@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.conf import settings
 from .models import *
 from .serializers import *
@@ -6,6 +6,7 @@ import requests
 
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
+from rest_framework import status
 
 BASE_URL = 'http://finlife.fss.or.kr/finlifeapi/'
 API_KEY = settings.API_KEY
@@ -160,3 +161,33 @@ def saving_list(request):
     savings = Saving.objects.all()
     serializer = SavingFullListSerializer(savings, many=True)
     return Response(serializer.data)
+
+@api_view(['GET'])
+def product_detail(request, product_id):
+    try:
+        # 예금 상품 조회 시도
+        try:
+            product = get_object_or_404(Deposit, fin_prdt_cd=product_id)
+            serializer = DepositFullListSerializer(product)
+        except:
+            # 적금 상품 조회 시도
+            product = get_object_or_404(Saving, fin_prdt_cd=product_id)
+            serializer = SavingFullListSerializer(product)
+            
+        return Response(serializer.data)
+    except:
+        return Response({'error': '상품을 찾을 수 없습니다.'}, status=status.HTTP_404_NOT_FOUND)
+
+@api_view(['GET'])
+def product_list(request):
+    """전체 상품 목록 조회"""
+    deposits = Deposit.objects.all()
+    savings = Saving.objects.all()
+    
+    deposit_serializer = DepositFullListSerializer(deposits, many=True)
+    saving_serializer = SavingFullListSerializer(savings, many=True)
+    
+    return Response({
+        'deposits': deposit_serializer.data,
+        'savings': saving_serializer.data
+    })

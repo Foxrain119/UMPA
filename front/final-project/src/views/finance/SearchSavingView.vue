@@ -60,6 +60,7 @@
           v-for="saving in displayedSavings"
           :key="`saving${saving.id}`"
           :product="saving"
+          type="saving"
         />
       </tbody>
     </table>
@@ -78,6 +79,16 @@ import { computed, ref, onMounted } from 'vue'
 import { useFinanceStore } from '@/stores/finance';
 
 const store = useFinanceStore()
+
+onMounted(async () => {
+  try {
+    await store.getSavingList()
+  } catch (error) {
+    console.error('적금 상품 목록 조회 실패:', error)
+    window.alert('상품 목록을 불러오는데 실패했습니다.')
+  }
+})
+
 const savings = ref(store.savings.sort(function (a, b) {
   const optionA = a.option.find(opt => opt.save_trm === 6);
   const optionB = b.option.find(opt => opt.save_trm === 6);
@@ -103,7 +114,7 @@ const maxLimit = ref(null)
 const rate = ref(null)
 const keyword = ref(null)
 
-const searchSavings = function () {
+const searchingSaving = function () {
   let searched = savings.value
   if (period.value) {
     searched = searched.filter((el) => {
@@ -162,10 +173,6 @@ const prePage = () => {
 const nextPage = () => {
   currentPage.value += 1
 }
-
-onMounted(async () => {
-  await store.getSavingList()
-})
 </script>
 
 <style scoped>

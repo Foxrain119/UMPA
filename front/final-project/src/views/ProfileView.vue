@@ -12,7 +12,7 @@
           :class="['nav-link', { active: currentTab === 'products' }]"
           @click="currentTab = 'products'"
         >
-          가입 상품 관리
+          관심 상품 관리
         </button>
       </div>
     </div>
@@ -37,7 +37,7 @@
 
       <!-- 가입 상품 관리 탭 -->
       <div v-else-if="currentTab === 'products'" class="profile-card">
-        <h2>가입 상품 관리</h2>
+        <h2>관심 상품 관리</h2>
         <ProfileProducts 
           :profile="store2.profile"
         />
@@ -47,14 +47,23 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, watch } from 'vue'
+import { useRoute } from 'vue-router'
 import { useAccountStore } from '@/stores/account'
 import ProfileInfo from '@/components/profile/ProfileInfo.vue'
 import ProfileEdit from '@/components/profile/ProfileEdit.vue'
 import ProfileProducts from '@/components/profile/ProfileProducts.vue'
 
 const store2 = useAccountStore()
+const route = useRoute()
 const currentTab = ref('info')
+
+// URL query parameter로 전달된 탭 정보 처리
+watch(() => route.query.tab, (newTab) => {
+  if (newTab) {
+    currentTab.value = newTab
+  }
+}, { immediate: true })
 
 onMounted(async () => {
   await store2.getProfile()

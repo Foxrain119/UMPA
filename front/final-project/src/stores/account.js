@@ -13,40 +13,38 @@ export const useAccountStore = defineStore('account', () => {
   const isEditing = ref(false)
   const router = useRouter()
 
-  const getProfile = function () {
-    if (!token.value) {
-      window.alert('로그인이 필요합니다.')
-      router.push({ name: 'login' })
-      return
-    }
-
+  const getProfile = async function () {
     const username = localStorage.getItem('username')
-    console.log('Getting profile for username:', username)
-
-    if (!username) {
-      console.error('Username not found in localStorage')
-      router.push({ name: 'login' })
-      return
-    }
-
-    axios({
-      method: 'get',
-      url: `${PROFILE_URL}/${username}/`,
-      headers: {
-        Authorization: `Token ${token.value}`
+    try {
+      const response = await axios({
+        method: 'get',
+        url: `${PROFILE_URL}/${username}/`,
+        headers: {
+          Authorization: `Token ${token.value}`
+        }
+      })
+      
+      // 응답 데이터 구조 확인
+      console.log('Raw API Response:', response.data)
+      
+      // 가입 상품 정보 추출
+      const { joined_deposits = [], joined_savings = [], ...profileData } = response.data
+      
+      // 프로필 정보 업데이트
+      profile.value = {
+        ...profileData,
+        joined_deposits,
+        joined_savings
       }
-    })
-      .then(res => {
-        console.log('Profile data:', res.data)
-        profile.value = res.data
-        isEditing.value = false
-      })
-      .catch(err => {
-        console.error('Profile error:', err.response?.data || err)
-        window.alert('프로필 정보를 불러오는 데 실패했습니다.')
-        router.push({ name: 'home' })
-      })
+      
+      console.log('Processed Profile:', profile.value)
+      return profile.value
+      
+    } catch (error) {
+      console.error('프로필 정보 조회 실패:', error)
+      throw error
     }
+  }
 
   const updateProfile = function (payload) {
     const username = localStorage.getItem('username')
@@ -195,7 +193,12 @@ export const useAccountStore = defineStore('account', () => {
     const username = localStorage.getItem('username')
     
     try {
-      await axios({
+      console.log('Sending join request:', {
+        url: `${PROFILE_URL}/${username}/products/join/`,
+        data: productData
+      })
+
+      const response = await axios({
         method: 'post',
         url: `${PROFILE_URL}/${username}/products/join/`,
         data: productData,
@@ -204,11 +207,11 @@ export const useAccountStore = defineStore('account', () => {
         }
       })
       
-      // 프로필 정보 갱신
       await getProfile()
+      return response.data
       
     } catch (error) {
-      console.error('상품 가입 실패:', error.response?.data || error)
+      console.error('상품 가입 요청 실패:', error.response?.data || error)
       throw error
     }
   }

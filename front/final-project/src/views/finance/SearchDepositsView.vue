@@ -60,6 +60,7 @@
           v-for="product in displayedProducts"
           :key="`deposit${product.id}`"
           :product="product"
+          type="deposit"
         />
       </tbody>
     </table>
@@ -80,7 +81,12 @@ import { useFinanceStore } from '@/stores/finance';
 const store = useFinanceStore()
 
 onMounted(async () => {
-  await store.getProducts()
+  try {
+    await store.getDepositList()
+  } catch (error) {
+    console.error('예금 상품 목록 조회 실패:', error)
+    window.alert('상품 목록을 불러오는데 실패했습니다.')
+  }
 })
 
 const deposits = ref(store.deposits.sort(function (a, b) {
@@ -108,7 +114,7 @@ const maxLimit = ref(null)
 const rate = ref(null)
 const keyword = ref(null)
 
-// 기존 검색 알고리즘 유지
+// 검색 함수 이름 변경 (searchProducts -> searchingDeposit)
 const searchingDeposit = function () {
   let searched = deposits.value
   if (period.value) {
@@ -286,5 +292,14 @@ const nextPage = () => {
   .search-form {
     grid-template-columns: 1fr;
   }
+}
+
+.no-results {
+  text-align: center;
+  padding: 2rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  margin-top: 1rem;
+  color: #666;
 }
 </style>
