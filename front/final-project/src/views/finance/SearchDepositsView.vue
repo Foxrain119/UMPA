@@ -180,6 +180,7 @@ const nextPage = () => {
 <style scoped>
 .search-container {
   padding: 1rem;
+  
 }
 
 .search-form {
@@ -190,6 +191,7 @@ const nextPage = () => {
   padding: 1.5rem;
   border-radius: 8px;
   margin-bottom: 2rem;
+  box-shadow: 5px 5px 10px rgba(109, 106, 106, 0.5);
 }
 
 .form-group {

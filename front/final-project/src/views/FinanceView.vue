@@ -1,15 +1,20 @@
 <template>
   <div class="finance-container">
-    <h1>금융 상품 비교</h1>
-    <div class="nav-links">
-      <RouterLink 
-        to="search_products" 
-        class="nav-link"
-        :class="{ 'router-link-active': $route.path.includes('deposit') || $route.path.includes('saving') }"
-      >
-        예적금 상품 검색
-      </RouterLink>
-      <RouterLink to="recommend_products" class="nav-link">상품 추천</RouterLink>
+    <div class="title-container">
+      <h1>금융 상품 비교</h1>
+    </div>
+    <div class="menu-container">
+      <div class="nav-links">
+        <RouterLink 
+          to="search_products" 
+          class="nav-link"
+          :class="{ 'router-link-active': $route.path.includes('deposit') || $route.path.includes('saving') }"
+        >
+          예적금 상품 검색
+        </RouterLink>
+        <span class="divider">|</span>
+        <RouterLink to="recommend_products" class="nav-link">상품 추천</RouterLink>
+      </div>
     </div>
     <RouterView />
   </div>
@@ -17,8 +22,6 @@
 
 <script setup>
 import { RouterLink, RouterView } from 'vue-router';
-
-
 </script>
 
 <style scoped>
@@ -28,30 +31,58 @@ import { RouterLink, RouterView } from 'vue-router';
   padding: 2rem;
 }
 
-h1 {
-  color: #333;
+.title-container {
+  display: flex;
+  justify-content: center;
   margin-bottom: 2rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #333;
+  font-family: 'S-CoreDream-6Bold';
+  position: relative;
   text-align: center;
 }
 
-.nav-links {
+h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 3px;
+  background-color: #007bff;
+}
+
+.menu-container {
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  width: 100%;
   margin-bottom: 2rem;
 }
 
+.nav-links {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
 .nav-link {
-  padding: 0.5rem 1rem;
   color: #666;
   text-decoration: none;
-  border-radius: 4px;
   transition: all 0.3s ease;
+}
+
+.divider {
+  color: #666;
+  font-size: 1.1rem;
 }
 
 .nav-link:hover {
   color: #007bff;
-  background-color: #f8f9fa;
 }
 
 .router-link-active {

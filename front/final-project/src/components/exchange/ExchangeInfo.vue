@@ -40,25 +40,61 @@ const selectedCountry = computed(() => {
 
 <style scoped>
 .info-box {
-  border: 1px solid black;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  padding: 10px;
-  width: 730px;
+  border: none;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  width: 100%;
 }
-.basic-info-box {
-  border: 1px solid black;
-  width: 700px;
-}
-.search-box {
-  border: 1px solid black;
-  width: 700px;
-}
-.info-box > p {
-  margin: 10px 5px;
 
+.basic-info-box {
+  border: none;
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  width: 100%;
+}
+
+.basic-info-box p {
+  margin: 0.8rem 0;
+  color: #495057;
+  font-size: 1.1rem;
+}
+
+.search-box {
+  border: none;
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  width: 100%;
+}
+
+.search-box p {
+  margin-bottom: 1rem;
+  color: #495057;
+  font-weight: bold;
+}
+
+select {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #495057;
+}
+
+span {
+  display: block;
+  padding: 0.8rem;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  color: #495057;
+  font-size: 1.1rem;
 }
 </style>
