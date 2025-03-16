@@ -19,7 +19,7 @@ def profile(request, username):
         return Response(serializer.data)
     
     elif request.method == 'PUT':
-        serializer = CustomUserDetailsSerializer(user, data=request.data, partial=True)
+        serializer = CustomUserDetailsSerializer(user, data=request.data, partial=True, context={'request': request})
         if serializer.is_valid():
             serializer.save()
             return Response(UserInfoSerializer(user).data)

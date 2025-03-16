@@ -327,3 +327,6 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,django,vue,vuejs,visualstudiocode,python
+
+/참고자료
+command.txt
