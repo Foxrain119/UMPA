@@ -54,10 +54,10 @@
 
 ## ERD, 컴포넌트 구성
 ### ERD
-<img src='./ERD_update.drawio.png' alt='ERD'/>  
+<img src='./document/ERD_update.drawio.png' alt='ERD'/>  
 
 ### Component  
-<img src='./컴포 figma_init.png' alt='ERD'/>  
+<img src='./document/컴포 figma_init.png' alt='ERD'/>  
 
 ## 기능별 설명
 1. 메인 페이지
